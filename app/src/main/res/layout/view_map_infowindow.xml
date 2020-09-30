@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/_5sdp"
+    android:paddingRight="@dimen/_5sdp"
+    android:paddingTop="@dimen/_2sdp"
+    android:paddingBottom="@dimen/_2sdp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/_120sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/map_infowindow_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/black_text_color"
+            android:singleLine="true" />
+
+        <TextView
+            android:fontFamily="@font/font_awesome"
+            android:id="@+id/map_infowindow_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icon_phone"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/colorDarkBlue"
+            android:layout_toRightOf="@+id/map_infowindow_name"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_centerVertical="true"
+            android:rotation="270" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/map_infowindow_distance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10sdp"
+        android:textColor="@color/black_text_disable" />
+
+    <TextView
+        android:id="@+id/map_infowindow_checkin_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10sdp"
+        android:textColor="@color/black_text_color_hint"
+        android:layout_marginTop="@dimen/_2sdp" />
+
+    <LinearLayout
+        android:id="@+id/map_infowindow_note_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--<wolve.dms.customviews.CTextIcon-->
+        <!--android:id="@+id/map_infowindow_icon_location"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/icon_district"-->
+        <!--android:textSize="@dimen/_12sdp"-->
+        <!--android:layout_gravity="center_vertical"/>-->
+
+        <TextView
+            android:id="@+id/map_infowindow_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black_text_color"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+
+
+</LinearLayout>
+

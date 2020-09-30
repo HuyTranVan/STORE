@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    android:clickable="true"
+    android:layout_marginTop="@dimen/_36sdp">
+
+    <RelativeLayout
+        android:id="@+id/cart_choice_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_20sdp"
+        android:background="#f4f4f4">
+
+        <!--<ImageView-->
+        <!--android:id="@+id/icon_back"-->
+        <!--android:layout_width="@dimen/_35sdp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:src="@drawable/ic_arrow_back_black_18dp"-->
+        <!--android:padding="@dimen/_8sdp"-->
+        <!--android:background="?selectableItemBackground"/>-->
+
+        <TextView
+            android:id="@+id/cart_choice_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Chọn sản phẩm khách cần mua"
+            android:textStyle="italic"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black_text_color_hint" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/cart_choice_header">
+
+        <!--<View-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="#75b9b3b3"/>-->
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/cart_choice_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:background="#f4f4f4"
+            android:layout_gravity="center"
+            app:tabGravity="fill"
+            app:tabPaddingStart="@dimen/_5sdp"
+            app:tabPaddingEnd="@dimen/_5sdp"
+            app:tabIndicatorColor="@color/colorBlue"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/colorBlue"
+            app:tabTextAppearance="@style/NavigationTabTextAppeareance"
+            app:tabTextColor="@color/black_text_color_hint" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="#75b9b3b3" />
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/cart_choice_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cart_choice_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_25sdp"
+        android:orientation="horizontal"
+        android:background="@drawable/btn_confirm_blue"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone">
+
+        <TextView
+            android:fontFamily="@font/font_awesome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icon_cart"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_gravity="center" />
+
+
+        <TextView
+            android:id="@+id/cart_choice_tvsubmit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="THÊM VÀO GIỎ HÀNG"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/_20sdp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

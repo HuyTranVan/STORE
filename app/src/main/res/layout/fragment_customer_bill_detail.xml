@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:clickable="true"
+    android:layout_marginTop="@dimen/_36sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--<RelativeLayout-->
+        <!--android:id="@+id/cart_choice_header"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_20sdp"-->
+        <!--android:background="@color/colorLightGrey">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/header_title"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:text="Tất cả hóa đơn"-->
+        <!--android:textStyle="italic"-->
+        <!--android:textSize="@dimen/_10sdp"-->
+        <!--android:textColor="@color/black_text_color_hint"/>-->
+
+        <!--</RelativeLayout>-->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:fillViewport="true"
+            android:layout_below="@+id/customer_header">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/bill_detail_bdf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btn_round_orange"
+                    android:textColor="@color/colorWhite"
+                    android:text="con no"
+                    android:textSize="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/bill_detail_debt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btn_round_red"
+                    android:text="con no"
+                    android:textSize="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:textColor="@color/colorWhite"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/bill_detail_paid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btn_round_grey"
+                    android:text="con no"
+                    android:textSize="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:textColor="@color/colorWhite"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/bill_detail_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btn_round_blue"
+                    android:text="con no"
+                    android:textSize="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:textColor="@color/colorWhite"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/bill_detail_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@color/colorWhite"
+                android:layout_gravity="center"
+                app:tabGravity="fill"
+                app:tabPaddingStart="@dimen/_5sdp"
+                app:tabPaddingEnd="@dimen/_5sdp"
+                app:tabIndicatorColor="@color/colorBlue"
+                app:tabIndicatorHeight="3dp"
+                app:tabSelectedTextColor="@color/colorBlue"
+                app:tabTextAppearance="@style/NavigationTabTextAppeareance"
+                app:tabTextColor="@color/black_text_color_hint" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#75b9b3b3" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/bill_detail_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorLightGrey" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/bill_detail_group"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorGrey"
+        android:gravity="center_vertical">
+
+        <RadioGroup
+            android:id="@+id/bill_detail_yeargroup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:paddingRight="@dimen/_10sdp">
+
+
+        </RadioGroup>
+
+        <TextView
+            android:fontFamily="@font/font_awesome"
+            android:id="@+id/bill_detail_export"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:text="@string/icon_export"
+            android:textColor="@color/black_text_color_hint"
+            android:textSize="@dimen/_16sdp"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_10sdp" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

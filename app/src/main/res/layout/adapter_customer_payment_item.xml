@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bills_item_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/btn_none_white"
+    android:paddingLeft="@dimen/_10sdp"
+    android:paddingRight="@dimen/_10sdp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/customer_payment_item_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default"
+            android:paddingLeft="@dimen/_5sdp"
+            android:textColor="@color/black_text_color"
+            android:textSize="@dimen/_12sdp"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/customer_payment_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default"
+            android:paddingLeft="@dimen/_5sdp"
+            android:textColor="@color/black_text_color_hint"
+            android:textSize="@dimen/_8sdp"
+            android:textStyle="italic"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_centerVertical="true" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/customer_payment_item_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Default"
+        android:gravity="right"
+        android:textColor="@color/black_text_color"
+        android:textStyle="bold"
+        android:textSize="@dimen/_12sdp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true" />
+
+    <View
+        android:id="@+id/line_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#e5e5e5"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+</RelativeLayout>

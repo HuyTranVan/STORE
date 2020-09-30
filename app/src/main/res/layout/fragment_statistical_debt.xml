@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:minHeight="@dimen/_40sdp"
+        android:padding="@dimen/_5sdp"
+        android:layout_gravity="right">
+
+        <LinearLayout
+            android:id="@+id/statistical_ordered_count_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_corner5_white_border2_blue"
+            android:minWidth="@dimen/_70sdp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_text_color_hint"
+                android:textSize="@dimen/_8sdp"
+                android:text="Đã mua hàng" />
+
+            <TextView
+                android:id="@+id/statistical_debt_number_customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/colorBlue"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_corner5_white_border2_red"
+            android:minWidth="@dimen/_70sdp"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_text_color_hint"
+                android:textSize="@dimen/_8sdp"
+                android:text="Đang nợ" />
+
+            <TextView
+                android:id="@+id/statistical_debt_number_customer_debt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:text="0"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/colorRed"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/statistical_debt_count_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_corner5_white_border2_orange"
+            android:minWidth="@dimen/_70sdp"
+            android:layout_marginLeft="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:minWidth="@dimen/_70sdp"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black_text_color_hint"
+                    android:textSize="@dimen/_8sdp"
+                    android:text="Số tiền nợ" />
+
+
+                <TextView
+                    android:id="@+id/statistical_debt_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="@dimen/_5sdp"
+                    android:textColor="@color/orange_dark"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="Công nợ"
+                    android:gravity="center_vertical|right" />
+            </LinearLayout>
+
+            <TextView
+                android:fontFamily="@font/font_awesome"
+                android:id="@+id/statistical_debt_sort"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:text="@string/icon_down"
+                android:textSize="@dimen/_16sdp"
+                android:textColor="@color/black_text_color_hint"
+                android:gravity="center"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/statistical_debt_rvbill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_50sdp" />
+
+
+</LinearLayout>

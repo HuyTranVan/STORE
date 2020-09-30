@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp">
+
+    <TextView
+        android:id="@+id/tabTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lịch hẹn sắp tới"
+        android:textSize="@dimen/_10sdp"
+        android:textColor="@drawable/text_blue_selected"
+        android:textAllCaps="true"
+        android:layout_gravity="center" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_12sdp"
+        android:layout_marginLeft="@dimen/_2sdp">
+
+        <TextView
+            android:id="@+id/tabNotify"
+            android:layout_width="@dimen/_8sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:background="@drawable/btn_round_red"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tabNotifyCount"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_12sdp"
+            android:minWidth="@dimen/_12sdp"
+            android:minHeight="@dimen/_12sdp"
+            android:background="@drawable/btn_round_greyblue"
+            android:text="1"
+            android:textSize="@dimen/_7sdp"
+            android:textColor="@color/colorWhite"
+            android:gravity="center"
+            android:layout_gravity="center|right"
+            android:visibility="visible" />
+
+    </FrameLayout>
+
+
+</LinearLayout>

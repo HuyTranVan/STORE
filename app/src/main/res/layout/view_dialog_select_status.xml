@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_choice_status_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorWhite"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/dialog_choice_status_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@drawable/bg_img_header"
+            android:text="CHỌN SẢN PHẨM"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black_text_color"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/dialog_choice_status_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_30sdp"
+            android:text="Thời gian ghé cửa hàng"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black_text_color"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_10sdp" />
+
+        <View
+            android:id="@+id/checkin_reason_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#0d000000"
+            android:layout_below="@+id/checkin_reason_name" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dialog_choice_status_rvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:clipToPadding="false"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/dialog_choice_status_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/_50sdp"
+                android:background="@drawable/bg_white_corner_stroke_grey"
+                android:contextClickable="false"
+                android:gravity="top"
+                android:imeOptions="actionNext"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_15sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:textColor="@color/black_text_color"
+                android:textSize="@dimen/_12sdp"
+                android:hint="Nhập nội dung khác"
+                android:layout_margin="@dimen/_5sdp"
+                android:inputType="textCapSentences|textMultiLine" />
+
+            <TextView
+                android:fontFamily="@font/font_awesome"
+                android:id="@+id/dialog_select_status_clear"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentRight="true"
+                android:text="@string/icon_x"
+                android:gravity="center"
+                android:layout_margin="@dimen/_5sdp" />
+
+        </RelativeLayout>
+
+
+        <include
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            layout="@layout/view_bottom_dialog_button" />
+    </LinearLayout>
+
+
+</FrameLayout>

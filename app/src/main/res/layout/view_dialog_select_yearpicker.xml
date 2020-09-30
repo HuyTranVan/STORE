@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pickers"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/dialog_year_picker_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@drawable/bg_img_header"
+        android:text="CHỌN NĂM"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/black_text_color"
+        android:gravity="center" />
+
+
+    <NumberPicker
+        android:id="@+id/year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dip"
+        android:layout_marginStart="1dip"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/colorGrey" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="0.5"
+            android:background="?selectableItemBackground"
+            android:textColor="@color/black_text_color_hint"
+            android:text="Hủy"
+            android:textSize="@dimen/_12sdp"
+            android:textAllCaps="true"
+            android:layout_gravity="center" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorGrey"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_2sdp" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="0.5"
+            android:background="?selectableItemBackground"
+            android:textColor="@color/colorBlue"
+            android:text="Chọn"
+            android:textSize="@dimen/_12sdp"
+            android:textAllCaps="true"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+</LinearLayout>

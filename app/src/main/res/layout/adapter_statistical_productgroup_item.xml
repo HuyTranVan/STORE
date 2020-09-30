@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/statistical_productgroup_item_content_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_2sdp"
+    app:cardElevation="@dimen/_4sdp"
+    app:cardCornerRadius="@dimen/_4sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGrey">
+
+            <TextView
+                android:id="@+id/statistical_productgroup_item_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/_2sdp"
+                android:text="a"
+                android:textColor="@color/colorBlue"
+                android:layout_marginLeft="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/statistical_productgroup_item_sumchecked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ooooo"
+                android:textColor="@color/colorAccent"
+                android:paddingRight="@dimen/_5sdp"
+                android:layout_toLeftOf="@+id/statistical_productgroup_item_sum"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/statistical_productgroup_item_sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/_2sdp"
+                android:text="a"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlueDark"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:background="#e5e5e5" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/statistical_productgroup_item_rvproduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_2sdp"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:clipToPadding="true"
+            android:paddingBottom="@dimen/_5sdp"
+            android:paddingTop="@dimen/_5sdp" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+
+

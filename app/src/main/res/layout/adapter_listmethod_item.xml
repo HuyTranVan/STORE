@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_list_method_parent"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_40sdp"
+    android:background="?selectableItemBackground"
+    tools:ignore="WebViewLayout"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:fontFamily="@font/font_awesome"
+                android:id="@+id/list_method_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:minWidth="@dimen/_40sdp"
+                android:textColor="@color/black_text_color_hint"
+                android:textSize="@dimen/_12sdp"
+                android:text="@string/icon_close"
+                android:gravity="center" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/list_method_image"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:minWidth="@dimen/_40sdp"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"/>
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/list_method_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Tân Bình"
+            android:textColor="@color/black_text_color"
+            android:textSize="@dimen/_12sdp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_15sdp" />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/list_method_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e0e0e0"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
