@@ -1,0 +1,14 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="cn.pedant.SweetAlert" >
+4
+5    <uses-sdk android:minSdkVersion="21" />
+5-->/Users/huytran/StudioProjects/STORE/dialog/src/main/AndroidManifest.xml
+6
+7    <!-- android:versionCode="2" -->
+8    <!-- android:versionName="1.1"> -->
+9    <!-- <uses-sdk android:targetSdkVersion="25"/> -->
+10    <application />
+10-->/Users/huytran/StudioProjects/STORE/dialog/src/main/AndroidManifest.xml:8:1-16
+11
+12</manifest>

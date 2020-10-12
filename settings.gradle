@@ -1,0 +1,2 @@
+rootProject.name='STORE'
+include ':app', ':dialog', ':mpchart'
