@@ -49,6 +49,21 @@ public class ApiUtil {
     public final static String LOGOUT(){
         return BASE_URL + "store/token/system/Logout";
     }
+
+//VEHICLE GROUP
+    public final static String VEHICLES(){
+        return BASE_URL + "store/token/vehicle/VehicleList";
+    }
+    public final static String BRAND_CREATE_PARAM = "%sname=%s&image=%s";
+    public final static String BRAND_NEW(){
+        return BASE_URL + "store/token/vehicle/BrandNew";
+    }
+
+    public final static String KIND_CREATE_PARAM = "%sname=%s";
+    public final static String KIND_NEW(){
+        return BASE_URL + "store/token/vehicle/KindNew";
+    }
+
 //PRODUCT GROUP
     public final static String PRODUCT_GROUPS(){
         return BASE_URL + "store/token/productgroup/ProductgroupList";

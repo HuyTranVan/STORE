@@ -15,7 +15,6 @@ import com.lubsolution.store.callback.CallbackBoolean;
 import com.lubsolution.store.callback.NewCallbackCustom;
 import com.lubsolution.store.models.BaseModel;
 import com.lubsolution.store.utils.Constants;
-import com.lubsolution.store.utils.CustomCenterDialog;
 import com.lubsolution.store.utils.CustomSQL;
 import com.lubsolution.store.utils.Transaction;
 
@@ -95,39 +94,45 @@ public class SplashScreenActivity extends BaseActivity {
     }
 
     private void checkLogin(CallbackBoolean listener) {
+
         BaseModel param = createGetParam(ApiUtil.CHECK_LOGIN(), false);
 
         new GetPostMethod(param, new NewCallbackCustom() {
             @Override
             public void onResponse(BaseModel result, List<BaseModel> list) {
-                if (result.getInt("version") > BuildConfig.VERSION_CODE) {
-                    progressBar.setVisibility(View.GONE);
-                    CustomCenterDialog.alertWithCancelButton("PHIÊN BẢN MỚI",
-                            "Có 1 bản cập nhật mới trên Store \nVui lòng cập nhật",
-                            "đồng ý",
-                            "không", new CallbackBoolean() {
-                                @Override
-                                public void onRespone(Boolean result) {
-                                    if (!result) {
-                                        finish();
-
-                                    } else {
-                                        Transaction.openGooglePlay();
-
-
-                                    }
-                                }
-                            });
-
-
+                if (result.getBoolean("success")) {
+                    listener.onRespone(true);
                 } else {
-                    if (result.getBoolean("success")) {
-                        listener.onRespone(true);
-                    } else {
-                        listener.onRespone(false);
-                    }
-
+                    listener.onRespone(false);
                 }
+//                if (result.getInt("version") > BuildConfig.VERSION_CODE) {
+//                    progressBar.setVisibility(View.GONE);
+//                    CustomCenterDialog.alertWithCancelButton("PHIÊN BẢN MỚI",
+//                            "Có 1 bản cập nhật mới trên Store \nVui lòng cập nhật",
+//                            "đồng ý",
+//                            "không", new CallbackBoolean() {
+//                                @Override
+//                                public void onRespone(Boolean result) {
+//                                    if (!result) {
+//                                        finish();
+//
+//                                    } else {
+//                                        Transaction.openGooglePlay();
+//
+//
+//                                    }
+//                                }
+//                            });
+//
+//
+//                } else {
+//                    if (result.getBoolean("success")) {
+//                        listener.onRespone(true);
+//                    } else {
+//                        listener.onRespone(false);
+//                    }
+//
+//                }
 
             }
 

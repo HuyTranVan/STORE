@@ -9,12 +9,11 @@ android {
         multiDexEnabled true
         minSdkVersion 21
 //        targetSdkVersion 27
-        versionCode 13
-        versionName "1.44"
+        versionCode 1
+        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
-    //keystorepass: android
     signingConfigs {
         config {
 //            storeFile file("/Users/huytran/Android Project/DMS/keystore")

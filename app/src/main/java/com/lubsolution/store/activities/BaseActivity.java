@@ -227,7 +227,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    //huy
+
 
 
 //    public void receiveBundleFormFCM(String tag){

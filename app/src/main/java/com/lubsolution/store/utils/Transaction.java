@@ -19,6 +19,7 @@ import com.lubsolution.store.R;
 import com.lubsolution.store.activities.HomeActivity;
 import com.lubsolution.store.activities.LoginActivity;
 import com.lubsolution.store.activities.SettingActivity;
+import com.lubsolution.store.activities.VehicleActivity;
 import com.lubsolution.store.callback.CallbackUri;
 import com.lubsolution.store.models.BaseModel;
 
@@ -76,6 +77,14 @@ public class Transaction {
     public static void gotoSettingActivity() {
         Context context = Util.getInstance().getCurrentActivity();
         Intent intent = new Intent(context, SettingActivity.class);
+        context.startActivity(intent);
+        ((AppCompatActivity) context).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        ((AppCompatActivity) context).finish();
+    }
+
+    public static void gotoVehicleActivity() {
+        Context context = Util.getInstance().getCurrentActivity();
+        Intent intent = new Intent(context, VehicleActivity.class);
         context.startActivity(intent);
         ((AppCompatActivity) context).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         ((AppCompatActivity) context).finish();

@@ -247,7 +247,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void choiceSetupItem() {
-        CustomBottomDialog.choiceListObject("cài đặt",
+        CustomBottomDialog.choiceListObject("danh mục",
                 Constants.homeSettingSetup(),
                 "text",
                 new CallbackObject() {
@@ -278,7 +278,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
 
                             case 4:
                                 if (User.getCurrentRoleId() == Constants.ROLE_ADMIN) {
-//                                    Transaction.gotoStatusActivity();
+                                    Transaction.gotoVehicleActivity();
                                 }
 
                                 break;

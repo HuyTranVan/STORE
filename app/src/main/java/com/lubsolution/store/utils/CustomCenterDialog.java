@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.lubsolution.store.R;
 import com.lubsolution.store.activities.BaseActivity;
-import com.lubsolution.store.adapter.ListUserChangeAdapter;
+import com.lubsolution.store.adapter.VehicleBrandAdapter;
 import com.lubsolution.store.apiconnect.ApiUtil;
 import com.lubsolution.store.apiconnect.apiserver.GetPostMethod;
 import com.lubsolution.store.callback.CallbackBoolean;
@@ -1088,7 +1088,7 @@ public class CustomCenterDialog {
         tvTitle.setText(title);
         dialogResult.setCanceledOnTouchOutside(true);
 
-        ListUserChangeAdapter adapter = new ListUserChangeAdapter(users, new CallbackObject() {
+        VehicleBrandAdapter adapter = new VehicleBrandAdapter(users, new CallbackObject() {
             @Override
             public void onResponse(BaseModel object) {
                 dialogResult.dismiss();

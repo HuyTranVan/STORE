@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/new_brand_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@drawable/bg_img_header">
+
+        <ImageView
+            android:id="@+id/icon_back"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_arrow_back_black_18dp"
+            android:padding="@dimen/_8sdp"
+            android:background="?selectableItemBackground" />
+
+        <TextView
+            android:id="@+id/new_vehicename_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="TÊN XE"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/black_text_color" />
+
+        <TextView
+            android:id="@+id/icon_delete"
+            android:fontFamily="@font/font_awesome"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="match_parent"
+            android:text="@string/icon_trash"
+            android:textColor="@color/black_text_color_hint"
+            android:textSize="@dimen/_14sdp"
+            android:gravity="center"
+            android:background="?selectableItemBackground"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/new_vehicename_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_30sdp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/new_vehicename_image"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                app:civ_border_width="4dp"
+                app:civ_border_color="@color/colorLightGrey"
+                android:src="@drawable/ic_lub_empty"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_gravity="center" />
+
+            <com.lubsolution.store.customviews.CInputForm
+                android:id="@+id/new_vehicename_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                app:textHint="Tên xe"
+                app:iconText="@string/icon_product" />
+
+            <com.lubsolution.store.customviews.CInputForm
+                android:id="@+id/new_vehicename_brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapCharacters"
+                app:textHint="Chọn hãng xe"
+                app:iconText="@string/icon_car" />
+
+
+            <com.lubsolution.store.customviews.CInputForm
+                android:id="@+id/new_vehicename_kind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapCharacters"
+                app:textHint="Chọn loại xe"
+                app:iconText="@string/icon_product_group" />
+
+            <Button
+                android:id="@+id/new_vehicename_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:minWidth="@dimen/_150sdp"
+                android:background="@drawable/btn_confirm_blue"
+                android:layout_margin="@dimen/_20sdp"
+                android:text="CẬP NHẬT"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

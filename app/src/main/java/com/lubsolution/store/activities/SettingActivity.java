@@ -142,7 +142,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
             case R.id.user_option_change_info:
                 Bundle bundle = new Bundle();
                 bundle.putString(Constants.USER, User.getCurrentUserString());
-                changeFragment(new NewUpdateUserFragment(), bundle, true);
+                changeFragment(new UpdateUserFragment(), bundle, true);
                 break;
 
             case R.id.user_option_share_parent:
@@ -249,7 +249,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
 
         if (Util.getInstance().isLoading()) {
             Util.getInstance().stopLoading(true);
-        } else if (mFragment != null && mFragment instanceof NewUpdateUserFragment) {
+        } else if (mFragment != null && mFragment instanceof UpdateUserFragment) {
             getSupportFragmentManager().popBackStack();
 
         }

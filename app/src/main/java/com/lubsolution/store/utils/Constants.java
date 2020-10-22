@@ -14,6 +14,9 @@ public class Constants {
     public final static String PRODUCTGROUP = "productgroup";
     public final static String DEPOT = "depot";
     public final static String PRODUCT = "product";
+    public final static String BRAND = "brand";
+    public final static String VEHICLE_NAME = "vehicle_name";
+    public final static String VEHICLE = "vehicle";
     public final static String STATUS = "status";
     public final static String CUSTOMER = "customer";
     public final static String CUSTOMER_RECEIVE = "customer_receive";
@@ -166,6 +169,7 @@ public class Constants {
     public final static String VIBER_PACKAGE = "com.viber.voip";
     public final static String MESSENGER_PACKAGE = "com.facebook.orca";
     public static final String PACKAGE_DEFAULT = "package_default";
+    public static final String KIND = "kind";
 
     //Home constant
     public static List<BaseModel> HomeItemList() {
@@ -228,7 +232,7 @@ public class Constants {
         BaseModel item0 = new BaseModel();
         item0.put("position", 0);
         item0.put("icon", Util.getIcon(R.string.icon_info));
-        item0.put("text", "Thông tin nhà phân phối");
+        item0.put("text", "Thông tin cửa hàng");
         list.add(0, item0);
 
         BaseModel item1 = new BaseModel();
@@ -251,8 +255,8 @@ public class Constants {
 
         BaseModel item4 = new BaseModel();
         item4.put("position", 4);
-        item4.put("icon", Util.getIcon(R.string.icon_status));
-        item4.put("text", "Trạng thái");
+        item4.put("icon", Util.getIcon(R.string.icon_car));
+        item4.put("text", "Xe");
         list.add(4, item4);
 
         return list;
