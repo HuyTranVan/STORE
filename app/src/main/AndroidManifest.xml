@@ -132,6 +132,20 @@
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
 
         <activity
+            android:name=".activities.MainShopActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="unspecified"
+            android:theme="@style/FullScreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+
+        <activity
+            android:name=".activities.ShopActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="unspecified"
+            android:theme="@style/FullScreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+
+        <activity
             android:name=".activities.SettingActivity"
             android:label="@string/app_name"
             android:screenOrientation="unspecified"
@@ -166,12 +180,19 @@
         <!--        android:theme="@style/FullScreen"-->
         <!--        android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>-->
 
-        <!--    <activity-->
-        <!--        android:name=".activities.ProductActivity"-->
-        <!--        android:label="@string/app_name"-->
-        <!--        android:screenOrientation="unspecified"-->
-        <!--        android:theme="@style/FullScreen"-->
-        <!--        android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>-->
+        <activity
+            android:name=".activities.ProductGroupActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="unspecified"
+            android:theme="@style/FullScreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+
+        <activity
+            android:name=".activities.ProductActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="unspecified"
+            android:theme="@style/FullScreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
 
         <!--    <activity-->
         <!--        android:name=".activities.UserActivity"-->
@@ -180,12 +201,7 @@
         <!--        android:theme="@style/FullScreen"-->
         <!--        android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>-->
 
-        <!--    <activity-->
-        <!--        android:name=".activities.ProductGroupActivity"-->
-        <!--        android:label="@string/app_name"-->
-        <!--        android:screenOrientation="unspecified"-->
-        <!--        android:theme="@style/FullScreen"-->
-        <!--        android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>-->
+
 
         <!--    <activity-->
         <!--        android:name=".activities.StatusActivity"-->

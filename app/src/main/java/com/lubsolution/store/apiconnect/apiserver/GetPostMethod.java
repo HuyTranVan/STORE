@@ -6,7 +6,7 @@ import android.view.View;
 import com.lubsolution.store.callback.CallbackBoolean;
 import com.lubsolution.store.callback.NewCallbackCustom;
 import com.lubsolution.store.models.BaseModel;
-import com.lubsolution.store.models.Distributor;
+import com.lubsolution.store.models.Shop;
 import com.lubsolution.store.models.User;
 import com.lubsolution.store.utils.Constants;
 import com.lubsolution.store.utils.CustomCenterDialog;
@@ -72,7 +72,7 @@ public class GetPostMethod extends AsyncTask<String, Void, String> {
                 con.setRequestProperty("Content-Type", mParam.getBoolean("isjson") ? "application/json" : "application/x-www-form-urlencoded");
                 con.setRequestProperty("x-wolver-accesstoken", User.getToken());
                 con.setRequestProperty("x-wolver-accessid", User.getUserId());
-                con.setRequestProperty("x-wolver-debtid", Distributor.getDistributorId());
+                con.setRequestProperty("x-wolver-debtid", Shop.getShopId());
 
                 DataOutputStream wr = null;
                 BufferedReader in = null;
@@ -103,7 +103,7 @@ public class GetPostMethod extends AsyncTask<String, Void, String> {
                 con.setRequestProperty("User-Agent", "Mozilla/5.0");
                 con.setRequestProperty("x-wolver-accesstoken", User.getToken());
                 con.setRequestProperty("x-wolver-accessid", User.getUserId());
-                con.setRequestProperty("x-wolver-debtid", Distributor.getDistributorId());
+                con.setRequestProperty("x-wolver-debtid", Shop.getShopId());
 
                 BufferedReader inp = new BufferedReader(new InputStreamReader(con.getInputStream()));
                 String inputLine1;

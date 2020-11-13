@@ -12,8 +12,8 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import com.lubsolution.store.R;
 import com.lubsolution.store.adapter.VehicleBrandAdapter;
+import com.lubsolution.store.adapter.VehicleGroupNameAdapter;
 import com.lubsolution.store.adapter.VehicleKindAdapter;
-import com.lubsolution.store.adapter.VehicleNameAdapter;
 import com.lubsolution.store.adapter.ViewpagerMultiListAdapter;
 import com.lubsolution.store.apiconnect.ApiUtil;
 import com.lubsolution.store.apiconnect.apiserver.GetPostMethod;
@@ -36,7 +36,7 @@ public class VehicleActivity extends BaseActivity implements View.OnClickListene
     private ViewpagerMultiListAdapter viewpagerAdapter;
     private VehicleBrandAdapter brandAdapter;
     private VehicleKindAdapter kindAdapter;
-    private VehicleNameAdapter nameAdapter;
+    private VehicleGroupNameAdapter nameAdapter;
     protected BaseModel mVehicle = new BaseModel();
 
     @Override
@@ -100,14 +100,14 @@ public class VehicleActivity extends BaseActivity implements View.OnClickListene
         Transaction.gotoHomeActivityRight(true);
     }
 
-    private void setupViewPager(BaseModel mVehicle) {
+    private void setupViewPager(BaseModel mVehicle){
         listadapter = new ArrayList<>();
 
-        nameAdapter = new VehicleNameAdapter(new ArrayList<>(), new CallbackObject() {
+        nameAdapter = new VehicleGroupNameAdapter(mVehicle.getList("brands"), new CallbackObject() {
             @Override
             public void onResponse(BaseModel object) {
                 Bundle bundle = new Bundle();
-                bundle.putString(Constants.VEHICLE_NAME, object == null ? null : object.BaseModelstoString());
+                bundle.putString(Constants.VEHICLENAME, object == null ? null : object.BaseModelstoString());
                 bundle.putString(Constants.VEHICLE, mVehicle.BaseModelstoString());
                 changeFragment(new UpdateVehicleNameFragment(), bundle, true);
             }
@@ -192,11 +192,16 @@ public class VehicleActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     public void onResponse(BaseModel object) {
-        if(object.hasKey(Constants.BRAND) && object.getBoolean(Constants.BRAND)){
+        if(object.hasKey(Constants.BRAND) && object.getBoolean(Constants.BRAND) ){
             brandAdapter.updateItem(object);
 
-        }else if(object.hasKey(Constants.KIND) && object.getBoolean(Constants.KIND)){
+        }else if(object.hasKey(Constants.KIND)&& object.getBoolean(Constants.KIND) ){
             kindAdapter.updateItem(object);
+
+        }else if(object.hasKey(Constants.VEHICLENAME) && object.getBoolean(Constants.VEHICLENAME)){
+            nameAdapter.updateItem(object);
+            //initialData();
+
         }
 
     }

@@ -2,7 +2,7 @@ package com.lubsolution.store.utils;
 
 import com.google.android.gms.maps.model.Marker;
 import com.lubsolution.store.models.BaseModel;
-import com.lubsolution.store.models.Distributor;
+import com.lubsolution.store.models.Shop;
 import com.lubsolution.store.models.User;
 
 import org.json.JSONArray;
@@ -30,7 +30,7 @@ public class DataUtil {
             params.put("total", total);
             params.put("paid", paid);
             params.put("customerId", customerId);
-            params.put("distributorId", Distributor.getDistributorId());
+            params.put("distributorId", Shop.getShopId());
             params.put("userId", userId);
             params.put("note", Util.encodeString(note));
             params.put("deliverBy", deliverBy);
@@ -563,6 +563,17 @@ public class DataUtil {
         }
 
         return list;
+
+    }
+
+    public static List<String> getListStringFromListObject(List<BaseModel> objects, String key) {
+        List<String> result = new ArrayList<>();
+        for (BaseModel item : objects) {
+            result.add(item.getString(key));
+
+        }
+
+        return result;
 
     }
 

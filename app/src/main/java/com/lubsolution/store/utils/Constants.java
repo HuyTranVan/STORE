@@ -14,9 +14,10 @@ public class Constants {
     public final static String PRODUCTGROUP = "productgroup";
     public final static String DEPOT = "depot";
     public final static String PRODUCT = "product";
-    public final static String BRAND = "brand";
-    public final static String VEHICLE_NAME = "vehicle_name";
-    public final static String VEHICLE = "vehicle";
+    public final static String BRAND = "brand_result";
+    public final static String VEHICLENAME = "vehiclename_result";
+    public final static String VEHICLE = "vehicle_result";
+    public static final String KIND = "kind_result";
     public final static String STATUS = "status";
     public final static String CUSTOMER = "customer";
     public final static String CUSTOMER_RECEIVE = "customer_receive";
@@ -34,7 +35,7 @@ public class Constants {
     public final static String PRINT_BILL_ACTIVITY = "printbill";
     public final static String IMPORT_ACTIVITY = "import";
     public final static String USER = "user";
-    public final static String DISTRIBUTOR = "distributor";
+    public final static String SHOP = "mainshop";
     public final static String USER_USERNAME = "username";
     public final static String USER_PASSWORD = "password";
     public final static String IMAGES_DIRECTORY = "Lubsolution_DMS";
@@ -123,12 +124,13 @@ public class Constants {
     public static final String PRODUCTGROUP_LIST = "productgroup_list";
     public static final String PRODUCT_LIST = "product_list";
     public static final String PROVINCE_LIST = "province_list";
+    public static final String VEHICLEBRAND_LIST = "vehiclebrand_list";
 
     public static final String CONNECTING_PRINTER = "Đang kết nối máy in ....";
     public static final String CONNECTED_PRINTER = "Đã kết nối máy in: %s";
     public static final String CONNECTED_PRINTER_ERROR = "Không thể kết nối tới máy in";
 
-    public static final String ON_MAP_SCREEN = "on_map";
+    public static final String ON_MAIN_SHOP = "on_main_shop";
 
     public final static String COMPANY_NAME = "CTY TNHH MTV TM DV XNK TRẦN VŨ ANH";
     public final static String COMPANY_ADDRESS = "MST: 3702405542";
@@ -169,7 +171,7 @@ public class Constants {
     public final static String VIBER_PACKAGE = "com.viber.voip";
     public final static String MESSENGER_PACKAGE = "com.facebook.orca";
     public static final String PACKAGE_DEFAULT = "package_default";
-    public static final String KIND = "kind";
+
 
     //Home constant
     public static List<BaseModel> HomeItemList() {

@@ -18,6 +18,21 @@ import java.util.List;
 public class BaseModel implements Serializable {
     JSONObject jsonObject;
 
+    public String getmName() {
+        return mName;
+    }
+
+    public void setmName(String mName) {
+        try {
+            this.mName = jsonObject.getString("name");
+        } catch (JSONException e) {
+            this.mName = "";
+        }
+        ;
+    }
+
+    private String mName;
+
     public BaseModel() {
         jsonObject = new JSONObject();
     }

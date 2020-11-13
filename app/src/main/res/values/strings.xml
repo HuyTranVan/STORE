@@ -132,6 +132,7 @@
     <string name="icon_key" translatable="false">&#xf084;</string>
     <string name="icon_chat_noname" translatable="false">&#xf075;</string>
     <string name="icon_store" translatable="false">&#xf54e;</string>
+    <string name="icon_plate" translatable="false">&#xf641;</string>
     <string name="icon_chat_viber">&#xf409;</string>
     <string name="icon_chat_messenger">&#xf39f;</string>
 

@@ -71,12 +71,11 @@
         android:maxSdkVersion="25" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- Required by older versions of Google Play services to create GCM registration tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
-        android:required="true" />
-
-    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- for android -->
+        android:required="true" /> <!-- for android -->
     <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/> -->
     <!-- <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/> -->
     <!-- <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> -->
@@ -167,6 +166,18 @@
             android:theme="@style/FullScreen"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
+            android:name="com.lubsolution.store.activities.MainShopActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="unspecified"
+            android:theme="@style/FullScreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.lubsolution.store.activities.ShopActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="unspecified"
+            android:theme="@style/FullScreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
             android:name="com.lubsolution.store.activities.SettingActivity"
             android:label="@string/app_name"
             android:screenOrientation="unspecified"
@@ -202,25 +213,21 @@
         <!-- android:theme="@style/FullScreen" -->
         <!-- android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/> -->
 
-
-        <!-- <activity -->
-        <!-- android:name=".activities.ProductActivity" -->
-        <!-- android:label="@string/app_name" -->
-        <!-- android:screenOrientation="unspecified" -->
-        <!-- android:theme="@style/FullScreen" -->
-        <!-- android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/> -->
-
+        <activity
+            android:name="com.lubsolution.store.activities.ProductGroupActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="unspecified"
+            android:theme="@style/FullScreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.lubsolution.store.activities.ProductActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="unspecified"
+            android:theme="@style/FullScreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
 
         <!-- <activity -->
         <!-- android:name=".activities.UserActivity" -->
-        <!-- android:label="@string/app_name" -->
-        <!-- android:screenOrientation="unspecified" -->
-        <!-- android:theme="@style/FullScreen" -->
-        <!-- android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/> -->
-
-
-        <!-- <activity -->
-        <!-- android:name=".activities.ProductGroupActivity" -->
         <!-- android:label="@string/app_name" -->
         <!-- android:screenOrientation="unspecified" -->
         <!-- android:theme="@style/FullScreen" -->
@@ -359,25 +366,7 @@
         <service
             android:name="com.evernote.android.job.JobRescheduleService"
             android:exported="false"
-            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- Needs to be explicitly declared on P+ -->
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false" />
-
-        <activity
-            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <!--
-            Service handling Google Sign-In user revocation. For apps that do not integrate with
-            Google Sign-In, this service will never be started.
-        -->
-        <service
-            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-            android:exported="true"
-            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-            android:visibleToInstantApps="true" />
+            android:permission="android.permission.BIND_JOB_SERVICE" />
         <!--
              FirebaseMessagingService performs security checks at runtime,
              but set to not exported to explicitly avoid allowing another app to call it.
@@ -412,26 +401,6 @@
         </service>
 
         <receiver
-            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-            android:exported="true"
-            android:permission="com.google.android.c2dm.permission.SEND" >
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            </intent-filter>
-        </receiver>
-
-        <activity
-            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <provider
-            android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.lubsolution.store.firebaseinitprovider"
-            android:exported="false"
-            android:initOrder="100" />
-
-        <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
             android:enabled="true"
             android:exported="false" >
@@ -447,9 +416,37 @@
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+        <receiver
+            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver> <!-- Needs to be explicitly declared on P+ -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--
+            Service handling Google Sign-In user revocation. For apps that do not integrate with
+            Google Sign-In, this service will never be started.
+        -->
+        <service
+            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+            android:exported="true"
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+            android:visibleToInstantApps="true" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"
@@ -554,18 +551,15 @@
             </intent-filter>
         </receiver>
 
-        <service
-            android:name="org.acra.sender.SenderService"
-            android:exported="false"
-            android:permission="android.permission.BIND_JOB_SERVICE"
-            android:process=":acra" />
-
         <provider
-            android:name="org.acra.attachment.AcraContentProvider"
-            android:authorities="com.lubsolution.store.acra"
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="com.lubsolution.store.firebaseinitprovider"
             android:exported="false"
-            android:grantUriPermissions="true"
-            android:process=":acra" />
+            android:initOrder="100" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <service
             android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
@@ -588,6 +582,18 @@
             android:name="androidx.room.MultiInstanceInvalidationService"
             android:directBootAware="true"
             android:exported="false" />
+        <service
+            android:name="org.acra.sender.SenderService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":acra" />
+
+        <provider
+            android:name="org.acra.attachment.AcraContentProvider"
+            android:authorities="com.lubsolution.store.acra"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:process=":acra" />
     </application>
 
 </manifest>

@@ -54,6 +54,8 @@ public class UpdateVehicleNameFragment extends Fragment implements View.OnClickL
     private TextView tvDelete;
 
     private BaseModel nameObject;
+    private BaseModel brandObject;
+    private BaseModel kindObject;
     private List<String> listBoolean = new ArrayList<>();
     private Uri imageChangeUri;
     private CallbackObject onDataPass;
@@ -68,7 +70,7 @@ public class UpdateVehicleNameFragment extends Fragment implements View.OnClickL
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_add_name, container, false);
+        view = inflater.inflate(R.layout.fragment_add_vehiclename, container, false);
 //        FitScrollWithFullscreen.assistActivity(getActivity(), 1);
         initializeView();
 
@@ -79,20 +81,24 @@ public class UpdateVehicleNameFragment extends Fragment implements View.OnClickL
     }
 
     private void intitialData() {
-        String bundle = getArguments().getString(Constants.VEHICLE_NAME);
+        String bundle = getArguments().getString(Constants.VEHICLENAME);
         mVehicle = new BaseModel(getArguments().getString(Constants.VEHICLE));
         if (bundle != null) {
             tvDelete.setVisibility(Util.isAdmin()? View.VISIBLE : View.GONE);
             btnSubmit.setText("CẬP NHẬT");
             nameObject = new BaseModel(bundle);
+            brandObject = nameObject.getBaseModel("brand");
+            kindObject = nameObject.getBaseModel("kind");
 
             edName.setText(nameObject.getString("name"));
+            edBrand.setText(brandObject.getString("name"));
+            edKind.setText(kindObject.getString("name"));
 
             if (!Util.checkImageNull(nameObject.getString("image"))) {
                 Glide.with(UpdateVehicleNameFragment.this).load(nameObject.getString("image")).centerCrop().into(imgName);
 
             } else {
-                Glide.with(this).load(R.drawable.ic_wolver).centerCrop().into(imgName);
+                Glide.with(this).load(R.drawable.ic_lub_empty).centerCrop().into(imgName);
 
             }
 
@@ -100,6 +106,8 @@ public class UpdateVehicleNameFragment extends Fragment implements View.OnClickL
             btnSubmit.setText("TẠO MỚI");
             nameObject = new BaseModel();
             nameObject.put("id", 0);
+            brandObject = new BaseModel();
+            kindObject = new BaseModel();
 
         }
         edBrand.setDropdown(true, new CInputForm.ClickListener() {
@@ -148,7 +156,7 @@ public class UpdateVehicleNameFragment extends Fragment implements View.OnClickL
                 break;
 
             case R.id.new_vehicename_submit:
-                submitBrand();
+                submitVehicleName();
                 break;
 
             case R.id.new_vehicename_image:
@@ -190,11 +198,17 @@ public class UpdateVehicleNameFragment extends Fragment implements View.OnClickL
                 });
     }
 
-    private void submitBrand() {
+    private void submitVehicleName() {
         if (edName.getText().toString().trim().equals("")) {
+            Util.showSnackbar("Tên xe không được rỗng!", null, null);
+
+        }else if(edBrand.getText().toString().trim().equals("")) {
             Util.showSnackbar("Tên hãng xe không được rỗng!", null, null);
 
-        } else {
+        }else if(edKind.getText().toString().trim().equals("")){
+            Util.showSnackbar("Tên loại xe không được rỗng!", null, null);
+
+        }else {
             if (imageChangeUri != null) {
                 new UploadCloudaryMethod(Util.getRealPathFromCaptureURI(imageChangeUri), new CallbackString() {
                     @Override
@@ -216,14 +230,17 @@ public class UpdateVehicleNameFragment extends Fragment implements View.OnClickL
             }
 
 
+
         }
     }
 
     private void updateProduct(String urlImage) {
-        BaseModel param = createPostParam(ApiUtil.BRAND_NEW(),
-                String.format(ApiUtil.BRAND_CREATE_PARAM,
+        BaseModel param = createPostParam(ApiUtil.VEHICLE_NEW(),
+                String.format(ApiUtil.VEHICLE_CREATE_PARAM,
                         nameObject.getInt("id") == 0 ? "" : "id=" + nameObject.getString("id") + "&",
                         Util.encodeString(edName.getText().toString().trim()),
+                        brandObject.getInt("id"),
+                        kindObject.getInt("id"),
                         urlImage),
                 false, false);
         new GetPostMethod(param, new NewCallbackCustom() {
@@ -231,7 +248,7 @@ public class UpdateVehicleNameFragment extends Fragment implements View.OnClickL
             public void onResponse(BaseModel result, List<BaseModel> list) {
                 getActivity().getSupportFragmentManager().popBackStack();
 
-                result.put(Constants.BRAND, true);
+                result.put(Constants.VEHICLENAME, true);
                 onDataPass.onResponse(result);
             }
 
@@ -280,6 +297,7 @@ public class UpdateVehicleNameFragment extends Fragment implements View.OnClickL
         CustomBottomDialog.choiceListObject("CHỌN HÃNG XE", brandList, "name", new CallbackObject() {
             @Override
             public void onResponse(BaseModel object) {
+                brandObject = object;
                 edBrand.setText(object.getString("name"));
 
             }
@@ -290,6 +308,7 @@ public class UpdateVehicleNameFragment extends Fragment implements View.OnClickL
         CustomBottomDialog.choiceListObject("CHỌN LOẠI XE", kindList, "name", new CallbackObject() {
             @Override
             public void onResponse(BaseModel object) {
+                kindObject = object;
                 edKind.setText(object.getString("name"));
 
             }

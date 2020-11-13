@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
 import com.lubsolution.store.R;
 import com.lubsolution.store.callback.CallbackClickAdapter;
 import com.lubsolution.store.models.BaseModel;
-import com.lubsolution.store.models.Distributor;
+import com.lubsolution.store.models.Shop;
 import com.lubsolution.store.utils.Constants;
 import com.lubsolution.store.utils.Util;
 
@@ -59,9 +59,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ItemAdapterVie
         if (mData.get(position).getBoolean("isDistributor")){
             holder.tvIcon.setVisibility(View.GONE);
             holder.imgItem.setVisibility(View.VISIBLE);
-            holder.tvTitle.setText(Distributor.getName());
+            holder.tvTitle.setText(Shop.getName());
             holder.tvTitle.setTextColor(mContext.getResources().getColor(R.color.colorBlue));
-            Glide.with(mContext).load(Distributor.getImage()).placeholder(R.drawable.lub_logo_grey).fitCenter().into(holder.imgItem);
+            Glide.with(mContext).load(Shop.getImage()).placeholder(R.drawable.lub_logo_grey).fitCenter().into(holder.imgItem);
 
         }else {
             holder.tvIcon.setVisibility(View.VISIBLE);

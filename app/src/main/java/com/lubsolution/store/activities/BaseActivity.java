@@ -168,7 +168,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         new GetPostMethod(param, new NewCallbackCustom() {
             @Override
             public void onResponse(BaseModel object, List<BaseModel> list) {
-                CustomSQL.setString(Constants.DISTRIBUTOR, object.getString("distributor"));
+                CustomSQL.setString(Constants.SHOP, object.getString("shop"));
                 CustomSQL.setString(Constants.DISTRICT_LIST, object.getString("district"));
                 CustomSQL.setString(Constants.USER_USERNAME, username);
                 CustomSQL.setString(Constants.USER_PASSWORD, pass);

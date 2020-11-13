@@ -18,7 +18,11 @@ import com.lubsolution.store.BuildConfig;
 import com.lubsolution.store.R;
 import com.lubsolution.store.activities.HomeActivity;
 import com.lubsolution.store.activities.LoginActivity;
+import com.lubsolution.store.activities.MainShopActivity;
+import com.lubsolution.store.activities.ProductActivity;
+import com.lubsolution.store.activities.ProductGroupActivity;
 import com.lubsolution.store.activities.SettingActivity;
+import com.lubsolution.store.activities.ShopActivity;
 import com.lubsolution.store.activities.VehicleActivity;
 import com.lubsolution.store.callback.CallbackUri;
 import com.lubsolution.store.models.BaseModel;
@@ -63,7 +67,7 @@ public class Transaction {
     }
 
     public static void gotoHomeActivityRight(Boolean isFinnish) {
-        CustomSQL.setBoolean(Constants.ON_MAP_SCREEN, false);
+        CustomSQL.setBoolean(Constants.ON_MAIN_SHOP, false);
 
         Context context = Util.getInstance().getCurrentActivity();
         Intent intent = new Intent(context, HomeActivity.class);
@@ -90,16 +94,16 @@ public class Transaction {
         ((AppCompatActivity) context).finish();
     }
 
-//    public static void gotoMapsActivity() {
-//        Context context = Util.getInstance().getCurrentActivity();
-//        Intent intent = new Intent(context, MapsActivity.class);
-//        CustomSQL.setBoolean(Constants.ON_MAP_SCREEN, true);
-//        context.startActivity(intent);
-//        ((AppCompatActivity) context).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//        ((AppCompatActivity) context).finish();
-//
-//    }
-//
+    public static void gotoMainShopActivity() {
+        Context context = Util.getInstance().getCurrentActivity();
+        Intent intent = new Intent(context, MainShopActivity.class);
+        CustomSQL.setBoolean(Constants.ON_MAIN_SHOP, true);
+        context.startActivity(intent);
+        ((AppCompatActivity) context).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        ((AppCompatActivity) context).finish();
+
+    }
+
 //    public static void gotoWarehouseActivity() {
 //        Context context = Util.getInstance().getCurrentActivity();
 //        Intent intent = new Intent(context, WarehouseActivity.class);
@@ -118,23 +122,23 @@ public class Transaction {
 //
 //
 //    }
-//
-//    public static void gotoProductActivity() {
-//        Context context = Util.getInstance().getCurrentActivity();
-//        Intent intent = new Intent(context, ProductActivity.class);
-//        context.startActivity(intent);
-//        ((AppCompatActivity) context).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//        ((AppCompatActivity) context).finish();
-//    }
-//
-//    public static void gotoProductGroupActivity() {
-//        Context context = Util.getInstance().getCurrentActivity();
-//        Intent intent = new Intent(context, ProductGroupActivity.class);
-//        context.startActivity(intent);
-//        ((AppCompatActivity) context).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//        ((AppCompatActivity) context).finish();
-//    }
-//
+
+    public static void gotoProductActivity() {
+        Context context = Util.getInstance().getCurrentActivity();
+        Intent intent = new Intent(context, ProductActivity.class);
+        context.startActivity(intent);
+        ((AppCompatActivity) context).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        ((AppCompatActivity) context).finish();
+    }
+
+    public static void gotoProductGroupActivity() {
+        Context context = Util.getInstance().getCurrentActivity();
+        Intent intent = new Intent(context, ProductGroupActivity.class);
+        context.startActivity(intent);
+        ((AppCompatActivity) context).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        ((AppCompatActivity) context).finish();
+    }
+
 //    public static void gotoUserActivity(boolean userdetail) {
 //        Context context = Util.getInstance().getCurrentActivity();
 //        Intent intent = new Intent(context, UserActivity.class);
@@ -258,12 +262,12 @@ public class Transaction {
 //        context.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 //    }
 
-    public static void gotoDistributorActivity() {
-//        Activity context = Util.getInstance().getCurrentActivity();
-//        Intent intent = new Intent(context, DistributorActivity.class);
-//        context.startActivity(intent);
-//        context.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//        ((AppCompatActivity) context).finish();
+    public static void gotoShopActivity() {
+        Activity context = Util.getInstance().getCurrentActivity();
+        Intent intent = new Intent(context, ShopActivity.class);
+        context.startActivity(intent);
+        context.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        ((AppCompatActivity) context).finish();
     }
 
 

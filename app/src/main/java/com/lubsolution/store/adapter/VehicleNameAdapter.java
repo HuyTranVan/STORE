@@ -30,8 +30,6 @@ public class VehicleNameAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private LayoutInflater mLayoutInflater;
     private Context mContext;
     private CallbackObject mListener;
-    private final int VIEW_TYPE_ITEM = 0;
-    private final int VIEW_TYPE_LOADING = 1;
 
     public VehicleNameAdapter(List<BaseModel> list, CallbackObject listener) {
         this.mLayoutInflater = LayoutInflater.from(Util.getInstance().getCurrentActivity());
@@ -39,43 +37,28 @@ public class VehicleNameAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         this.mListener = listener;
 
         this.mData = list;
-        mData.add(0,null);
 
 
     }
 
-    @Override
-    public int getItemViewType(int position) {
-        return mData.get(position) == null ? VIEW_TYPE_LOADING : VIEW_TYPE_ITEM;
-    }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if (viewType == VIEW_TYPE_ITEM) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_vehiclebrand_item, parent, false);
-            return new VehicleNameAdapter.ItemViewHolder(view);
-        } else {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_item_new, parent, false);
-            return new VehicleNameAdapter.SetNewViewHolder(view);
-        }
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_vehiclename_item, parent, false);
+        return new VehicleNameAdapter.ItemViewHolder(view);
 
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
-        if (viewHolder instanceof VehicleNameAdapter.ItemViewHolder) {
-            setItemRows((VehicleNameAdapter.ItemViewHolder) viewHolder, position);
-
-        } else if (viewHolder instanceof VehicleNameAdapter.SetNewViewHolder) {
-            setNewItem((VehicleNameAdapter.SetNewViewHolder) viewHolder, position);
-
-        }
+        setItemRows((VehicleNameAdapter.ItemViewHolder) viewHolder, position);
 
     }
 
     private void setItemRows(VehicleNameAdapter.ItemViewHolder holder, int position) {
         holder.tvName.setText(mData.get(position).getString("name"));
+        holder.tvKind.setText(mData.get(position).getBaseModel("kind").getString("name"));
 
         if (!Util.checkImageNull(mData.get(position).getString("image"))) {
             Glide.with(mContext).load(mData.get(position).getString("image")).centerCrop().into(holder.image);
@@ -98,41 +81,23 @@ public class VehicleNameAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvName;
+        private TextView tvName, tvKind;
         private CircleImageView image;
         private View vLine;
         private RelativeLayout lnParent;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-            lnParent = itemView.findViewById(R.id.vehiclebrand_item_parent);
-            image = itemView.findViewById(R.id.vehiclebrand_item_image);
-            tvName = itemView.findViewById(R.id.vehiclebrand_item_name);
+            lnParent = itemView.findViewById(R.id.vehiclename_item_parent);
+            image = itemView.findViewById(R.id.vehiclename_item_image);
+            tvName = itemView.findViewById(R.id.vehiclename_item_name);
+            tvKind = itemView.findViewById(R.id.vehiclename_item_kind);
             vLine = itemView.findViewById(R.id.seperateline);
 
         }
     }
 
-    public static class SetNewViewHolder extends RecyclerView.ViewHolder {
-        TextView tvName;
-        RelativeLayout lnParent;
 
-        public SetNewViewHolder(@NonNull View itemView) {
-            super(itemView);
-            tvName = itemView.findViewById(R.id.item_new_name);
-            lnParent = itemView.findViewById(R.id.item_new_parent);
-        }
-    }
-
-    private void setNewItem(VehicleNameAdapter.SetNewViewHolder holder, int position) {
-        holder.tvName.setText("Thêm tên xe");
-        holder.lnParent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mListener.onResponse(null);
-            }
-        });
-    }
 
     public void updateItem(BaseModel object){
         boolean check = false;

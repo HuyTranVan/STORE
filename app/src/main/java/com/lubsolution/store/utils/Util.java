@@ -47,6 +47,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.kaopiz.kprogresshud.KProgressHUD;
 import com.lubsolution.store.R;
+import com.lubsolution.store.callback.CallbackBoolean;
 import com.lubsolution.store.callback.CallbackDouble;
 import com.lubsolution.store.callback.CallbackString;
 import com.lubsolution.store.customviews.CInputForm;
@@ -410,7 +411,7 @@ public class Util {
             public void run() {
                 Util.showKeyboard(view);
             }
-        }, 500);
+        }, 200);
     }
 
     public static void showKeyboardEditTextDelay(EditText view) {
@@ -419,6 +420,17 @@ public class Util {
             public void run() {
                 Util.showKeyboard(view);
                 view.setSelection(view.getText().toString().trim().length());
+            }
+        }, 200);
+    }
+
+    public static void showKeyboardEditTextDelay(EditText view, CallbackBoolean listener) {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Util.showKeyboard(view);
+                view.setSelection(view.getText().toString().trim().length());
+                listener.onRespone(true);
             }
         }, 200);
     }

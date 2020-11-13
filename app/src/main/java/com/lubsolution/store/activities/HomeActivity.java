@@ -23,11 +23,16 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.bumptech.glide.Glide;
 import com.lubsolution.store.R;
 import com.lubsolution.store.adapter.HomeAdapter;
+import com.lubsolution.store.apiconnect.ApiUtil;
+import com.lubsolution.store.apiconnect.apiserver.GetPostMethod;
 import com.lubsolution.store.callback.CallbackBoolean;
 import com.lubsolution.store.callback.CallbackClickAdapter;
 import com.lubsolution.store.callback.CallbackObject;
+import com.lubsolution.store.callback.NewCallbackCustom;
 import com.lubsolution.store.models.BaseModel;
+import com.lubsolution.store.models.ProductGroup;
 import com.lubsolution.store.models.User;
+import com.lubsolution.store.models.Vehicle;
 import com.lubsolution.store.utils.Constants;
 import com.lubsolution.store.utils.CustomBottomDialog;
 import com.lubsolution.store.utils.CustomCenterDialog;
@@ -108,6 +113,28 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
         HomeAdapter adapter = new HomeAdapter(HomeActivity.this);
         Util.createGridRV(rvItems, adapter, 3);
 
+//        loadCurrentData(new CallbackBoolean() {
+//            @Override
+//            public void onRespone(Boolean result) {
+//                //checkNewProductUpdated(null, 0, true);
+//            }
+//        },1);
+
+
+        if (CustomSQL.getBoolean(Constants.LOGIN_SUCCESS)) {
+            CustomSQL.setBoolean(Constants.LOGIN_SUCCESS, false);
+            loadCurrentData(new CallbackBoolean() {
+                @Override
+                public void onRespone(Boolean result) {
+                    //checkNewProductUpdated(null, 0, true);
+                }
+            },1);
+
+
+        }else {
+            //checkNewProductUpdated(null, 1, true);
+
+        }
     }
 
     private void loadOverView() {
@@ -115,7 +142,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
         long start = Util.TimeStamp1(Util.Current01MonthYear());
         long end = Util.TimeStamp1(Util.Next01MonthYear());
 
-        //params.add(DataUtil.createListPaymentParam(start, end));
+//        params.add(DataUtil.createListPaymentParam(start, end));
 //        SystemConnect.loadListObject(params, new CallbackCustomListList() {
 //            @Override
 //            public void onResponse(List<List<BaseModel>> results) {
@@ -148,7 +175,12 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
                 break;
 
             case R.id.home_new_product:
-                loadCurrentData();
+                loadCurrentData(new CallbackBoolean() {
+                    @Override
+                    public void onRespone(Boolean result) {
+
+                    }
+                }, 1);
                 break;
 
 
@@ -189,8 +221,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
     public void onRespone(String data, int position) {
         switch (position) {
             case 0:
-//                if (User.checkUserWarehouse())
-//                    Transaction.gotoMapsActivity();
+                Transaction.gotoMainShopActivity();
 
                 break;
 
@@ -216,9 +247,9 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
                 break;
 
             case 5:
-//                if (CustomSQL.getBoolean(Constants.IS_ADMIN)) {
-//                    Transaction.gotoDistributorActivity();
-//                }
+                if (CustomSQL.getBoolean(Constants.IS_ADMIN)) {
+                    Transaction.gotoShopActivity();
+                }
 
                 break;
         }
@@ -226,23 +257,28 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
 
     }
 
-    private void loadCurrentData() {
-//        SystemConnect.getCategories(new CallbackCustom() {
-//            @Override
-//            public void onResponse(BaseModel result) {
-////                Status.saveStatusList(result.getJSONArray("Status"));
-//                ProductGroup.saveProductGroupList(result.getJSONArray("ProductGroup"));
-//
-//                CustomSQL.setLong(Constants.LAST_PRODUCT_UPDATE, result.getLong("LastProductUpdate"));
+    private void loadCurrentData(CallbackBoolean listener, int load) {
+        BaseModel param = createGetParam(ApiUtil.CATEGORIES(), false);
+        new GetPostMethod(param, new NewCallbackCustom() {
+            @Override
+            public void onResponse(BaseModel result, List<BaseModel> list) {
+                ProductGroup.saveProductGroupList(result.getJSONArray("ProductGroup"));
+                Vehicle.saveVehicleList(result.getJSONArray("Vehicle"));
+
+                CustomSQL.setLong(Constants.LAST_PRODUCT_UPDATE, result.getLong("LastProductUpdate"));
 //                tvHaveNewProduct.setVisibility(View.GONE);
 //
-//            }
-//
-//            @Override
-//            public void onError(String error) {
-//
-//            }
-//        }, false);
+//                if (listener != null){
+//                    listener.onRespone(true);
+//                }
+
+            }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        }, load).execute();
 
     }
 
@@ -256,7 +292,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
                         switch (object.getInt("position")) {
                             case 0:
                                 if (CustomSQL.getBoolean(Constants.IS_ADMIN)) {
-                                    Transaction.gotoDistributorActivity();
+                                    Transaction.gotoShopActivity();
                                 }
                                 break;
 
@@ -268,12 +304,12 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
 
                             case 2:
                                 if (User.getCurrentRoleId() == Constants.ROLE_ADMIN) {
-//                                    Transaction.gotoProductGroupActivity();
+                                    Transaction.gotoProductGroupActivity();
                                 }
                                 break;
 
                             case 3:
-//                                Transaction.gotoProductActivity();
+                                Transaction.gotoProductActivity();
                                 break;
 
                             case 4:
@@ -357,9 +393,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
     @SuppressLint("WrongConstant")
     private void checkPermission() {
         Activity context = Util.getInstance().getCurrentActivity();
-        if (PermissionChecker.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
-                PermissionChecker.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
-                PermissionChecker.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED ||
+        if (PermissionChecker.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED ||
                 PermissionChecker.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
                 PermissionChecker.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
                 PermissionChecker.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -374,8 +408,6 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
                         public void onRespone(Boolean result) {
                             if (result) {
                                 ActivityCompat.requestPermissions(context, new String[]{
-                                        Manifest.permission.ACCESS_FINE_LOCATION,
-                                        Manifest.permission.ACCESS_COARSE_LOCATION,
                                         Manifest.permission.CALL_PHONE,
                                         Manifest.permission.WRITE_EXTERNAL_STORAGE,
                                         Manifest.permission.READ_EXTERNAL_STORAGE,

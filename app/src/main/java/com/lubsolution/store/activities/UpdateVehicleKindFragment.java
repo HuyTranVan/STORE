@@ -53,7 +53,7 @@ public class UpdateVehicleKindFragment extends Fragment implements View.OnClickL
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_add_kind, container, false);
+        view = inflater.inflate(R.layout.fragment_add_vehiclekind, container, false);
 //        FitScrollWithFullscreen.assistActivity(getActivity(), 1);
         initializeView();
 

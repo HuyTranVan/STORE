@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/text"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/btn_round_grey"
     android:minHeight="@dimen/_25sdp"
+    android:minWidth="@dimen/_100sdp"
     android:textSize="@dimen/_12sdp"
     android:gravity="center"
     android:textColor="@color/colorWhite"
-    android:paddingLeft="@dimen/_10sdp"
-    android:paddingRight="@dimen/_10sdp" />
+    android:paddingLeft="@dimen/_20sdp"
+    android:paddingRight="@dimen/_20sdp" />

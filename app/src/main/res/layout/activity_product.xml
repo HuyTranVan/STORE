@@ -32,7 +32,7 @@
 
     </RelativeLayout>
 
-    <wolve.dms.libraries.MySwipeRefreshLayout
+    <com.lubsolution.store.libraries.MySwipeRefreshLayout
         android:id="@+id/product_swipelayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
                 android:background="@color/colorWhite" />
 
         </LinearLayout>
-    </wolve.dms.libraries.MySwipeRefreshLayout>
+    </com.lubsolution.store.libraries.MySwipeRefreshLayout>
 
     <com.github.clans.fab.FloatingActionButton
         android:id="@+id/product_add_new"

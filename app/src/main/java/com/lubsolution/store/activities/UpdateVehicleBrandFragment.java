@@ -67,7 +67,7 @@ public class UpdateVehicleBrandFragment extends Fragment implements View.OnClick
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_add_brand, container, false);
+        view = inflater.inflate(R.layout.fragment_add_vehiclebrand, container, false);
 //        FitScrollWithFullscreen.assistActivity(getActivity(), 1);
         initializeView();
 

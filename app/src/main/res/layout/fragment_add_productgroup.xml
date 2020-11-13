@@ -31,7 +31,7 @@
 
     </RelativeLayout>
 
-    <wolve.dms.customviews.CInputForm
+    <com.lubsolution.store.customviews.CInputForm
         android:id="@+id/add_productgroup_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

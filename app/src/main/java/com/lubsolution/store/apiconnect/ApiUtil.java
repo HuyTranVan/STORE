@@ -46,18 +46,17 @@ public class ApiUtil {
     }
 
 //Logout
-    public final static String LOGOUT(){
-        return BASE_URL + "store/token/system/Logout";
-    }
+    public final static String LOGOUT(){ return BASE_URL + "store/token/system/Logout"; }
 
 //VEHICLE GROUP
     public final static String VEHICLES(){
         return BASE_URL + "store/token/vehicle/VehicleList";
     }
+    public final static String VEHICLE_CREATE_PARAM = "%sname=%s&brand_id=%d&kind_id=%d&image=%s";
+    public final static String VEHICLE_NEW(){ return BASE_URL + "store/token/vehicle/VehicleNew"; }
+
     public final static String BRAND_CREATE_PARAM = "%sname=%s&image=%s";
-    public final static String BRAND_NEW(){
-        return BASE_URL + "store/token/vehicle/BrandNew";
-    }
+    public final static String BRAND_NEW(){ return BASE_URL + "store/token/vehicle/BrandNew"; }
 
     public final static String KIND_CREATE_PARAM = "%sname=%s";
     public final static String KIND_NEW(){
@@ -195,14 +194,9 @@ public class ApiUtil {
     }
     //public final static String CUSTOMER_ORDERED = BASE_URL + "store/token/customer/CustomerOrderedList";
 
-    public final static String DISTRIBUTOR_DETAIL(){
-        return BASE_URL + "store/token/distributor/DistributorDetail?id=";
-    }
-
-    public final static String DISTRIBUTOR_CREATE_PARAM = "%scompany=%s&address=%s&phone=%s&website=%s&thanks=%s&image=%s";
-    public final static String DISTRIBUTOR_NEW(){
-        return BASE_URL + "store/token/distributor/DistributorNew";
-    }
+    public final static String SHOP_DETAIL(){ return BASE_URL + "store/token/shop/ShopDetail?id="; }
+    public final static String SHOP_CREATE_PARAM = "%scompany=%s&address=%s&phone=%s&website=%s&thanks=%s&image=%s";
+    public final static String SHOP_NEW(){ return BASE_URL + "store/token/shop/ShopNew"; }
 
     public final static String SCHECKIN_CREATE_PARAM = "customer_id=%d&rating=%d&note=%s&user_id=%d&nextVisit=%d&meetOwner=%d";
     public final static String CHECKIN_NEW(){
