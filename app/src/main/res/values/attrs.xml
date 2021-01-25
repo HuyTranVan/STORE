@@ -26,17 +26,16 @@
         <attr name="backgroundLayout" format="reference|color" />
     </declare-styleable>
 
-<!--    <declare-styleable name="MaterialSearchView">-->
-<!--        <attr name="searchBackground" format="integer" />-->
-<!--        <attr name="searchVoiceIcon" format="integer" />-->
-<!--        <attr name="searchCloseIcon" format="integer" />-->
-<!--        <attr name="searchBackIcon" format="integer" />-->
-<!--        <attr name="searchSuggestionIcon" format="integer" />-->
-<!--        <attr name="searchSuggestionBackground" format="integer" />-->
-<!--        <attr name="android:hint" />-->
-<!--        <attr name="android:textColor" />-->
-<!--        <attr name="android:textColorHint" />-->
-<!--    </declare-styleable>-->
+    <declare-styleable name="CDropdown">
+        <attr name="iconDropdownColor" format="integer" />
+        <attr name="iconDropdownSize" format="reference|dimension" />
+        <attr name="iconDropdownText" format="string" />
+        <attr name="textDropdownSize" format="reference|dimension" />
+        <attr name="textDropdownColor" format="integer" />
+        <attr name="textDropdown" format="string" />
+        <attr name="android:inputType" />
+        <attr name="backgroundDropdown" format="reference|color" />
+    </declare-styleable>
 
     <declare-styleable name="InputRegister">
         <attr name="customIconText" format="integer" />

@@ -5,15 +5,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lubsolution.store.R;
+import com.lubsolution.store.callback.CallbackBoolean;
+import com.lubsolution.store.callback.CallbackInt;
 import com.lubsolution.store.callback.CallbackObject;
 import com.lubsolution.store.models.BaseModel;
+import com.lubsolution.store.utils.CustomInputDialog;
 import com.lubsolution.store.utils.Util;
 
 import java.util.ArrayList;
@@ -23,97 +25,72 @@ import java.util.List;
  * Created by tranhuy on 5/24/17.
  */
 
-public class VehicleGroupNameAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class VehicleGroupNameAdapter extends RecyclerView.Adapter<VehicleGroupNameAdapter.ItemViewHolder> {
     private List<BaseModel> baseData = new ArrayList<>();
     private List<BaseModel> mData = new ArrayList<>();
+    private List<List<BaseModel>> mVehicle = new ArrayList<>();
     private LayoutInflater mLayoutInflater;
     private Context mContext;
     private CallbackObject mListener;
+    private CallbackInt mSize;
     private RecyclerView mRecyclerView;
-    private final int VIEW_TYPE_ITEM = 0;
-    private final int VIEW_TYPE_LOADING = 1;
+    private int numberOfVehicle =0;
 
-    public VehicleGroupNameAdapter(List<BaseModel> list, CallbackObject listener) {
+    public VehicleGroupNameAdapter(List<BaseModel> list, List<BaseModel> baselist, CallbackObject listener, CallbackInt size) {
         this.mLayoutInflater = LayoutInflater.from(Util.getInstance().getCurrentActivity());
         this.mContext = Util.getInstance().getCurrentActivity();
         this.mListener = listener;
-        this.baseData = list;
+        this.mData = list;
+        this.baseData = baselist;
+        this.mSize = size;
 
-        reloadBaseData(baseData);
-        mData.add(0,null);
-//        for(BaseModel item: list){
-//            if (item.getList("vehicles").size()>0){
-//                this.mData.add(item);
-//            }
-////            List<BaseModel> vehices = item.getList("vehicles");
-////            for (BaseModel vehicleItem : vehices){
-////
-////            }
-//        }
-//
-//        mData.add(0,null);
-
-    }
-
-    @Override
-    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
-
-        mRecyclerView = recyclerView;
-    }
-
-    private void reloadBaseData(List<BaseModel> list){
-        this.mData = new ArrayList<>();
-        for(BaseModel item: list){
-            if (item.getList("vehicles").size()>0){
-                this.mData.add(item);
-            }
-
+        for (BaseModel item: mData){
+            List<BaseModel> items = new ArrayList<>(item.getList("vehicles"));
+            mVehicle.add(items);
+            numberOfVehicle += items.size();
         }
-//        mData.add(0,null);
 
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        return mData.get(position) == null ? VIEW_TYPE_LOADING : VIEW_TYPE_ITEM;
     }
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if (viewType == VIEW_TYPE_ITEM) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_vehiclegroup_item, parent, false);
-            return new VehicleGroupNameAdapter.ItemViewHolder(view);
-        } else {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_item_new, parent, false);
-            return new VehicleGroupNameAdapter.SetNewViewHolder(view);
-        }
+    public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_vehiclegroup_item, parent, false);
+        return new ItemViewHolder(view);
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
-        if (viewHolder instanceof VehicleGroupNameAdapter.ItemViewHolder) {
-            setItemRows((VehicleGroupNameAdapter.ItemViewHolder) viewHolder, position);
-
-        } else if (viewHolder instanceof VehicleGroupNameAdapter.SetNewViewHolder) {
-            setNewItem((VehicleGroupNameAdapter.SetNewViewHolder) viewHolder, position);
-
-        }
-
-    }
-
-    private void setItemRows(VehicleGroupNameAdapter.ItemViewHolder holder, int position) {
+    public void onBindViewHolder(ItemViewHolder holder, int position) {
         holder.tvName.setText(mData.get(position).getString("name"));
-        VehicleNameAdapter nameAdapter = new VehicleNameAdapter(mData.get(position).getList("vehicles"), new CallbackObject() {
+        VehicleNameAdapter nameAdapter = new VehicleNameAdapter(mVehicle.get(position), new CallbackObject() {
             @Override
             public void onResponse(BaseModel object) {
                 mListener.onResponse(object);
             }
+        }, new CallbackBoolean() {
+            @Override
+            public void onRespone(Boolean result) {
+                if (result){
+                    notifyItemChanged(position);
+                    numberOfVehicle -= 1;
+                    mSize.onResponse(numberOfVehicle);
+                }
+            }
         });
         Util.createLinearRV(holder.rvGroup, nameAdapter);
 
+        holder.tvNew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CustomInputDialog.createNewVehicle(view, position, baseData, new CallbackObject() {
+                    @Override
+                    public void onResponse(BaseModel object) {
+                        insertItem(object);
+                    }
+                });
+            }
+        });
     }
 
 
@@ -123,7 +100,7 @@ public class VehicleGroupNameAdapter extends RecyclerView.Adapter<RecyclerView.V
     }
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvName;
+        private TextView tvName, tvNew;
         private RecyclerView rvGroup;
         private LinearLayout lnParent;
 
@@ -131,31 +108,26 @@ public class VehicleGroupNameAdapter extends RecyclerView.Adapter<RecyclerView.V
             super(itemView);
             lnParent = itemView.findViewById(R.id.vehiclegroup_item_parent);
             tvName = itemView.findViewById(R.id.vehiclegroup_item_name);
+            tvNew = itemView.findViewById(R.id.vehiclegroup_item_new);
             rvGroup = itemView.findViewById(R.id.vehiclegroup_item_rv);
 
         }
     }
 
-    public static class SetNewViewHolder extends RecyclerView.ViewHolder {
-        TextView tvName;
-        RelativeLayout lnParent;
+    private void insertItem(BaseModel item){
+        for (int i=0; i<mData.size(); i++){
+            if (item.getInt("brand_id") == mData.get(i).getInt("id")){
+                mVehicle.get(i).add(0, item);
 
-        public SetNewViewHolder(@NonNull View itemView) {
-            super(itemView);
-            tvName = itemView.findViewById(R.id.item_new_name);
-
-            lnParent = itemView.findViewById(R.id.item_new_parent);
-        }
-    }
-
-    private void setNewItem(VehicleGroupNameAdapter.SetNewViewHolder holder, int position) {
-        holder.tvName.setText("Thêm tên xe");
-        holder.lnParent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mListener.onResponse(null);
+                notifyItemChanged(i);
+                numberOfVehicle += 1;
+                mSize.onResponse(numberOfVehicle);
+                break;
             }
-        });
+
+
+        }
+
     }
 
     public void updateItem(BaseModel object){
@@ -199,6 +171,10 @@ public class VehicleGroupNameAdapter extends RecyclerView.Adapter<RecyclerView.V
         //reloadBaseData(baseData);
         //notifyDataSetChanged();
 
+    }
+
+    public int getVehicleTotal(){
+        return numberOfVehicle;
     }
 
 

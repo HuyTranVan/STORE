@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomSQL {
-    final static String MY_PREFS = "DMS_data";
+    final static String MY_PREFS = "STORE_data";
     static SharedPreferences prefs;
 
     public static void setBaseModel(String title, BaseModel value) {

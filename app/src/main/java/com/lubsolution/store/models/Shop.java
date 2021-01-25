@@ -57,15 +57,27 @@ public class Shop extends BaseModel {
         return currentShop.getString("image");
     }
 
-    public static int getLocationId() {
-        int location = 0;
+    public static int getDistrictId() {
+        int district_id = 0;
         BaseModel currentShop = CustomSQL.getBaseModel(Constants.SHOP);
 
         if (currentShop != null) {
-            location = currentShop.getInt("location");
+            district_id = currentShop.getInt("district_id");
 //            location = 79;
         }
-        return location;
+        return district_id;
+
+    }
+
+    public static int getProvinceId() {
+        int province_id = 0;
+        BaseModel currentShop = CustomSQL.getBaseModel(Constants.SHOP);
+
+        if (currentShop != null) {
+            province_id = currentShop.getInt("province_id");
+//            location = 79;
+        }
+        return province_id;
 
     }
 

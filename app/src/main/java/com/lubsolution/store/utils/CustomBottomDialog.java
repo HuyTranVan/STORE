@@ -10,13 +10,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.lubsolution.store.R;
 import com.lubsolution.store.adapter.ItemAdapter;
 import com.lubsolution.store.callback.CallbackBoolean;
+import com.lubsolution.store.callback.CallbackLong;
 import com.lubsolution.store.callback.CallbackObject;
+import com.lubsolution.store.libraries.calendarpicker.SimpleDatePickerDelegate;
 import com.lubsolution.store.models.BaseModel;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.OnBackPressListener;
 import com.orhanobut.dialogplus.OnDismissListener;
 import com.orhanobut.dialogplus.ViewHolder;
 
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -209,8 +212,9 @@ public class CustomBottomDialog {
 
 
     public static void choiceListObject(String title, final List<BaseModel> list, String key, final CallbackObject mListener, CallbackBoolean dismiss) {
+        int titleHigh = title == null? Util.convertSdpToInt(R.dimen._35sdp) : 0;
         int heigh = list.size() > 5 ? Util.convertSdpToInt(R.dimen._350sdp) :
-                (list.size() + 1) * Util.convertSdpToInt(R.dimen._40sdp) + Util.convertSdpToInt(R.dimen._5sdp); //+Util.convertSdpToInt(R.dimen._30sdp);
+                (list.size() + 1) * Util.convertSdpToInt(R.dimen._40sdp) + Util.convertSdpToInt(R.dimen._5sdp) - titleHigh ; //+Util.convertSdpToInt(R.dimen._30sdp);
         final DialogPlus dialog = DialogPlus.newDialog(Util.getInstance().getCurrentActivity())
                 .setContentHolder(new ViewHolder(R.layout.view_choice_listmethod))
                 .setGravity(Gravity.BOTTOM)
@@ -257,4 +261,66 @@ public class CustomBottomDialog {
 
         dialog.show();
     }
+
+    public static void selectDate(String title , long currentDay, CallbackLong listener) {
+        final DialogPlus dialog = DialogPlus.newDialog(Util.getInstance().getCurrentActivity())
+                .setContentHolder(new ViewHolder(R.layout.view_choice_date))
+                .setGravity(Gravity.BOTTOM)
+                .setBackgroundColorResId(R.drawable.bg_corner5_white)
+                .setMargin(10, 10, 10, 10)
+                .setInAnimation(R.anim.slide_up)
+                .setOnBackPressListener(new OnBackPressListener() {
+                    @Override
+                    public void onBackPressed(DialogPlus dialogPlus) {
+                        dialogPlus.dismiss();
+                    }
+                }).create();
+        TextView tvTitle = (TextView) dialog.findViewById(R.id.view_choicedate_title);
+        TextView btnSubmit = (TextView) dialog.findViewById(R.id.view_choicedate_submit);
+
+        tvTitle.setText(title);
+
+        SimpleDatePickerDelegate monthPickerView = new SimpleDatePickerDelegate(dialog.getHolderView());
+        monthPickerView.init(Util.Year(currentDay),
+                Util.Month(currentDay),
+//                Calendar.getInstance().get(Calendar.YEAR),
+//                Calendar.getInstance().get(Calendar.MONTH),
+                new SimpleDatePickerDelegate.OnDateChangedListener() {
+                    @Override
+                    public void onDateChanged(int year, int monthOfYear){
+
+                    }
+                });
+
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int month = monthPickerView.getMonth() +1 ;
+                int year = monthPickerView.getYear();
+
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, monthPickerView.getMonth());
+                int day = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+                String value  =  String.format("%s-%s-%s 23:59:59",
+                        day <10 ? "0"+String.valueOf(day) : String.valueOf(day),
+                        month <10 ? "0"+String.valueOf(month) : String.valueOf(month),
+                        String.valueOf(year));
+
+                dialog.dismiss();
+                long result = Util.TimeStamp2(value);
+                listener.onResponse(result);
+
+
+            }
+        });
+
+
+
+
+        dialog.show();
+    }
+
+
 }

@@ -12,14 +12,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.lubsolution.store.R;
+import com.lubsolution.store.apiconnect.ApiUtil;
+import com.lubsolution.store.apiconnect.apiserver.GetPostMethod;
+import com.lubsolution.store.callback.CallbackBoolean;
 import com.lubsolution.store.callback.CallbackObject;
+import com.lubsolution.store.callback.NewCallbackCustom;
 import com.lubsolution.store.models.BaseModel;
+import com.lubsolution.store.utils.CustomCenterDialog;
 import com.lubsolution.store.utils.Util;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+
+import static com.lubsolution.store.activities.BaseActivity.createGetParam;
 
 /**
  * Created by tranhuy on 5/24/17.
@@ -30,11 +37,13 @@ public class VehicleNameAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private LayoutInflater mLayoutInflater;
     private Context mContext;
     private CallbackObject mListener;
+    private CallbackBoolean mDelete;
 
-    public VehicleNameAdapter(List<BaseModel> list, CallbackObject listener) {
+    public VehicleNameAdapter(List<BaseModel> list, CallbackObject listener, CallbackBoolean delete) {
         this.mLayoutInflater = LayoutInflater.from(Util.getInstance().getCurrentActivity());
         this.mContext = Util.getInstance().getCurrentActivity();
         this.mListener = listener;
+        this.mDelete = delete;
 
         this.mData = list;
 
@@ -57,6 +66,7 @@ public class VehicleNameAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     private void setItemRows(VehicleNameAdapter.ItemViewHolder holder, int position) {
+        holder.vLine.setVisibility(position == mData.size() -1 ? View.GONE : View.VISIBLE);
         holder.tvName.setText(mData.get(position).getString("name"));
         holder.tvKind.setText(mData.get(position).getBaseModel("kind").getString("name"));
 
@@ -64,11 +74,50 @@ public class VehicleNameAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             Glide.with(mContext).load(mData.get(position).getString("image")).centerCrop().into(holder.image);
         }
 
-
         holder.lnParent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mListener.onResponse(mData.get(position));
+            }
+        });
+
+        holder.lnParent.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                CustomCenterDialog.alertWithCancelButton(null,
+                        String.format("Bạn muốn xóa xe %s %s" ,
+                                mData.get(position).getBaseModel("brand").getString("name"),
+                                mData.get(position).getString("name")
+                                ), "ĐỒNG Ý", "HỦY", new CallbackBoolean() {
+                    @Override
+                    public void onRespone(Boolean result) {
+                        if (result) {
+                            BaseModel param = createGetParam(ApiUtil.VEHICLE_DELETE() + mData.get(position).getString("id"), false);
+                            new GetPostMethod(param, new NewCallbackCustom() {
+                                @Override
+                                public void onResponse(BaseModel re, List<BaseModel> list) {
+                                    if (re.getBoolean("deleted")){
+                                        notifyItemRemoved(position);
+                                        mData.remove(position);
+                                        mDelete.onRespone(true);
+
+                                    }
+                                }
+
+                                @Override
+                                public void onError(String error) {
+
+                                }
+                            }, 1).execute();
+
+                        }
+
+                    }
+                });
+
+
+
+                return true;
             }
         });
 
@@ -96,8 +145,6 @@ public class VehicleNameAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         }
     }
-
-
 
     public void updateItem(BaseModel object){
         boolean check = false;

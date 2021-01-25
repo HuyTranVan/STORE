@@ -58,7 +58,6 @@ public class DataUtil {
 
     }
 
-
     public static String updateBillDeliveredParam(int customerId, BaseModel currentBill, int userid, List<BaseModel> listProduct) {
         JSONObject params = new JSONObject();
         try {

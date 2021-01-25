@@ -126,83 +126,83 @@
 67-->/Users/huytran/StudioProjects/STORE/app/src/main/AndroidManifest.xml:61:9-33
 68
 69    <uses-permission
-69-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:12:5-68
+69-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:12:5-68
 70        android:name="android.permission.WAKE_LOCK"
-70-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:12:22-65
+70-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:12:22-65
 71        android:maxSdkVersion="25" />
-71-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/3b8386838c9b0ff741b6dc48667833d2/jetified-acra-core-5.1.3/AndroidManifest.xml:27:9-35
+71-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/84e96239de267c98ab9d77210ab73d10/jetified-acra-core-5.1.3/AndroidManifest.xml:27:9-35
 72    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- Required by older versions of Google Play services to create GCM registration tokens -->
-72-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:14:5-81
-72-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:14:22-78
+72-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:14:5-81
+72-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:14:22-78
 73    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-73-->[com.google.android.gms:play-services-gcm:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/b9b8b0d33a81422ea1f3d38da7a640be/jetified-play-services-gcm-17.0.0/AndroidManifest.xml:23:5-82
-73-->[com.google.android.gms:play-services-gcm:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/b9b8b0d33a81422ea1f3d38da7a640be/jetified-play-services-gcm-17.0.0/AndroidManifest.xml:23:22-79
+73-->[com.google.android.gms:play-services-gcm:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/d01466eababbc2c5eea58e3fa789a6eb/jetified-play-services-gcm-17.0.0/AndroidManifest.xml:23:5-82
+73-->[com.google.android.gms:play-services-gcm:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/d01466eababbc2c5eea58e3fa789a6eb/jetified-play-services-gcm-17.0.0/AndroidManifest.xml:23:22-79
 74    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-74-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:26:5-110
-74-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:26:22-107
+74-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:26:5-110
+74-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:26:22-107
 75
 76    <uses-feature
-76-->[com.google.android.gms:play-services-maps:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/e757fb812573aaea2a88b86e0b5c3de3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
+76-->[com.google.android.gms:play-services-maps:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/8f39bfc7a6458732a756f8d94b970bfa/jetified-play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
 77        android:glEsVersion="0x00020000"
-77-->[com.google.android.gms:play-services-maps:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/e757fb812573aaea2a88b86e0b5c3de3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:27:9-41
+77-->[com.google.android.gms:play-services-maps:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/8f39bfc7a6458732a756f8d94b970bfa/jetified-play-services-maps-17.0.0/AndroidManifest.xml:27:9-41
 78        android:required="true" /> <!-- for android -->
-78-->[com.google.android.gms:play-services-maps:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/e757fb812573aaea2a88b86e0b5c3de3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
+78-->[com.google.android.gms:play-services-maps:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/8f39bfc7a6458732a756f8d94b970bfa/jetified-play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
 79    <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/> -->
 80    <!-- <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/> -->
 81    <!-- <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> -->
 82    <!-- <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> -->
 83    <!-- for Samsung -->
 84    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
-84-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:19:5-86
-84-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:19:22-83
+84-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:19:5-86
+84-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:19:22-83
 85    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- for htc -->
-85-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:20:5-87
-85-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:20:22-84
+85-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:20:5-87
+85-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:20:22-84
 86    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
-86-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:23:5-81
-86-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:23:22-78
+86-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:23:5-81
+86-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:23:22-78
 87    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- for sony -->
-87-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:24:5-83
-87-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:24:22-80
+87-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:24:5-83
+87-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:24:22-80
 88    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
-88-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:27:5-88
-88-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:27:22-85
+88-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:27:5-88
+88-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:27:22-85
 89    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- for apex -->
-89-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:28:5-92
-89-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:28:22-89
+89-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:28:5-92
+89-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:28:22-89
 90    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- for solid -->
-90-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:31:5-84
-90-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:31:22-81
+90-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:31:5-84
+90-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:31:22-81
 91    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- for huawei -->
-91-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:34:5-83
-91-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:34:22-80
+91-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:34:5-83
+91-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:34:22-80
 92    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
-92-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:37:5-91
-92-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:37:22-88
+92-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:37:5-91
+92-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:37:22-88
 93    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
-93-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:38:5-92
-93-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:38:22-89
+93-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:38:5-92
+93-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:38:22-89
 94    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" /> <!-- for ZUK -->
-94-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:39:5-93
-94-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:39:22-90
+94-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:39:5-93
+94-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:39:22-90
 95    <uses-permission android:name="android.permission.READ_APP_BADGE" /> <!-- for OPPO -->
-95-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:42:5-73
-95-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:42:22-70
+95-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:42:5-73
+95-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:42:22-70
 96    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
-96-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:45:5-82
-96-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:45:22-79
+96-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:45:5-82
+96-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:45:22-79
 97    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" /> <!-- for EvMe -->
-97-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:46:5-83
-97-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:46:22-80
+97-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:46:5-83
+97-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:46:22-80
 98    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
-98-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:49:5-88
-98-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:49:22-85
+98-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:49:5-88
+98-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:49:22-85
 99    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
-99-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:50:5-89
-99-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/90e8337c87954e65dd87d3cf890aea38/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:50:22-86
+99-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:50:5-89
+99-->[me.leolin:ShortcutBadger:1.1.22] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c0ccc3156eb95d2d23c97d5a4cd9e294/jetified-ShortcutBadger-1.1.22/AndroidManifest.xml:50:22-86
 100    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-100-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:28:5-77
-100-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:28:22-74
+100-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:28:5-77
+100-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:28:22-74
 101
 102    <application
 102-->/Users/huytran/StudioProjects/STORE/app/src/main/AndroidManifest.xml:63:5-279:19
@@ -211,7 +211,7 @@
 104        android:allowBackup="true"
 104-->/Users/huytran/StudioProjects/STORE/app/src/main/AndroidManifest.xml:65:9-35
 105        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-105-->[androidx.core:core:1.3.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/949edbbcac46cb3f48fa8cc858e2c7fb/core-1.3.1/AndroidManifest.xml:24:18-86
+105-->[androidx.core:core:1.3.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/1a6315dd45b20f46f5a99c065a23d68d/core-1.3.1/AndroidManifest.xml:24:18-86
 106        android:configChanges="layoutDirection|locale"
 106-->/Users/huytran/StudioProjects/STORE/app/src/main/AndroidManifest.xml:73:9-55
 107        android:debuggable="true"
@@ -338,8 +338,8 @@
 173-->/Users/huytran/StudioProjects/STORE/app/src/main/AndroidManifest.xml:139:13-73
 174        <activity
 174-->/Users/huytran/StudioProjects/STORE/app/src/main/AndroidManifest.xml:141:9-146:76
-175            android:name="com.lubsolution.store.activities.ShopActivity"
-175-->/Users/huytran/StudioProjects/STORE/app/src/main/AndroidManifest.xml:142:13-52
+175            android:name="com.lubsolution.store.activities.ShopListActivity"
+175-->/Users/huytran/StudioProjects/STORE/app/src/main/AndroidManifest.xml:142:13-56
 176            android:label="@string/app_name"
 176-->/Users/huytran/StudioProjects/STORE/app/src/main/AndroidManifest.xml:143:13-45
 177            android:screenOrientation="unspecified"
@@ -529,117 +529,117 @@
 316-->/Users/huytran/StudioProjects/STORE/app/src/main/AndroidManifest.xml:277:13-68
 317
 318        <activity
-318-->[pub.devrel:easypermissions:0.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/a6117e95469938c05bb4f49e446525f6/jetified-easypermissions-0.3.0/AndroidManifest.xml:12:9-16:66
+318-->[pub.devrel:easypermissions:0.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/bead8cf46d5059920cc4fee59b6cc571/jetified-easypermissions-0.3.0/AndroidManifest.xml:12:9-16:66
 319            android:name="pub.devrel.easypermissions.AppSettingsDialogHolderActivity"
-319-->[pub.devrel:easypermissions:0.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/a6117e95469938c05bb4f49e446525f6/jetified-easypermissions-0.3.0/AndroidManifest.xml:13:13-86
+319-->[pub.devrel:easypermissions:0.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/bead8cf46d5059920cc4fee59b6cc571/jetified-easypermissions-0.3.0/AndroidManifest.xml:13:13-86
 320            android:exported="false"
-320-->[pub.devrel:easypermissions:0.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/a6117e95469938c05bb4f49e446525f6/jetified-easypermissions-0.3.0/AndroidManifest.xml:14:13-37
+320-->[pub.devrel:easypermissions:0.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/bead8cf46d5059920cc4fee59b6cc571/jetified-easypermissions-0.3.0/AndroidManifest.xml:14:13-37
 321            android:label=""
-321-->[pub.devrel:easypermissions:0.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/a6117e95469938c05bb4f49e446525f6/jetified-easypermissions-0.3.0/AndroidManifest.xml:15:13-29
+321-->[pub.devrel:easypermissions:0.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/bead8cf46d5059920cc4fee59b6cc571/jetified-easypermissions-0.3.0/AndroidManifest.xml:15:13-29
 322            android:theme="@style/EasyPermissions.Transparent" />
-322-->[pub.devrel:easypermissions:0.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/a6117e95469938c05bb4f49e446525f6/jetified-easypermissions-0.3.0/AndroidManifest.xml:16:13-63
+322-->[pub.devrel:easypermissions:0.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/bead8cf46d5059920cc4fee59b6cc571/jetified-easypermissions-0.3.0/AndroidManifest.xml:16:13-63
 323
 324        <service
-324-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:17:9-20:72
+324-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:17:9-20:72
 325            android:name="com.evernote.android.job.v21.PlatformJobService"
-325-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:18:13-75
+325-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:18:13-75
 326            android:exported="false"
-326-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:19:13-37
+326-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:19:13-37
 327            android:permission="android.permission.BIND_JOB_SERVICE" />
-327-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:20:13-69
+327-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:20:13-69
 328        <service
-328-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:21:9-24:72
+328-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:21:9-24:72
 329            android:name="com.evernote.android.job.v14.PlatformAlarmService"
-329-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:22:13-77
+329-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:22:13-77
 330            android:exported="false"
-330-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:23:13-37
+330-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:23:13-37
 331            android:permission="android.permission.BIND_JOB_SERVICE" />
-331-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:24:13-69
+331-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:24:13-69
 332        <service
-332-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:25:9-27:40
+332-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:25:9-27:40
 333            android:name="com.evernote.android.job.v14.PlatformAlarmServiceExact"
-333-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:26:13-82
+333-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:26:13-82
 334            android:exported="false" />
-334-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:27:13-37
+334-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:27:13-37
 335
 336        <receiver
-336-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:29:9-38:20
+336-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:29:9-38:20
 337            android:name="com.evernote.android.job.v14.PlatformAlarmReceiver"
-337-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:30:13-78
+337-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:30:13-78
 338            android:exported="false" >
-338-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:31:13-37
+338-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:31:13-37
 339            <intent-filter>
-339-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:32:13-37:29
+339-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:32:13-37:29
 340
 341                <!-- Keep the filter for legacy intents -->
 342                <action android:name="com.evernote.android.job.v14.RUN_JOB" />
-342-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:35:17-79
-342-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:35:25-76
+342-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:35:17-79
+342-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:35:25-76
 343                <action android:name="net.vrallev.android.job.v14.RUN_JOB" />
-343-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:36:17-78
-343-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:36:25-75
+343-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:36:17-78
+343-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:36:25-75
 344            </intent-filter>
 345        </receiver>
 346        <receiver
-346-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:39:9-48:20
+346-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:39:9-48:20
 347            android:name="com.evernote.android.job.JobBootReceiver"
-347-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:40:13-68
+347-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:40:13-68
 348            android:exported="false" >
-348-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:41:13-37
+348-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:41:13-37
 349            <intent-filter>
-349-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:42:13-47:29
+349-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:42:13-47:29
 350                <action android:name="android.intent.action.BOOT_COMPLETED" />
-350-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:43:17-79
-350-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:43:25-76
+350-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:43:17-79
+350-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:43:25-76
 351                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-351-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:44:17-82
-351-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:44:25-79
+351-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:44:17-82
+351-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:44:25-79
 352                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-352-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:45:17-82
-352-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:45:25-79
+352-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:45:17-82
+352-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:45:25-79
 353                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-353-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:46:17-84
-353-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:46:25-81
+353-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:46:17-84
+353-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:46:25-81
 354            </intent-filter>
 355        </receiver>
 356
 357        <service
-357-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:50:9-58:19
+357-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:50:9-58:19
 358            android:name="com.evernote.android.job.gcm.PlatformGcmService"
-358-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:51:13-75
+358-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:51:13-75
 359            android:enabled="false"
-359-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:52:13-36
+359-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:52:13-36
 360            android:exported="true"
-360-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:53:13-36
+360-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:53:13-36
 361            android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE" >
-361-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:54:13-93
+361-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:54:13-93
 362            <intent-filter>
-362-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:55:13-57:29
+362-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:55:13-57:29
 363                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
-363-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:56:17-87
-363-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:56:25-84
+363-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:56:17-87
+363-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:56:25-84
 364            </intent-filter>
 365        </service>
 366        <service
-366-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:59:9-62:72
+366-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:59:9-62:72
 367            android:name="com.evernote.android.job.JobRescheduleService"
-367-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:60:13-73
+367-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:60:13-73
 368            android:exported="false"
-368-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:61:13-37
+368-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:61:13-37
 369            android:permission="android.permission.BIND_JOB_SERVICE" />
-369-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:62:13-69
+369-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:62:13-69
 370        <!--
 371             FirebaseMessagingService performs security checks at runtime,
 372             but set to not exported to explicitly avoid allowing another app to call it.
 373        -->
 374        <service
-374-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/970f29bd83abba4702b104d3bbf75d8f/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:28:9-35:19
+374-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ef32c7af672ca69eeb293197d92062d4/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:28:9-35:19
 375            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-375-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/970f29bd83abba4702b104d3bbf75d8f/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:29:13-82
+375-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ef32c7af672ca69eeb293197d92062d4/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:29:13-82
 376            android:directBootAware="true"
-376-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/970f29bd83abba4702b104d3bbf75d8f/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:30:13-43
+376-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ef32c7af672ca69eeb293197d92062d4/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:30:13-43
 377            android:exported="false" >
-377-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/970f29bd83abba4702b104d3bbf75d8f/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:31:13-37
+377-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ef32c7af672ca69eeb293197d92062d4/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:31:13-37
 378            <intent-filter android:priority="-500" >
 378-->/Users/huytran/StudioProjects/STORE/app/src/main/AndroidManifest.xml:261:13-263:29
 379                <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -648,410 +648,410 @@
 380            </intent-filter>
 381        </service>
 382        <service
-382-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/970f29bd83abba4702b104d3bbf75d8f/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:36:9-42:19
+382-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ef32c7af672ca69eeb293197d92062d4/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:36:9-42:19
 383            android:name="com.google.firebase.components.ComponentDiscoveryService"
-383-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/970f29bd83abba4702b104d3bbf75d8f/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:37:13-84
+383-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ef32c7af672ca69eeb293197d92062d4/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:37:13-84
 384            android:directBootAware="true"
-384-->[com.google.firebase:firebase-common:19.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2caf8db81a8d2c6bca5d167c7be07a3d/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+384-->[com.google.firebase:firebase-common:19.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7122d89269a791538712eb3d9e4dfc69/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
 385            android:exported="false" >
-385-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/970f29bd83abba4702b104d3bbf75d8f/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:38:13-37
+385-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ef32c7af672ca69eeb293197d92062d4/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:38:13-37
 386            <meta-data
-386-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/970f29bd83abba4702b104d3bbf75d8f/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:39:13-41:85
+386-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ef32c7af672ca69eeb293197d92062d4/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:39:13-41:85
 387                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
-387-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/970f29bd83abba4702b104d3bbf75d8f/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:40:17-119
+387-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ef32c7af672ca69eeb293197d92062d4/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:40:17-119
 388                android:value="com.google.firebase.components.ComponentRegistrar" />
-388-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/970f29bd83abba4702b104d3bbf75d8f/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:41:17-82
+388-->[com.google.firebase:firebase-messaging:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ef32c7af672ca69eeb293197d92062d4/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:41:17-82
 389            <meta-data
-389-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/1516696c9fe858f2e4c5e1bd6b789a6c/jetified-firebase-iid-21.0.0/AndroidManifest.xml:32:13-34:85
+389-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2c74cc9ae51c998b97be672aad417af2/jetified-firebase-iid-21.0.0/AndroidManifest.xml:32:13-34:85
 390                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-390-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/1516696c9fe858f2e4c5e1bd6b789a6c/jetified-firebase-iid-21.0.0/AndroidManifest.xml:33:17-96
+390-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2c74cc9ae51c998b97be672aad417af2/jetified-firebase-iid-21.0.0/AndroidManifest.xml:33:17-96
 391                android:value="com.google.firebase.components.ComponentRegistrar" />
-391-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/1516696c9fe858f2e4c5e1bd6b789a6c/jetified-firebase-iid-21.0.0/AndroidManifest.xml:34:17-82
+391-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2c74cc9ae51c998b97be672aad417af2/jetified-firebase-iid-21.0.0/AndroidManifest.xml:34:17-82
 392            <meta-data
-392-->[com.google.android.gms:play-services-measurement-api:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/d378630104fd0c496fd8526bbac15fcd/jetified-play-services-measurement-api-18.0.0/AndroidManifest.xml:30:13-32:85
+392-->[com.google.android.gms:play-services-measurement-api:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/cca636dcaf21ab7ec32ad50e163ff25c/jetified-play-services-measurement-api-18.0.0/AndroidManifest.xml:30:13-32:85
 393                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-393-->[com.google.android.gms:play-services-measurement-api:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/d378630104fd0c496fd8526bbac15fcd/jetified-play-services-measurement-api-18.0.0/AndroidManifest.xml:31:17-139
+393-->[com.google.android.gms:play-services-measurement-api:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/cca636dcaf21ab7ec32ad50e163ff25c/jetified-play-services-measurement-api-18.0.0/AndroidManifest.xml:31:17-139
 394                android:value="com.google.firebase.components.ComponentRegistrar" />
-394-->[com.google.android.gms:play-services-measurement-api:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/d378630104fd0c496fd8526bbac15fcd/jetified-play-services-measurement-api-18.0.0/AndroidManifest.xml:32:17-82
+394-->[com.google.android.gms:play-services-measurement-api:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/cca636dcaf21ab7ec32ad50e163ff25c/jetified-play-services-measurement-api-18.0.0/AndroidManifest.xml:32:17-82
 395            <meta-data
-395-->[com.google.firebase:firebase-datatransport:17.0.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/26e3cb25030189136d0a33cf6367b054/jetified-firebase-datatransport-17.0.3/AndroidManifest.xml:28:13-30:85
+395-->[com.google.firebase:firebase-datatransport:17.0.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/8c05b4545925f0bc7b9a997831d4480c/jetified-firebase-datatransport-17.0.3/AndroidManifest.xml:28:13-30:85
 396                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
-396-->[com.google.firebase:firebase-datatransport:17.0.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/26e3cb25030189136d0a33cf6367b054/jetified-firebase-datatransport-17.0.3/AndroidManifest.xml:29:17-115
+396-->[com.google.firebase:firebase-datatransport:17.0.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/8c05b4545925f0bc7b9a997831d4480c/jetified-firebase-datatransport-17.0.3/AndroidManifest.xml:29:17-115
 397                android:value="com.google.firebase.components.ComponentRegistrar" />
-397-->[com.google.firebase:firebase-datatransport:17.0.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/26e3cb25030189136d0a33cf6367b054/jetified-firebase-datatransport-17.0.3/AndroidManifest.xml:30:17-82
+397-->[com.google.firebase:firebase-datatransport:17.0.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/8c05b4545925f0bc7b9a997831d4480c/jetified-firebase-datatransport-17.0.3/AndroidManifest.xml:30:17-82
 398            <meta-data
-398-->[com.google.firebase:firebase-installations:16.3.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7c00838929461fb6c9a3cfb64f3957d4/jetified-firebase-installations-16.3.3/AndroidManifest.xml:17:13-19:85
+398-->[com.google.firebase:firebase-installations:16.3.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f0c7795449a18b62e8690b0a87e5dce1/jetified-firebase-installations-16.3.3/AndroidManifest.xml:17:13-19:85
 399                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-399-->[com.google.firebase:firebase-installations:16.3.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7c00838929461fb6c9a3cfb64f3957d4/jetified-firebase-installations-16.3.3/AndroidManifest.xml:18:17-127
+399-->[com.google.firebase:firebase-installations:16.3.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f0c7795449a18b62e8690b0a87e5dce1/jetified-firebase-installations-16.3.3/AndroidManifest.xml:18:17-127
 400                android:value="com.google.firebase.components.ComponentRegistrar" />
-400-->[com.google.firebase:firebase-installations:16.3.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7c00838929461fb6c9a3cfb64f3957d4/jetified-firebase-installations-16.3.3/AndroidManifest.xml:19:17-82
+400-->[com.google.firebase:firebase-installations:16.3.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f0c7795449a18b62e8690b0a87e5dce1/jetified-firebase-installations-16.3.3/AndroidManifest.xml:19:17-82
 401        </service>
 402
 403        <receiver
-403-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:29:9-33:20
+403-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:29:9-33:20
 404            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-404-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:30:13-85
+404-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:30:13-85
 405            android:enabled="true"
-405-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:31:13-35
+405-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:31:13-35
 406            android:exported="false" >
-406-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:32:13-37
+406-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:32:13-37
 407        </receiver>
 408
 409        <service
-409-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:35:9-38:40
+409-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:35:9-38:40
 410            android:name="com.google.android.gms.measurement.AppMeasurementService"
-410-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:36:13-84
+410-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:36:13-84
 411            android:enabled="true"
-411-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:37:13-35
+411-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:37:13-35
 412            android:exported="false" />
-412-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:38:13-37
+412-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:38:13-37
 413        <service
-413-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:39:9-43:72
+413-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:39:9-43:72
 414            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-414-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:40:13-87
+414-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:40:13-87
 415            android:enabled="true"
-415-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:41:13-35
+415-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:41:13-35
 416            android:exported="false"
-416-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:42:13-37
+416-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:42:13-37
 417            android:permission="android.permission.BIND_JOB_SERVICE" />
-417-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7ba1741e801892dd286bd599b1ae7247/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:43:13-69
+417-->[com.google.android.gms:play-services-measurement:18.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f5ef273f2a60be8c4ff6a5f714b228f1/jetified-play-services-measurement-18.0.0/AndroidManifest.xml:43:13-69
 418
 419        <receiver
-419-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/1516696c9fe858f2e4c5e1bd6b789a6c/jetified-firebase-iid-21.0.0/AndroidManifest.xml:37:9-44:20
+419-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2c74cc9ae51c998b97be672aad417af2/jetified-firebase-iid-21.0.0/AndroidManifest.xml:37:9-44:20
 420            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-420-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/1516696c9fe858f2e4c5e1bd6b789a6c/jetified-firebase-iid-21.0.0/AndroidManifest.xml:38:13-78
+420-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2c74cc9ae51c998b97be672aad417af2/jetified-firebase-iid-21.0.0/AndroidManifest.xml:38:13-78
 421            android:exported="true"
-421-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/1516696c9fe858f2e4c5e1bd6b789a6c/jetified-firebase-iid-21.0.0/AndroidManifest.xml:39:13-36
+421-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2c74cc9ae51c998b97be672aad417af2/jetified-firebase-iid-21.0.0/AndroidManifest.xml:39:13-36
 422            android:permission="com.google.android.c2dm.permission.SEND" >
-422-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/1516696c9fe858f2e4c5e1bd6b789a6c/jetified-firebase-iid-21.0.0/AndroidManifest.xml:40:13-73
+422-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2c74cc9ae51c998b97be672aad417af2/jetified-firebase-iid-21.0.0/AndroidManifest.xml:40:13-73
 423            <intent-filter>
-423-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/1516696c9fe858f2e4c5e1bd6b789a6c/jetified-firebase-iid-21.0.0/AndroidManifest.xml:41:13-43:29
+423-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2c74cc9ae51c998b97be672aad417af2/jetified-firebase-iid-21.0.0/AndroidManifest.xml:41:13-43:29
 424                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-424-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/1516696c9fe858f2e4c5e1bd6b789a6c/jetified-firebase-iid-21.0.0/AndroidManifest.xml:42:17-81
-424-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/1516696c9fe858f2e4c5e1bd6b789a6c/jetified-firebase-iid-21.0.0/AndroidManifest.xml:42:25-78
+424-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2c74cc9ae51c998b97be672aad417af2/jetified-firebase-iid-21.0.0/AndroidManifest.xml:42:17-81
+424-->[com.google.firebase:firebase-iid:21.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2c74cc9ae51c998b97be672aad417af2/jetified-firebase-iid-21.0.0/AndroidManifest.xml:42:25-78
 425            </intent-filter>
 426        </receiver> <!-- Needs to be explicitly declared on P+ -->
 427        <uses-library
-427-->[com.google.android.gms:play-services-maps:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/e757fb812573aaea2a88b86e0b5c3de3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
+427-->[com.google.android.gms:play-services-maps:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/8f39bfc7a6458732a756f8d94b970bfa/jetified-play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
 428            android:name="org.apache.http.legacy"
-428-->[com.google.android.gms:play-services-maps:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/e757fb812573aaea2a88b86e0b5c3de3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
+428-->[com.google.android.gms:play-services-maps:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/8f39bfc7a6458732a756f8d94b970bfa/jetified-play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
 429            android:required="false" />
-429-->[com.google.android.gms:play-services-maps:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/e757fb812573aaea2a88b86e0b5c3de3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
+429-->[com.google.android.gms:play-services-maps:17.0.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/8f39bfc7a6458732a756f8d94b970bfa/jetified-play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
 430
 431        <activity
-431-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7b3a55cd5db1a94eaef59caa12759fc5/jetified-play-services-auth-18.1.0/AndroidManifest.xml:23:9-27:75
+431-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f10a358dc419ef9878f5a5bf2169fe84/jetified-play-services-auth-18.1.0/AndroidManifest.xml:23:9-27:75
 432            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-432-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7b3a55cd5db1a94eaef59caa12759fc5/jetified-play-services-auth-18.1.0/AndroidManifest.xml:24:13-93
+432-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f10a358dc419ef9878f5a5bf2169fe84/jetified-play-services-auth-18.1.0/AndroidManifest.xml:24:13-93
 433            android:excludeFromRecents="true"
-433-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7b3a55cd5db1a94eaef59caa12759fc5/jetified-play-services-auth-18.1.0/AndroidManifest.xml:25:13-46
+433-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f10a358dc419ef9878f5a5bf2169fe84/jetified-play-services-auth-18.1.0/AndroidManifest.xml:25:13-46
 434            android:exported="false"
-434-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7b3a55cd5db1a94eaef59caa12759fc5/jetified-play-services-auth-18.1.0/AndroidManifest.xml:26:13-37
+434-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f10a358dc419ef9878f5a5bf2169fe84/jetified-play-services-auth-18.1.0/AndroidManifest.xml:26:13-37
 435            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-435-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7b3a55cd5db1a94eaef59caa12759fc5/jetified-play-services-auth-18.1.0/AndroidManifest.xml:27:13-72
+435-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f10a358dc419ef9878f5a5bf2169fe84/jetified-play-services-auth-18.1.0/AndroidManifest.xml:27:13-72
 436        <!--
 437            Service handling Google Sign-In user revocation. For apps that do not integrate with
 438            Google Sign-In, this service will never be started.
 439        -->
 440        <service
-440-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7b3a55cd5db1a94eaef59caa12759fc5/jetified-play-services-auth-18.1.0/AndroidManifest.xml:33:9-37:51
+440-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f10a358dc419ef9878f5a5bf2169fe84/jetified-play-services-auth-18.1.0/AndroidManifest.xml:33:9-37:51
 441            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-441-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7b3a55cd5db1a94eaef59caa12759fc5/jetified-play-services-auth-18.1.0/AndroidManifest.xml:34:13-89
+441-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f10a358dc419ef9878f5a5bf2169fe84/jetified-play-services-auth-18.1.0/AndroidManifest.xml:34:13-89
 442            android:exported="true"
-442-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7b3a55cd5db1a94eaef59caa12759fc5/jetified-play-services-auth-18.1.0/AndroidManifest.xml:35:13-36
+442-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f10a358dc419ef9878f5a5bf2169fe84/jetified-play-services-auth-18.1.0/AndroidManifest.xml:35:13-36
 443            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-443-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7b3a55cd5db1a94eaef59caa12759fc5/jetified-play-services-auth-18.1.0/AndroidManifest.xml:36:13-107
+443-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f10a358dc419ef9878f5a5bf2169fe84/jetified-play-services-auth-18.1.0/AndroidManifest.xml:36:13-107
 444            android:visibleToInstantApps="true" />
-444-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7b3a55cd5db1a94eaef59caa12759fc5/jetified-play-services-auth-18.1.0/AndroidManifest.xml:37:13-48
+444-->[com.google.android.gms:play-services-auth:18.1.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/f10a358dc419ef9878f5a5bf2169fe84/jetified-play-services-auth-18.1.0/AndroidManifest.xml:37:13-48
 445
 446        <activity
-446-->[com.google.android.gms:play-services-base:17.5.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2ea3b7bd074c97d341431e77cb8711a0/jetified-play-services-base-17.5.0/AndroidManifest.xml:23:9-26:75
+446-->[com.google.android.gms:play-services-base:17.5.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/df1b6f1dda01563a84247e36fc061312/jetified-play-services-base-17.5.0/AndroidManifest.xml:23:9-26:75
 447            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-447-->[com.google.android.gms:play-services-base:17.5.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2ea3b7bd074c97d341431e77cb8711a0/jetified-play-services-base-17.5.0/AndroidManifest.xml:24:13-79
+447-->[com.google.android.gms:play-services-base:17.5.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/df1b6f1dda01563a84247e36fc061312/jetified-play-services-base-17.5.0/AndroidManifest.xml:24:13-79
 448            android:exported="false"
-448-->[com.google.android.gms:play-services-base:17.5.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2ea3b7bd074c97d341431e77cb8711a0/jetified-play-services-base-17.5.0/AndroidManifest.xml:25:13-37
+448-->[com.google.android.gms:play-services-base:17.5.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/df1b6f1dda01563a84247e36fc061312/jetified-play-services-base-17.5.0/AndroidManifest.xml:25:13-37
 449            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-449-->[com.google.android.gms:play-services-base:17.5.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2ea3b7bd074c97d341431e77cb8711a0/jetified-play-services-base-17.5.0/AndroidManifest.xml:26:13-72
+449-->[com.google.android.gms:play-services-base:17.5.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/df1b6f1dda01563a84247e36fc061312/jetified-play-services-base-17.5.0/AndroidManifest.xml:26:13-72
 450
 451        <provider
-451-->[com.squareup.picasso:picasso:2.71828] /Users/huytran/.gradle/caches/transforms-2/files-2.1/14a1194c3d81b2742701d2d4e9deff07/jetified-picasso-2.71828/AndroidManifest.xml:8:9-11:40
+451-->[com.squareup.picasso:picasso:2.71828] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7eff1985379b187d62c16d1af261b148/jetified-picasso-2.71828/AndroidManifest.xml:8:9-11:40
 452            android:name="com.squareup.picasso.PicassoProvider"
-452-->[com.squareup.picasso:picasso:2.71828] /Users/huytran/.gradle/caches/transforms-2/files-2.1/14a1194c3d81b2742701d2d4e9deff07/jetified-picasso-2.71828/AndroidManifest.xml:9:13-64
+452-->[com.squareup.picasso:picasso:2.71828] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7eff1985379b187d62c16d1af261b148/jetified-picasso-2.71828/AndroidManifest.xml:9:13-64
 453            android:authorities="com.lubsolution.store.com.squareup.picasso"
-453-->[com.squareup.picasso:picasso:2.71828] /Users/huytran/.gradle/caches/transforms-2/files-2.1/14a1194c3d81b2742701d2d4e9deff07/jetified-picasso-2.71828/AndroidManifest.xml:10:13-72
+453-->[com.squareup.picasso:picasso:2.71828] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7eff1985379b187d62c16d1af261b148/jetified-picasso-2.71828/AndroidManifest.xml:10:13-72
 454            android:exported="false" />
-454-->[com.squareup.picasso:picasso:2.71828] /Users/huytran/.gradle/caches/transforms-2/files-2.1/14a1194c3d81b2742701d2d4e9deff07/jetified-picasso-2.71828/AndroidManifest.xml:11:13-37
+454-->[com.squareup.picasso:picasso:2.71828] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7eff1985379b187d62c16d1af261b148/jetified-picasso-2.71828/AndroidManifest.xml:11:13-37
 455        <provider
-455-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:31:9-37:35
+455-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:31:9-37:35
 456            android:name="androidx.work.impl.WorkManagerInitializer"
-456-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:32:13-69
+456-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:32:13-69
 457            android:authorities="com.lubsolution.store.workmanager-init"
-457-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:33:13-68
+457-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:33:13-68
 458            android:directBootAware="false"
-458-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:34:13-44
+458-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:34:13-44
 459            android:exported="false"
-459-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:35:13-37
+459-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:35:13-37
 460            android:multiprocess="true" />
-460-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:36:13-40
+460-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:36:13-40
 461
 462        <service
-462-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:39:9-44:35
+462-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:39:9-44:35
 463            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
-463-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:40:13-88
+463-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:40:13-88
 464            android:directBootAware="false"
-464-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:41:13-44
+464-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:41:13-44
 465            android:enabled="@bool/enable_system_alarm_service_default"
-465-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:42:13-72
+465-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:42:13-72
 466            android:exported="false" />
-466-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:43:13-37
+466-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:43:13-37
 467        <service
-467-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:45:9-51:35
+467-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:45:9-51:35
 468            android:name="androidx.work.impl.background.systemjob.SystemJobService"
-468-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:46:13-84
+468-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:46:13-84
 469            android:directBootAware="false"
-469-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:47:13-44
+469-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:47:13-44
 470            android:enabled="@bool/enable_system_job_service_default"
-470-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:48:13-70
+470-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:48:13-70
 471            android:exported="true"
-471-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:49:13-36
+471-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:49:13-36
 472            android:permission="android.permission.BIND_JOB_SERVICE" />
-472-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:50:13-69
+472-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:50:13-69
 473        <service
-473-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:52:9-57:35
+473-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:52:9-57:35
 474            android:name="androidx.work.impl.foreground.SystemForegroundService"
-474-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:53:13-81
+474-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:53:13-81
 475            android:directBootAware="false"
-475-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:54:13-44
+475-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:54:13-44
 476            android:enabled="@bool/enable_system_foreground_service_default"
-476-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:55:13-77
+476-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:55:13-77
 477            android:exported="false" />
-477-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:56:13-37
+477-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:56:13-37
 478
 479        <receiver
-479-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:59:9-64:35
+479-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:59:9-64:35
 480            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
-480-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:60:13-88
+480-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:60:13-88
 481            android:directBootAware="false"
-481-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:61:13-44
+481-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:61:13-44
 482            android:enabled="true"
-482-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:62:13-35
+482-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:62:13-35
 483            android:exported="false" />
-483-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:63:13-37
+483-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:63:13-37
 484        <receiver
-484-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:65:9-75:20
+484-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:65:9-75:20
 485            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
-485-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:66:13-106
+485-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:66:13-106
 486            android:directBootAware="false"
-486-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:67:13-44
+486-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:67:13-44
 487            android:enabled="false"
-487-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:68:13-36
+487-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:68:13-36
 488            android:exported="false" >
-488-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:69:13-37
+488-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:69:13-37
 489            <intent-filter>
-489-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:71:13-74:29
+489-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:71:13-74:29
 490                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-490-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:72:17-87
-490-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:72:25-84
+490-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:72:17-87
+490-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:72:25-84
 491                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-491-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:73:17-90
-491-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:73:25-87
+491-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:73:17-90
+491-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:73:25-87
 492            </intent-filter>
 493        </receiver>
 494        <receiver
-494-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:76:9-86:20
+494-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:76:9-86:20
 495            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
-495-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:77:13-104
+495-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:77:13-104
 496            android:directBootAware="false"
-496-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:78:13-44
+496-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:78:13-44
 497            android:enabled="false"
-497-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:79:13-36
+497-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:79:13-36
 498            android:exported="false" >
-498-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:80:13-37
+498-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:80:13-37
 499            <intent-filter>
-499-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:82:13-85:29
+499-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:82:13-85:29
 500                <action android:name="android.intent.action.BATTERY_OKAY" />
-500-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:83:17-77
-500-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:83:25-74
+500-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:83:17-77
+500-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:83:25-74
 501                <action android:name="android.intent.action.BATTERY_LOW" />
-501-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:84:17-76
-501-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:84:25-73
+501-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:84:17-76
+501-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:84:25-73
 502            </intent-filter>
 503        </receiver>
 504        <receiver
-504-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:87:9-97:20
+504-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:87:9-97:20
 505            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
-505-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:88:13-104
+505-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:88:13-104
 506            android:directBootAware="false"
-506-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:89:13-44
+506-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:89:13-44
 507            android:enabled="false"
-507-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:90:13-36
+507-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:90:13-36
 508            android:exported="false" >
-508-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:91:13-37
+508-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:91:13-37
 509            <intent-filter>
-509-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:93:13-96:29
+509-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:93:13-96:29
 510                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
-510-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:94:17-83
-510-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:94:25-80
+510-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:94:17-83
+510-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:94:25-80
 511                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
-511-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:95:17-82
-511-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:95:25-79
+511-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:95:17-82
+511-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:95:25-79
 512            </intent-filter>
 513        </receiver>
 514        <receiver
-514-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:98:9-107:20
+514-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:98:9-107:20
 515            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
-515-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:99:13-103
+515-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:99:13-103
 516            android:directBootAware="false"
-516-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:100:13-44
+516-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:100:13-44
 517            android:enabled="false"
-517-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:101:13-36
+517-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:101:13-36
 518            android:exported="false" >
-518-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:102:13-37
+518-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:102:13-37
 519            <intent-filter>
-519-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:104:13-106:29
+519-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:104:13-106:29
 520                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-520-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:105:17-79
-520-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:105:25-76
+520-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:105:17-79
+520-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:105:25-76
 521            </intent-filter>
 522        </receiver>
 523        <receiver
-523-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:108:9-119:20
+523-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:108:9-119:20
 524            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
-524-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:109:13-88
+524-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:109:13-88
 525            android:directBootAware="false"
-525-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:110:13-44
+525-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:110:13-44
 526            android:enabled="false"
-526-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:111:13-36
+526-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:111:13-36
 527            android:exported="false" >
-527-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:112:13-37
+527-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:112:13-37
 528            <intent-filter>
-528-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:114:13-118:29
+528-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:114:13-118:29
 529                <action android:name="android.intent.action.BOOT_COMPLETED" />
-529-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:43:17-79
-529-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/79400d35abc4410bf3629d18ba6af64c/jetified-android-job-1.2.1/AndroidManifest.xml:43:25-76
+529-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:43:17-79
+529-->[com.evernote:android-job:1.2.1] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ffe94f069c2e19e2aac981289ef2d089/jetified-android-job-1.2.1/AndroidManifest.xml:43:25-76
 530                <action android:name="android.intent.action.TIME_SET" />
-530-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:116:17-73
-530-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:116:25-70
+530-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:116:17-73
+530-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:116:25-70
 531                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-531-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:117:17-81
-531-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:117:25-78
+531-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:117:17-81
+531-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:117:25-78
 532            </intent-filter>
 533        </receiver>
 534        <receiver
-534-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:120:9-129:20
+534-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:120:9-129:20
 535            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
-535-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:121:13-99
+535-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:121:13-99
 536            android:directBootAware="false"
-536-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:122:13-44
+536-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:122:13-44
 537            android:enabled="@bool/enable_system_alarm_service_default"
-537-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:123:13-72
+537-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:123:13-72
 538            android:exported="false" >
-538-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:124:13-37
+538-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:124:13-37
 539            <intent-filter>
-539-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:126:13-128:29
+539-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:126:13-128:29
 540                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
-540-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:127:17-98
-540-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:127:25-95
+540-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:127:17-98
+540-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:127:25-95
 541            </intent-filter>
 542        </receiver>
 543        <receiver
-543-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:130:9-140:20
+543-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:130:9-140:20
 544            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
-544-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:131:13-78
+544-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:131:13-78
 545            android:directBootAware="false"
-545-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:132:13-44
+545-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:132:13-44
 546            android:enabled="true"
-546-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:133:13-35
+546-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:133:13-35
 547            android:exported="true"
-547-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:134:13-36
+547-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:134:13-36
 548            android:permission="android.permission.DUMP" >
-548-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:135:13-57
+548-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:135:13-57
 549            <intent-filter>
-549-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:137:13-139:29
+549-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:137:13-139:29
 550                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
-550-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:138:17-88
-550-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5a9898b5df89fcbef99c6ce6d96655b1/work-runtime-2.4.0/AndroidManifest.xml:138:25-85
+550-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:138:17-88
+550-->[androidx.work:work-runtime:2.4.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/711c85df0db24b98f0903e96c429702c/work-runtime-2.4.0/AndroidManifest.xml:138:25-85
 551            </intent-filter>
 552        </receiver>
 553
 554        <provider
-554-->[com.google.firebase:firebase-common:19.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2caf8db81a8d2c6bca5d167c7be07a3d/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+554-->[com.google.firebase:firebase-common:19.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7122d89269a791538712eb3d9e4dfc69/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
 555            android:name="com.google.firebase.provider.FirebaseInitProvider"
-555-->[com.google.firebase:firebase-common:19.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2caf8db81a8d2c6bca5d167c7be07a3d/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+555-->[com.google.firebase:firebase-common:19.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7122d89269a791538712eb3d9e4dfc69/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
 556            android:authorities="com.lubsolution.store.firebaseinitprovider"
-556-->[com.google.firebase:firebase-common:19.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2caf8db81a8d2c6bca5d167c7be07a3d/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+556-->[com.google.firebase:firebase-common:19.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7122d89269a791538712eb3d9e4dfc69/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
 557            android:exported="false"
-557-->[com.google.firebase:firebase-common:19.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2caf8db81a8d2c6bca5d167c7be07a3d/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+557-->[com.google.firebase:firebase-common:19.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7122d89269a791538712eb3d9e4dfc69/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
 558            android:initOrder="100" />
-558-->[com.google.firebase:firebase-common:19.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2caf8db81a8d2c6bca5d167c7be07a3d/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+558-->[com.google.firebase:firebase-common:19.3.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/7122d89269a791538712eb3d9e4dfc69/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
 559
 560        <meta-data
-560-->[com.google.android.gms:play-services-basement:17.5.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2c32f9112a5aed84f612450a100866a0/jetified-play-services-basement-17.5.0/AndroidManifest.xml:23:9-25:69
+560-->[com.google.android.gms:play-services-basement:17.5.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c2d80e55d97074285ea0e2c616c50a39/jetified-play-services-basement-17.5.0/AndroidManifest.xml:23:9-25:69
 561            android:name="com.google.android.gms.version"
-561-->[com.google.android.gms:play-services-basement:17.5.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2c32f9112a5aed84f612450a100866a0/jetified-play-services-basement-17.5.0/AndroidManifest.xml:24:13-58
+561-->[com.google.android.gms:play-services-basement:17.5.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c2d80e55d97074285ea0e2c616c50a39/jetified-play-services-basement-17.5.0/AndroidManifest.xml:24:13-58
 562            android:value="@integer/google_play_services_version" />
-562-->[com.google.android.gms:play-services-basement:17.5.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/2c32f9112a5aed84f612450a100866a0/jetified-play-services-basement-17.5.0/AndroidManifest.xml:25:13-66
+562-->[com.google.android.gms:play-services-basement:17.5.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/c2d80e55d97074285ea0e2c616c50a39/jetified-play-services-basement-17.5.0/AndroidManifest.xml:25:13-66
 563
 564        <service
-564-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ae894d344c999b52cd323d3b9d4e653d/jetified-transport-backend-cct-2.2.0/AndroidManifest.xml:29:9-35:19
+564-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/75636c621b9cdc0ed3ad14963d0298c9/jetified-transport-backend-cct-2.2.0/AndroidManifest.xml:29:9-35:19
 565            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-565-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ae894d344c999b52cd323d3b9d4e653d/jetified-transport-backend-cct-2.2.0/AndroidManifest.xml:30:13-103
+565-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/75636c621b9cdc0ed3ad14963d0298c9/jetified-transport-backend-cct-2.2.0/AndroidManifest.xml:30:13-103
 566            android:exported="false" >
-566-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ae894d344c999b52cd323d3b9d4e653d/jetified-transport-backend-cct-2.2.0/AndroidManifest.xml:31:13-37
+566-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/75636c621b9cdc0ed3ad14963d0298c9/jetified-transport-backend-cct-2.2.0/AndroidManifest.xml:31:13-37
 567            <meta-data
-567-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ae894d344c999b52cd323d3b9d4e653d/jetified-transport-backend-cct-2.2.0/AndroidManifest.xml:32:13-34:39
+567-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/75636c621b9cdc0ed3ad14963d0298c9/jetified-transport-backend-cct-2.2.0/AndroidManifest.xml:32:13-34:39
 568                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-568-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ae894d344c999b52cd323d3b9d4e653d/jetified-transport-backend-cct-2.2.0/AndroidManifest.xml:33:17-94
+568-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/75636c621b9cdc0ed3ad14963d0298c9/jetified-transport-backend-cct-2.2.0/AndroidManifest.xml:33:17-94
 569                android:value="cct" />
-569-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ae894d344c999b52cd323d3b9d4e653d/jetified-transport-backend-cct-2.2.0/AndroidManifest.xml:34:17-36
+569-->[com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/75636c621b9cdc0ed3ad14963d0298c9/jetified-transport-backend-cct-2.2.0/AndroidManifest.xml:34:17-36
 570        </service>
 571        <service
-571-->[com.google.android.datatransport:transport-runtime:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/44a97a09892af6261fddf6cf15458da2/jetified-transport-runtime-2.2.0/AndroidManifest.xml:26:9-30:19
+571-->[com.google.android.datatransport:transport-runtime:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ab20ff8b7216ae27e72a1277a53077ef/jetified-transport-runtime-2.2.0/AndroidManifest.xml:26:9-30:19
 572            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-572-->[com.google.android.datatransport:transport-runtime:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/44a97a09892af6261fddf6cf15458da2/jetified-transport-runtime-2.2.0/AndroidManifest.xml:27:13-117
+572-->[com.google.android.datatransport:transport-runtime:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ab20ff8b7216ae27e72a1277a53077ef/jetified-transport-runtime-2.2.0/AndroidManifest.xml:27:13-117
 573            android:exported="false"
-573-->[com.google.android.datatransport:transport-runtime:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/44a97a09892af6261fddf6cf15458da2/jetified-transport-runtime-2.2.0/AndroidManifest.xml:28:13-37
+573-->[com.google.android.datatransport:transport-runtime:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ab20ff8b7216ae27e72a1277a53077ef/jetified-transport-runtime-2.2.0/AndroidManifest.xml:28:13-37
 574            android:permission="android.permission.BIND_JOB_SERVICE" >
-574-->[com.google.android.datatransport:transport-runtime:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/44a97a09892af6261fddf6cf15458da2/jetified-transport-runtime-2.2.0/AndroidManifest.xml:29:13-69
+574-->[com.google.android.datatransport:transport-runtime:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ab20ff8b7216ae27e72a1277a53077ef/jetified-transport-runtime-2.2.0/AndroidManifest.xml:29:13-69
 575        </service>
 576
 577        <receiver
-577-->[com.google.android.datatransport:transport-runtime:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/44a97a09892af6261fddf6cf15458da2/jetified-transport-runtime-2.2.0/AndroidManifest.xml:32:9-34:40
+577-->[com.google.android.datatransport:transport-runtime:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ab20ff8b7216ae27e72a1277a53077ef/jetified-transport-runtime-2.2.0/AndroidManifest.xml:32:9-34:40
 578            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-578-->[com.google.android.datatransport:transport-runtime:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/44a97a09892af6261fddf6cf15458da2/jetified-transport-runtime-2.2.0/AndroidManifest.xml:33:13-132
+578-->[com.google.android.datatransport:transport-runtime:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ab20ff8b7216ae27e72a1277a53077ef/jetified-transport-runtime-2.2.0/AndroidManifest.xml:33:13-132
 579            android:exported="false" />
-579-->[com.google.android.datatransport:transport-runtime:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/44a97a09892af6261fddf6cf15458da2/jetified-transport-runtime-2.2.0/AndroidManifest.xml:34:13-37
+579-->[com.google.android.datatransport:transport-runtime:2.2.0] /Users/huytran/.gradle/caches/transforms-2/files-2.1/ab20ff8b7216ae27e72a1277a53077ef/jetified-transport-runtime-2.2.0/AndroidManifest.xml:34:13-37
 580
 581        <service
-581-->[androidx.room:room-runtime:2.2.5] /Users/huytran/.gradle/caches/transforms-2/files-2.1/4d3b0ecd657c58779305da99ed95da75/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
+581-->[androidx.room:room-runtime:2.2.5] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5895ef33c8f2334cdcd657775c45696b/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
 582            android:name="androidx.room.MultiInstanceInvalidationService"
-582-->[androidx.room:room-runtime:2.2.5] /Users/huytran/.gradle/caches/transforms-2/files-2.1/4d3b0ecd657c58779305da99ed95da75/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
+582-->[androidx.room:room-runtime:2.2.5] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5895ef33c8f2334cdcd657775c45696b/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
 583            android:directBootAware="true"
-583-->[androidx.room:room-runtime:2.2.5] /Users/huytran/.gradle/caches/transforms-2/files-2.1/4d3b0ecd657c58779305da99ed95da75/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
+583-->[androidx.room:room-runtime:2.2.5] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5895ef33c8f2334cdcd657775c45696b/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
 584            android:exported="false" />
-584-->[androidx.room:room-runtime:2.2.5] /Users/huytran/.gradle/caches/transforms-2/files-2.1/4d3b0ecd657c58779305da99ed95da75/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
+584-->[androidx.room:room-runtime:2.2.5] /Users/huytran/.gradle/caches/transforms-2/files-2.1/5895ef33c8f2334cdcd657775c45696b/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
 585        <service
-585-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/3b8386838c9b0ff741b6dc48667833d2/jetified-acra-core-5.1.3/AndroidManifest.xml:30:9-34:39
+585-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/84e96239de267c98ab9d77210ab73d10/jetified-acra-core-5.1.3/AndroidManifest.xml:30:9-34:39
 586            android:name="org.acra.sender.SenderService"
-586-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/3b8386838c9b0ff741b6dc48667833d2/jetified-acra-core-5.1.3/AndroidManifest.xml:31:13-57
+586-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/84e96239de267c98ab9d77210ab73d10/jetified-acra-core-5.1.3/AndroidManifest.xml:31:13-57
 587            android:exported="false"
-587-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/3b8386838c9b0ff741b6dc48667833d2/jetified-acra-core-5.1.3/AndroidManifest.xml:32:13-37
+587-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/84e96239de267c98ab9d77210ab73d10/jetified-acra-core-5.1.3/AndroidManifest.xml:32:13-37
 588            android:permission="android.permission.BIND_JOB_SERVICE"
-588-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/3b8386838c9b0ff741b6dc48667833d2/jetified-acra-core-5.1.3/AndroidManifest.xml:33:13-69
+588-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/84e96239de267c98ab9d77210ab73d10/jetified-acra-core-5.1.3/AndroidManifest.xml:33:13-69
 589            android:process=":acra" />
-589-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/3b8386838c9b0ff741b6dc48667833d2/jetified-acra-core-5.1.3/AndroidManifest.xml:34:13-36
+589-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/84e96239de267c98ab9d77210ab73d10/jetified-acra-core-5.1.3/AndroidManifest.xml:34:13-36
 590
 591        <provider
-591-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/3b8386838c9b0ff741b6dc48667833d2/jetified-acra-core-5.1.3/AndroidManifest.xml:36:9-41:39
+591-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/84e96239de267c98ab9d77210ab73d10/jetified-acra-core-5.1.3/AndroidManifest.xml:36:9-41:39
 592            android:name="org.acra.attachment.AcraContentProvider"
-592-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/3b8386838c9b0ff741b6dc48667833d2/jetified-acra-core-5.1.3/AndroidManifest.xml:37:13-67
+592-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/84e96239de267c98ab9d77210ab73d10/jetified-acra-core-5.1.3/AndroidManifest.xml:37:13-67
 593            android:authorities="com.lubsolution.store.acra"
-593-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/3b8386838c9b0ff741b6dc48667833d2/jetified-acra-core-5.1.3/AndroidManifest.xml:38:13-56
+593-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/84e96239de267c98ab9d77210ab73d10/jetified-acra-core-5.1.3/AndroidManifest.xml:38:13-56
 594            android:exported="false"
-594-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/3b8386838c9b0ff741b6dc48667833d2/jetified-acra-core-5.1.3/AndroidManifest.xml:39:13-37
+594-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/84e96239de267c98ab9d77210ab73d10/jetified-acra-core-5.1.3/AndroidManifest.xml:39:13-37
 595            android:grantUriPermissions="true"
-595-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/3b8386838c9b0ff741b6dc48667833d2/jetified-acra-core-5.1.3/AndroidManifest.xml:40:13-47
+595-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/84e96239de267c98ab9d77210ab73d10/jetified-acra-core-5.1.3/AndroidManifest.xml:40:13-47
 596            android:process=":acra" />
-596-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/3b8386838c9b0ff741b6dc48667833d2/jetified-acra-core-5.1.3/AndroidManifest.xml:41:13-36
+596-->[ch.acra:acra-core:5.1.3] /Users/huytran/.gradle/caches/transforms-2/files-2.1/84e96239de267c98ab9d77210ab73d10/jetified-acra-core-5.1.3/AndroidManifest.xml:41:13-36
 597    </application>
 598
 599</manifest>

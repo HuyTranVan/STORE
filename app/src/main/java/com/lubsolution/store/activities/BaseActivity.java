@@ -17,6 +17,7 @@ import com.lubsolution.store.callback.CallbackBoolean;
 import com.lubsolution.store.callback.NewCallbackCustom;
 import com.lubsolution.store.models.BaseModel;
 import com.lubsolution.store.utils.Constants;
+import com.lubsolution.store.utils.CustomCenterDialog;
 import com.lubsolution.store.utils.CustomFixSQL;
 import com.lubsolution.store.utils.CustomSQL;
 import com.lubsolution.store.utils.DataUtil;
@@ -200,6 +201,31 @@ public abstract class BaseActivity extends AppCompatActivity {
             }
         }, 1).execute();
 
+
+    }
+
+    public void changePassword() {
+        CustomCenterDialog.showDialogChangePass("Đổi mật khẩu", new CallbackBoolean() {
+            @Override
+            public void onRespone(Boolean result) {
+                if (result) {
+                    CustomCenterDialog.alertWithButtonCanceled("",
+                            "Đổi mật khẩu thành công , vui lòng đăng nhập lại",
+                            "ĐỒNG Ý",
+                            false,
+                            new CallbackBoolean() {
+                                @Override
+                                public void onRespone(Boolean result) {
+                                    if (result) {
+                                        logout(null);
+                                    }
+
+                                }
+                            });
+
+                }
+            }
+        });
 
     }
 

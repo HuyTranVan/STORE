@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/statistical_checkin_item_parent"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/waiting_list_parent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
-
-    <TextView
-        android:id="@+id/waiting_list_item_number"
-        android:layout_width="@dimen/_20sdp"
-        android:layout_height="@dimen/_20sdp"
-        android:background="@drawable/btn_oval_denim"
-        android:textColor="@color/colorWhite"
-        android:text="0"
-        android:textSize="@dimen/_10sdp"
-        android:gravity="center"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginRight="@dimen/_15sdp" />
+    app:cardCornerRadius="@dimen/_2sdp"
+    android:layout_margin="@dimen/_2sdp"
+    app:cardElevation="@dimen/_2sdp"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_toRightOf="@+id/waiting_list_item_number"
-        android:paddingTop="@dimen/_5sdp">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,57 +21,54 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/waiting_list_item_signboard"
+                android:id="@+id/waiting_list_plate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="a"
-                android:textSize="@dimen/_12sdp"
+                android:minWidth="@dimen/_50sdp"
+                android:minHeight="@dimen/_10sdp"
+                android:background="@drawable/bg_corner5_white_border_grey"
                 android:textColor="@color/black_text_color"
-                android:textAllCaps="true" />
+                android:textSize="@dimen/_12sdp"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"/>
 
-            <TextView
-                android:id="@+id/waiting_list_item_distance"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black_text_color_hint"
-                android:textStyle="italic"
-                android:layout_marginLeft="@dimen/_5sdp"
-                android:textSize="@dimen/_10sdp" />
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/waiting_list_brand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="XXX"
+                    android:textColor="@color/black_text_color"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/waiting_list_vehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black_text_color"
+                    android:textSize="@dimen/_12sdp"/>
+            </LinearLayout>
+
         </LinearLayout>
 
 
-        <TextView
-            android:id="@+id/waiting_list_item_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/_2sdp"
-            android:text="a"
-            android:textColor="@color/black_text_color_hint"
-            android:textSize="@dimen/_10sdp" />
+
 
     </LinearLayout>
 
-    <TextView
-        android:fontFamily="@font/font_awesome"
-        android:id="@+id/waiting_list_item_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="?selectableItemBackgroundBorderless"
-        android:text="@string/icon_x"
-        android:textSize="@dimen/_14sdp"
-        android:textColor="@color/black_text_color_hint"
-        android:layout_alignParentRight="true"
-        android:padding="@dimen/_10sdp"
-        android:layout_centerVertical="true" />
-
-    <View
-        android:id="@+id/waiting_list_item_line"
-        android:layout_width="match_parent"
-        android:layout_height="1dip"
-        android:background="#f1f1f1"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="@dimen/_5sdp" />
 
 
-</RelativeLayout>
+</androidx.cardview.widget.CardView>

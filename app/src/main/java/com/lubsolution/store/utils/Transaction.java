@@ -22,7 +22,7 @@ import com.lubsolution.store.activities.MainShopActivity;
 import com.lubsolution.store.activities.ProductActivity;
 import com.lubsolution.store.activities.ProductGroupActivity;
 import com.lubsolution.store.activities.SettingActivity;
-import com.lubsolution.store.activities.ShopActivity;
+import com.lubsolution.store.activities.ShopListActivity;
 import com.lubsolution.store.activities.VehicleActivity;
 import com.lubsolution.store.callback.CallbackUri;
 import com.lubsolution.store.models.BaseModel;
@@ -264,7 +264,7 @@ public class Transaction {
 
     public static void gotoShopActivity() {
         Activity context = Util.getInstance().getCurrentActivity();
-        Intent intent = new Intent(context, ShopActivity.class);
+        Intent intent = new Intent(context, ShopListActivity.class);
         context.startActivity(intent);
         context.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         ((AppCompatActivity) context).finish();
@@ -288,6 +288,8 @@ public class Transaction {
 
         }
     }
+
+
 
     public static void sendEmailReport(String content) {
         Intent intent = new Intent(Intent.ACTION_VIEW);

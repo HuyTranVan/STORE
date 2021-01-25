@@ -152,6 +152,7 @@ attr backIconAlpha
 attr backIconTint
 attr background
 attr backgroundColor
+attr backgroundDropdown
 attr backgroundIcon
 attr backgroundImage
 attr backgroundInsetBottom
@@ -558,6 +559,9 @@ attr horizontalOffset
 attr hoveredFocusedTranslationZ
 attr icon
 attr iconColor
+attr iconDropdownColor
+attr iconDropdownSize
+attr iconDropdownText
 attr iconEndPadding
 attr iconGravity
 attr iconPadding
@@ -1096,6 +1100,9 @@ attr textColor
 attr textColorAlertDialogListItem
 attr textColorHint
 attr textColorSearchUrl
+attr textDropdown
+attr textDropdownColor
+attr textDropdownSize
 attr textEndPadding
 attr textHint
 attr textInputLayoutFocusedRectEnabled
@@ -2706,6 +2713,7 @@ drawable bg_corner5_black
 drawable bg_corner5_lighgrey
 drawable bg_corner5_lightgrey
 drawable bg_corner5_transparent_border_darkblue
+drawable bg_corner5_transparent_border_grey
 drawable bg_corner5_white
 drawable bg_corner5_white_border2_accent
 drawable bg_corner5_white_border2_blue
@@ -2899,6 +2907,7 @@ drawable lub_icon_round
 drawable lub_logo_darkblue
 drawable lub_logo_grey
 drawable lub_logo_red
+drawable lub_logo_red_50
 drawable lub_logo_white
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -3044,10 +3053,11 @@ id activity_chooser_view_content
 id add
 id add_customer_brand
 id add_customer_name
+id add_customer_number
+id add_customer_number_show
 id add_customer_parent
 id add_customer_phone
-id add_customer_plate
-id add_customer_vehiclename
+id add_customer_vehicle
 id add_depot_input
 id add_depot_rd
 id add_depot_rdmain
@@ -3069,6 +3079,26 @@ id add_product_unit_price
 id add_product_volume
 id add_productgroup_input
 id add_productgroup_submit
+id add_shop_add_admin
+id add_shop_add_admin_title
+id add_shop_admin_group
+id add_shop_company_add
+id add_shop_company_hotline
+id add_shop_company_name
+id add_shop_company_thanks
+id add_shop_company_web
+id add_shop_district
+id add_shop_expire_to
+id add_shop_header
+id add_shop_image
+id add_shop_image_parent
+id add_shop_name
+id add_shop_parent
+id add_shop_progress
+id add_shop_province
+id add_shop_rvadmin
+id add_shop_submit
+id add_shop_title
 id add_status_color
 id add_status_colorchoice
 id add_status_name
@@ -3087,6 +3117,7 @@ id add_user_role
 id add_user_submit
 id add_user_title
 id add_user_warehouse
+id add_vehiclename_parent
 id adjust_height
 id adjust_width
 id alertTitle
@@ -3459,6 +3490,10 @@ id dialog_list_user__body
 id dialog_list_user_rv
 id dialog_list_user_title
 id dialog_month_picker_title
+id dialog_newadmin_body
+id dialog_newadmin_name
+id dialog_newadmin_phone
+id dialog_newadmin_title
 id dialog_relogin_body
 id dialog_relogin_password
 id dialog_relogin_phone
@@ -3492,7 +3527,10 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
+id dropdown_icon
 id dropdown_menu
+id dropdown_parent
+id dropdown_text
 id easeIn
 id easeInOut
 id easeOut
@@ -3664,6 +3702,13 @@ id line3
 id line_bottom
 id linear
 id listMode
+id list_admin_active
+id list_admin_cover
+id list_admin_icon
+id list_admin_line
+id list_admin_phone
+id list_admin_progress
+id list_admin_text
 id list_item
 id list_method_icon
 id list_method_image
@@ -3751,6 +3796,7 @@ id new_kind_name
 id new_kind_scrollview
 id new_kind_submit
 id new_kind_title
+id new_vehicename
 id new_vehicename_brand
 id new_vehicename_image
 id new_vehicename_kind
@@ -3758,6 +3804,9 @@ id new_vehicename_name
 id new_vehicename_scrollview
 id new_vehicename_submit
 id new_vehicename_title
+id new_vehicle_auto
+id new_vehicle_kinds
+id new_vehicle_moto
 id noScroll
 id none
 id normal
@@ -3956,16 +4005,17 @@ id selector_footer
 id selector_image_folder_button
 id selector_image_preview_button
 id seperateline
-id shop_company_add
-id shop_company_hotline
-id shop_company_name
-id shop_company_thanks
-id shop_company_web
+id shop_add_new
 id shop_header
-id shop_image
-id shop_image_parent
+id shop_item_active
+id shop_item_active_cover
+id shop_item_active_date
+id shop_item_image
+id shop_item_location
+id shop_item_name
+id shop_item_parent
 id shop_parent
-id shop_submit
+id shop_rvgroup
 id shop_title
 id shopcart_dialog_product_item_image
 id shopcart_dialog_product_item_line
@@ -4195,6 +4245,7 @@ id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
 id test_radiobutton_app_button_tint
 id text
+id text11
 id text2
 id textEnd
 id textSpacerNoButtons
@@ -4264,7 +4315,6 @@ id user_parent
 id user_rvusers
 id user_title
 id vehicle_header
-id vehicle_header_group
 id vehicle_parent
 id vehicle_tabs
 id vehicle_title
@@ -4273,6 +4323,7 @@ id vehiclebrand_item_image
 id vehiclebrand_item_name
 id vehiclebrand_item_parent
 id vehiclegroup_item_name
+id vehiclegroup_item_new
 id vehiclegroup_item_parent
 id vehiclegroup_item_rv
 id vehiclekind_item_name
@@ -4282,18 +4333,19 @@ id vehiclename_item_kind
 id vehiclename_item_name
 id vehiclename_item_parent
 id vertical
+id view_choicedate_submit
+id view_choicedate_title
+id view_list_admin_parent
 id view_list_method_parent
 id view_list_method_rv
 id view_listmethod_title
 id view_offset_helper
 id view_pay_method_parent
 id visible
-id waiting_list_item_address
-id waiting_list_item_delete
-id waiting_list_item_distance
-id waiting_list_item_line
-id waiting_list_item_number
-id waiting_list_item_signboard
+id waiting_list_brand
+id waiting_list_parent
+id waiting_list_plate
+id waiting_list_vehicle
 id waitinglist_header
 id waitinglist_location
 id waitinglist_map
@@ -4397,6 +4449,7 @@ layout activity_status
 layout activity_user
 layout activity_vehicle
 layout activity_warehouse
+layout adapter_admins_item
 layout adapter_bill_item
 layout adapter_bluetooth_list_item
 layout adapter_cart_button_group
@@ -4433,6 +4486,7 @@ layout adapter_product_select_item
 layout adapter_productgroup_item
 layout adapter_scanner_code_item
 layout adapter_search_item
+layout adapter_shop_item
 layout adapter_statistical_bills_item
 layout adapter_statistical_cash_item
 layout adapter_statistical_checkin_item
@@ -4473,14 +4527,16 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_add_customer
+layout dialog_add_vehiclename
 layout dialog_grid
 layout dialog_list
 layout dialog_view
 layout dp_example
-layout fragment_add_customer
 layout fragment_add_depot
 layout fragment_add_product
 layout fragment_add_productgroup
+layout fragment_add_shop
 layout fragment_add_status
 layout fragment_add_user
 layout fragment_add_vehiclebrand
@@ -4585,6 +4641,7 @@ layout view_bottom_dialog_button
 layout view_choice_2method
 layout view_choice_3method
 layout view_choice_4method
+layout view_choice_date
 layout view_choice_listmethod
 layout view_custom_search
 layout view_dialog_bill
@@ -4596,6 +4653,7 @@ layout view_dialog_edit_product
 layout view_dialog_list
 layout view_dialog_list_product
 layout view_dialog_list_user
+layout view_dialog_new_admin
 layout view_dialog_relogin
 layout view_dialog_return_product
 layout view_dialog_select_bluetooth_device
@@ -4620,6 +4678,7 @@ layout view_tab_statistical
 layout view_top_notify
 layout viewcustom_button
 layout viewcustom_button_vertical
+layout viewcustom_dropdown
 layout viewcustom_input_data
 layout viewcustom_vertical
 layout week
@@ -4731,7 +4790,7 @@ string google_crash_reporting_api_key
 string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
 string icon_account
-string icon_adress
+string icon_address
 string icon_barcode
 string icon_bill
 string icon_bluetooth
@@ -5675,6 +5734,7 @@ styleable BottomAppBar backgroundTint elevation fabAlignmentMode fabAnimationMod
 styleable BottomNavigationView backgroundTint elevation itemBackground itemHorizontalTranslationEnabled itemIconSize itemIconTint itemRippleColor itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
 styleable BottomSheetBehavior_Layout android_elevation backgroundTint behavior_draggable behavior_expandedOffset behavior_fitToContents behavior_halfExpandedRatio behavior_hideable behavior_peekHeight behavior_saveFlags behavior_skipCollapsed gestureInsetBottomIgnored shapeAppearance shapeAppearanceOverlay
 styleable ButtonBarLayout allowStacking
+styleable CDropdown android_inputType backgroundDropdown iconDropdownColor iconDropdownSize iconDropdownText textDropdown textDropdownColor textDropdownSize
 styleable CInputForm android_inputType backgroundIcon backgroundLayout iconColor iconSize iconText isDropdown isShowBottomLine multiLine text textColor textColorHint textHint textSize titleColor titleSize titleText
 styleable CTextViewDefault customFont setActive textWhite
 styleable CalendarPickerView android_background tsquare_dayBackground tsquare_dayTextColor tsquare_displayHeader tsquare_dividerColor tsquare_headerTextColor tsquare_titleTextColor

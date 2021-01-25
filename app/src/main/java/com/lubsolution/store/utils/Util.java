@@ -24,6 +24,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.ArrayMap;
@@ -903,6 +904,18 @@ public class Util {
 
     }
 
+    public static String DateDisplay(long timestamp, String format) {
+        String date = "";
+
+        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+        //cal.setTimeInMillis(timestamp*1000);
+        cal.setTimeInMillis(timestamp);
+        date = DateFormat.format(format, cal).toString();
+
+        return date;
+
+    }
+
     public static String DateMonthYearString(long timestamp) {
         String date = "";
 
@@ -944,6 +957,25 @@ public class Util {
         return date;
 
     }
+
+    public static int Year(long timestamp) {
+        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+        cal.setTimeInMillis(timestamp);
+        int year =cal.get(Calendar.YEAR);
+
+        return year;
+
+    }
+
+    public static int Month(long timestamp) {
+        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+        cal.setTimeInMillis(timestamp);
+        int monthOfYear = cal.get(Calendar.MONTH);
+
+        return monthOfYear;
+
+    }
+
 
     public static String MinuteString(long timestamp) {
         String date = "";
@@ -1244,10 +1276,13 @@ public class Util {
             @Override
             public void afterTextChanged(Editable s) {
                 edText.removeTextChangedListener(this);
+                int currentSelection = edText.getSelectionStart();
+                int prevStringLength = edText.getText().length();
+
                 try {
                     if (limitMoney == null) {
                         edText.setText(Util.FormatMoney(Util.valueMoney(edText)));
-                        edText.setSelection(edText.getText().toString().length());
+                        edText.setSelection(currentSelection + (edText.getText().toString().length() - prevStringLength));
 
                         mlistener.Result(Util.valueMoney(edText));
                         edText.addTextChangedListener(this);
@@ -1258,14 +1293,14 @@ public class Util {
                             String text = Util.valueMoneyString(edText).replaceFirst(".$", "");
 
                             edText.setText(Util.FormatMoney(Double.valueOf(text)));
-                            edText.setSelection(edText.getText().toString().length());
+                            edText.setSelection(currentSelection + (edText.getText().toString().length() - prevStringLength));
 
                             mlistener.Result(Util.valueMoney(edText));
                             edText.addTextChangedListener(this);
 
                         } else {
                             edText.setText(Util.FormatMoney(Util.valueMoney(edText)));
-                            edText.setSelection(edText.getText().toString().length());
+                            edText.setSelection(currentSelection + (edText.getText().toString().length() - prevStringLength));
 
                             mlistener.Result(Util.valueMoney(edText));
                             edText.addTextChangedListener(this);
@@ -1278,14 +1313,14 @@ public class Util {
                             String text = Util.valueMoneyString(edText).replaceFirst(".$", "");
 
                             edText.setText(Util.FormatMoney(Double.valueOf(text)));
-                            edText.setSelection(edText.getText().toString().length());
+                            edText.setSelection(currentSelection + (edText.getText().toString().length() - prevStringLength));
 
                             mlistener.Result(Util.valueMoney(edText) * -1);
                             edText.addTextChangedListener(this);
 
                         } else {
                             edText.setText(Util.FormatMoney(Util.valueMoney(edText)));
-                            edText.setSelection(edText.getText().toString().length());
+                            edText.setSelection(currentSelection + (edText.getText().toString().length() - prevStringLength));
 
                             mlistener.Result(Util.valueMoney(edText) * -1);
                             edText.addTextChangedListener(this);
@@ -1319,25 +1354,109 @@ public class Util {
 
             @Override
             public void afterTextChanged(Editable s) {
-
                 edText.removeTextChangedListener(this);
-                mlistener.Result(edText.getText().toString().replace(".", ""));
-                try {
-                    edText.setText(Util.FormatPhone(edText.getText().toString().replace(".", "")));
-                    edText.setSelection(edText.getText().toString().length());
 
-                    //listener.Result(edInput.getText().toString().replace(".", ""));
-                    edText.addTextChangedListener(this);
+                int currentSelection = edText.getSelectionStart();
+                int prevStringLength = edText.getText().length();
 
+                String newString = Util.FormatPhone(edText.getText().toString().replace(".", ""));
+                edText.setText(newString);
+                //int selection = currentSelection + (newString.length() - prevStringLength);
+                edText.setSelection(currentSelection + (newString.length() - prevStringLength));
 
-                } catch (Exception ex) {
-//                    ex.printStackTrace();
-                    edText.addTextChangedListener(this);
+                if (mlistener != null){
+                    mlistener.Result(edText.getText().toString().replace(".", ""));
                 }
+                edText.addTextChangedListener(this);
+
 
             }
         });
     }
+
+    public static void plateNumberEvent(final EditText edText, CallbackString mlistener) {
+        edText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                edText.removeTextChangedListener(this);
+
+                int currentSelection = edText.getSelectionStart();
+                int prevStringLength = edText.getText().length();
+
+                String baseString  = edText.getText().toString().replace(" ","");
+                if (baseString.length() >9){
+                    Util.showToast("Sai định dạng biển số");
+
+                }
+                String newString = Util.FormatPlate(baseString);
+                edText.setText(newString);
+                edText.setSelection(currentSelection + (newString.length() - prevStringLength));
+
+                if (mlistener != null){
+                    mlistener.Result(newString.replace(" ", "\n"));
+                }
+
+
+
+
+                if (baseString.length() ==2 ){
+                    edText.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
+                }else {
+                    edText.setInputType(InputType.TYPE_CLASS_NUMBER);
+                }
+
+                edText.addTextChangedListener(this);
+
+            }
+        });
+    }
+
+    public static String FormatPlate(String plate){
+        String result= "";
+        switch (plate.length()){
+            case 5:
+                result = plate.subSequence(0, 4) + " "+ plate.subSequence(4, 5);
+                break;
+
+            case 6:
+                result = plate.subSequence(0, 4) + " "+ plate.subSequence(4, 6);
+                break;
+
+            case 7:
+                result = plate.subSequence(0, 4) + " "+ plate.subSequence(4, 7);
+                break;
+
+            case 8:
+                result = plate.subSequence(0, 4) + " "+ plate.subSequence(4, 8);
+                break;
+
+            case 9:
+                result = plate.subSequence(0, 4) + " "+ plate.subSequence(4, 9);
+                break;
+
+            case 10:
+                result = plate.subSequence(0, 4) + " "+ plate.subSequence(4, 9);
+                break;
+
+
+            default:
+                result = plate;
+
+        }
+
+        return result;
+    }
+
 
     public static void textViewEvent(final TextView tvText, final CallbackString mlistener) {
         tvText.addTextChangedListener(new TextWatcher() {

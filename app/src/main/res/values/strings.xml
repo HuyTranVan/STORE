@@ -55,7 +55,7 @@
     <string name="icon_status" translatable="false">&#xf27a;</string>
     <string name="icon_purchase" translatable="false">&#xf291;</string>
     <string name="icon_weight" translatable="false">&#xf5cd;</string>
-    <string name="icon_adress" translatable="false">&#xf277;</string>
+    <string name="icon_address" translatable="false">&#xf277;</string>
     <string name="icon_district" translatable="false">&#xf3c5;</string>
     <string name="icon_detail" translatable="false">&#xf05a;</string>
     <string name="icon_flag" translatable="false">&#xf024;</string>

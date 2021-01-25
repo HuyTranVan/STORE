@@ -28,28 +28,28 @@
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_marginRight="@dimen/_10sdp">
 
-        <wolve.dms.customviews.CInputForm
+        <com.lubsolution.store.customviews.CInputForm
             android:id="@+id/dialog_editadd_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="@dimen/_30sdp"
-            app:iconText="@string/icon_adress" />
+            app:iconText="@string/icon_address" />
 
-        <wolve.dms.customviews.CInputForm
+        <com.lubsolution.store.customviews.CInputForm
             android:id="@+id/dialog_editadd_street"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="@dimen/_30sdp"
             app:iconText="@string/icon_street" />
 
-        <wolve.dms.customviews.CInputForm
+        <com.lubsolution.store.customviews.CInputForm
             android:id="@+id/dialog_editadd_district"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="@dimen/_30sdp"
             app:iconText="@string/icon_district" />
 
-        <wolve.dms.customviews.CInputForm
+        <com.lubsolution.store.customviews.CInputForm
             android:id="@+id/dialog_editadd_city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

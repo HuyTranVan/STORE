@@ -25,7 +25,6 @@
         android:minHeight="@dimen/_35sdp"
         android:background="@color/float_transparent"
         android:focusableInTouchMode="true"
-        android:textSize="@dimen/_12sdp"
         android:textColor="@color/black_text_color"
         android:textColorHint="@color/black_text_color_hint"
         android:inputType="textCapSentences"
@@ -35,7 +34,8 @@
         android:clickable="true"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/input_data_dropdown"
-        android:textCursorDrawable="@drawable/custom_cursor" />
+        android:textCursorDrawable="@drawable/custom_cursor"
+        />
 
 
     <TextView

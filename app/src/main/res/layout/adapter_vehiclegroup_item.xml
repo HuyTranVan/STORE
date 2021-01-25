@@ -7,17 +7,36 @@
     android:orientation="vertical"
     android:background="@color/colorWhite">
 
-    <TextView
-        android:id="@+id/vehiclegroup_item_name"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="@dimen/_20sdp"
+        android:layout_height="@dimen/_30sdp"
         android:background="@color/colorGrey"
-        android:text="Tran van A"
-        android:textColor="@color/black_text_color"
-        android:textSize="@dimen/_12sdp"
-        android:gravity="center_vertical"
-        android:paddingLeft="@dimen/_10sdp"/>
+        android:layout_marginBottom="@dimen/_1sdp">
+
+        <TextView
+            android:id="@+id/vehiclegroup_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Tran van A"
+            android:textColor="@color/black_text_color"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:id="@+id/vehiclegroup_item_new"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/font_awesome"
+            android:background="?selectableItemBackground"
+            android:text="@string/icon_plus"
+            android:textSize="@dimen/_14sdp"
+            android:layout_alignParentRight="true"
+            android:gravity="center"/>
+    </RelativeLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/vehiclegroup_item_rv"

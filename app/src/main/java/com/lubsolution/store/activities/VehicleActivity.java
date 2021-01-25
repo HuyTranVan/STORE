@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -17,11 +18,13 @@ import com.lubsolution.store.adapter.VehicleKindAdapter;
 import com.lubsolution.store.adapter.ViewpagerMultiListAdapter;
 import com.lubsolution.store.apiconnect.ApiUtil;
 import com.lubsolution.store.apiconnect.apiserver.GetPostMethod;
+import com.lubsolution.store.callback.CallbackInt;
 import com.lubsolution.store.callback.CallbackObject;
 import com.lubsolution.store.callback.NewCallbackCustom;
 import com.lubsolution.store.models.BaseModel;
 import com.lubsolution.store.utils.Constants;
 import com.lubsolution.store.utils.Transaction;
+import com.lubsolution.store.utils.Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +35,7 @@ public class VehicleActivity extends BaseActivity implements View.OnClickListene
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
+    private Fragment mFragment;
     private List<RecyclerView.Adapter> listadapter;
     private ViewpagerMultiListAdapter viewpagerAdapter;
     private VehicleBrandAdapter brandAdapter;
@@ -96,20 +100,39 @@ public class VehicleActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        Transaction.gotoHomeActivityRight(true);
+        //super.onBackPressed();
+        mFragment = getSupportFragmentManager().findFragmentById(R.id.vehicle_parent);
+
+        if (Util.getInstance().isLoading()) {
+            Util.getInstance().stopLoading(true);
+
+        } else if (mFragment != null && mFragment instanceof UpdateVehicleBrandFragment) {
+            getSupportFragmentManager().popBackStack();
+
+        }else if (mFragment != null && mFragment instanceof UpdateVehicleNameFragment) {
+            getSupportFragmentManager().popBackStack();
+
+        }else {
+            Transaction.gotoHomeActivityRight(true);
+        }
+
     }
 
     private void setupViewPager(BaseModel mVehicle){
         listadapter = new ArrayList<>();
-
-        nameAdapter = new VehicleGroupNameAdapter(mVehicle.getList("brands"), new CallbackObject() {
+        nameAdapter = new VehicleGroupNameAdapter(mVehicle.getList("brandWithVehicle"),
+                mVehicle.getList("brands"), new CallbackObject() {
             @Override
             public void onResponse(BaseModel object) {
-                Bundle bundle = new Bundle();
-                bundle.putString(Constants.VEHICLENAME, object == null ? null : object.BaseModelstoString());
-                bundle.putString(Constants.VEHICLE, mVehicle.BaseModelstoString());
-                changeFragment(new UpdateVehicleNameFragment(), bundle, true);
+//                Bundle bundle = new Bundle();
+//                bundle.putString(Constants.VEHICLENAME, object == null ? null : object.BaseModelstoString());
+//                bundle.putString(Constants.VEHICLE, mVehicle.BaseModelstoString());
+                changeFragment(new UpdateVehicleNameFragment(), true);
+            }
+        }, new CallbackInt() {
+            @Override
+            public void onResponse(int value) {
+                updateTabName(value);
             }
         });
 
@@ -122,42 +145,19 @@ public class VehicleActivity extends BaseActivity implements View.OnClickListene
 
 
             }
-        });
-
-        kindAdapter = new VehicleKindAdapter(mVehicle.getList("kinds"), new CallbackObject() {
+        }, new CallbackInt() {
             @Override
-            public void onResponse(BaseModel object) {
-                Bundle bundle = new Bundle();
-                bundle.putString(Constants.KIND, object == null ? null : object.BaseModelstoString());
-                changeFragment(new UpdateVehicleKindFragment(), bundle, true);
+            public void onResponse(int value) {
+                updateTabBrand(value);
             }
         });
 
         listadapter.add(0, nameAdapter);
         listadapter.add(1, brandAdapter);
-        listadapter.add(2, kindAdapter);
 
         viewpagerAdapter = new ViewpagerMultiListAdapter(listadapter, null, null);
         viewPager.setAdapter(viewpagerAdapter);
-        //viewPager.setCurrentItem(currentPosition);
-        viewPager.setOffscreenPageLimit(3);
-
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-//                currentPosition = position;
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
+        viewPager.setOffscreenPageLimit(2);
 
         for (int i = 0; i < createTabTitle().size(); i++) {
             TabLayout.Tab tab = tabLayout.getTabAt(i);
@@ -167,25 +167,70 @@ public class VehicleActivity extends BaseActivity implements View.OnClickListene
 
             tabText.setText(createTabTitle().get(i));
             tabNotify.setVisibility(View.GONE);
-//            if (mActivity.listInventoryDetail.get(i).getList("inventories").size() >0){
-//                tabTextNotify.setVisibility(View.VISIBLE);
-//                tabTextNotify.setText(String.valueOf(mActivity.listInventoryDetail.get(i).getList("inventories").size()));
-//            }else {
-//                tabTextNotify.setVisibility(View.GONE);
-//            }
+            if (i ==0){
+                if (nameAdapter.getVehicleTotal() > 0 ){
+                    tabNotify.setVisibility(View.VISIBLE);
+                    tabNotify.setText(String.valueOf(nameAdapter.getVehicleTotal()));
+                }else {
 
+                }
+
+            }else if (i == 1){
+                if (brandAdapter.mData.size() > 0 ){
+                    tabNotify.setVisibility(View.VISIBLE);
+                    tabNotify.setText(String.valueOf(brandAdapter.mData.size() -1));
+                }else {
+
+                }
+
+            }
 
             tab.setCustomView(customView);
         }
 
 
+
+    }
+
+    private void updateTabName(int number){
+        TabLayout.Tab tab = tabLayout.getTabAt(0);
+        View customView = LayoutInflater.from(this).inflate(R.layout.view_tab_default, null);
+        TextView tabNotify = (TextView) customView.findViewById(R.id.tabNotify);
+        TextView tabText = (TextView) customView.findViewById(R.id.tabTitle);
+
+        tabText.setText(createTabTitle().get(0));
+        if (number > 0 ){
+            tabNotify.setVisibility(View.VISIBLE);
+            tabNotify.setText(String.valueOf(number));
+        }else {
+            tabNotify.setVisibility(View.GONE);
+        }
+        tab.setCustomView(null);
+        tab.setCustomView(customView);
+    }
+
+    private void updateTabBrand(int number){
+        TabLayout.Tab tab = tabLayout.getTabAt(1);
+        View customView = LayoutInflater.from(this).inflate(R.layout.view_tab_default, null);
+        TextView tabNotify = (TextView) customView.findViewById(R.id.tabNotify);
+        TextView tabText = (TextView) customView.findViewById(R.id.tabTitle);
+
+        tabText.setText(createTabTitle().get(1));
+        if (number > 0 ){
+            tabNotify.setVisibility(View.VISIBLE);
+            tabNotify.setText(String.valueOf(number));
+        }else {
+            tabNotify.setVisibility(View.GONE);
+        }
+        tab.setCustomView(null);
+        tab.setCustomView(customView);
     }
 
     private List<String> createTabTitle() {
         List<String> titles = new ArrayList<>();
         titles.add(0, "TÊN XE");
         titles.add(1, "HÃNG XE");
-        titles.add(2, "LOẠI XE");
+
         return titles;
     }
 

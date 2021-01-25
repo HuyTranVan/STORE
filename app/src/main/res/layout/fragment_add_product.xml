@@ -62,7 +62,7 @@
                 android:paddingRight="@dimen/_10sdp">
 
 
-                <wolve.dms.customviews.CInputForm
+                <com.lubsolution.store.customviews.CInputForm
                     android:id="@+id/add_product_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
                     app:textHint="Nhập tên sản phẩm"
                     app:iconText="@string/icon_product" />
 
-                <wolve.dms.customviews.CInputForm
+                <com.lubsolution.store.customviews.CInputForm
                     android:id="@+id/add_product_group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                     app:isDropdown="true"
                     app:textColor="@color/colorBlue" />
 
-                <wolve.dms.customviews.CInputForm
+                <com.lubsolution.store.customviews.CInputForm
                     android:id="@+id/add_product_unit_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
                     app:textHint="Giá bán"
                     app:iconText="@string/icon_price" />
 
-                <wolve.dms.customviews.CInputForm
+                <com.lubsolution.store.customviews.CInputForm
                     android:id="@+id/add_product_purchase_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
                     app:textHint="Giá nhập hàng"
                     app:iconText="@string/icon_purchase" />
 
-                <wolve.dms.customviews.CInputForm
+                <com.lubsolution.store.customviews.CInputForm
                     android:id="@+id/add_product_distributor_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
                     app:textHint="Giá nhà phân phối"
                     app:iconText="@string/icon_briefcase" />
 
-                <wolve.dms.customviews.CInputForm
+                <com.lubsolution.store.customviews.CInputForm
                     android:id="@+id/add_product_unit_in_carton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
                     app:textHint="đơn vị/ thùng"
                     app:iconText="@string/icon_container" />
 
-                <wolve.dms.customviews.CInputForm
+                <com.lubsolution.store.customviews.CInputForm
                     android:id="@+id/add_product_volume"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
                     app:textHint="Khối lượng"
                     app:iconText="@string/icon_weight" />
 
-                <wolve.dms.customviews.CInputForm
+                <com.lubsolution.store.customviews.CInputForm
                     android:id="@+id/add_product_promotion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

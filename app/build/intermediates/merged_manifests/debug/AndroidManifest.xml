@@ -172,7 +172,7 @@
             android:theme="@style/FullScreen"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
-            android:name="com.lubsolution.store.activities.ShopActivity"
+            android:name="com.lubsolution.store.activities.ShopListActivity"
             android:label="@string/app_name"
             android:screenOrientation="unspecified"
             android:theme="@style/FullScreen"

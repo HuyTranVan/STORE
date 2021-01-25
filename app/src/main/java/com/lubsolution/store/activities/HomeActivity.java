@@ -95,6 +95,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void initialData() {
+        Util.getInstance().setCurrentActivity(this);
         swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorBlueDark));
         tvFullname.setText( User.getFullName());
         String role = User.getCurrentRoleString();
@@ -106,33 +107,34 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
 
         checkPermission();
 
-
     }
 
     private void createListItem() {
         HomeAdapter adapter = new HomeAdapter(HomeActivity.this);
         Util.createGridRV(rvItems, adapter, 3);
 
-//        loadCurrentData(new CallbackBoolean() {
-//            @Override
-//            public void onRespone(Boolean result) {
-//                //checkNewProductUpdated(null, 0, true);
-//            }
-//        },1);
-
-
         if (CustomSQL.getBoolean(Constants.LOGIN_SUCCESS)) {
             CustomSQL.setBoolean(Constants.LOGIN_SUCCESS, false);
+
+            swipeRefreshLayout.setRefreshing(true);
             loadCurrentData(new CallbackBoolean() {
                 @Override
                 public void onRespone(Boolean result) {
-                    //checkNewProductUpdated(null, 0, true);
+                    checkNewProductUpdated(new CallbackBoolean() {
+                        @Override
+                        public void onRespone(Boolean result) {
+                            suggestChangePassword();
+                        }
+                    }, 0, true);
+
+
                 }
-            },1);
+
+            },2);
 
 
         }else {
-            //checkNewProductUpdated(null, 1, true);
+            checkNewProductUpdated(null, 1, true);
 
         }
     }
@@ -178,9 +180,12 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
                 loadCurrentData(new CallbackBoolean() {
                     @Override
                     public void onRespone(Boolean result) {
-
+                        if (result){
+                            Util.showToast("Đồng bộ thành công");
+                        }
                     }
                 }, 1);
+
                 break;
 
 
@@ -237,12 +242,13 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
                 break;
 
             case 3:
-                choiceSetupItem();
+                Util.showToast("Chưa hỗ trợ");
 
                 break;
 
             case 4:
-                Util.showToast("Chưa hỗ trợ");
+                choiceSetupItem();
+
 
                 break;
 
@@ -263,14 +269,15 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
             @Override
             public void onResponse(BaseModel result, List<BaseModel> list) {
                 ProductGroup.saveProductGroupList(result.getJSONArray("ProductGroup"));
-                Vehicle.saveVehicleList(result.getJSONArray("Vehicle"));
+                Vehicle.saveBrandList(result.getJSONArray("Brands"));
+                Vehicle.saveVehicleList(result.getJSONArray("Vehicles"));
 
                 CustomSQL.setLong(Constants.LAST_PRODUCT_UPDATE, result.getLong("LastProductUpdate"));
-//                tvHaveNewProduct.setVisibility(View.GONE);
-//
-//                if (listener != null){
-//                    listener.onRespone(true);
-//                }
+                tvHaveNewProduct.setVisibility(View.GONE);
+
+                if (listener != null){
+                    listener.onRespone(true);
+                }
 
             }
 
@@ -283,39 +290,44 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void choiceSetupItem() {
-        CustomBottomDialog.choiceListObject("danh mục",
+        CustomBottomDialog.choiceListObject(null ,
                 Constants.homeSettingSetup(),
                 "text",
                 new CallbackObject() {
                     @Override
                     public void onResponse(BaseModel object) {
                         switch (object.getInt("position")) {
-                            case 0:
-                                if (CustomSQL.getBoolean(Constants.IS_ADMIN)) {
-                                    Transaction.gotoShopActivity();
-                                }
-                                break;
+//                            case 0:
+//                                if (CustomSQL.getBoolean(Constants.IS_ADMIN)) {
+//                                    Transaction.gotoShopActivity();
+//                                }
+//                                break;
 
-                            case 1:
+                            case 0:
                                 if (User.getCurrentRoleId() == Constants.ROLE_ADMIN) {
                                     //Transaction.gotoUserActivity(false);
                                 }
                                 break;
 
-                            case 2:
+                            case 1:
                                 if (User.getCurrentRoleId() == Constants.ROLE_ADMIN) {
                                     Transaction.gotoProductGroupActivity();
                                 }
                                 break;
 
-                            case 3:
+                            case 2:
                                 Transaction.gotoProductActivity();
                                 break;
 
-                            case 4:
+                            case 3:
                                 if (User.getCurrentRoleId() == Constants.ROLE_ADMIN) {
                                     Transaction.gotoVehicleActivity();
                                 }
+
+                                break;
+
+                            case 4:
+                                Transaction.gotoShopActivity();
 
                                 break;
 
@@ -352,41 +364,47 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
 
     }
 
-//    private void checkNewProductUpdated(CallbackListObject listenertempbill, CallbackListObject listenertempimport) {
-//        SystemConnect.getLastestProductUpdated(new CallbackCustom() {
-//            @Override
-//            public void onResponse(BaseModel result) {
-//                swipeRefreshLayout.setRefreshing(false);
-//                listenertempbill.onResponse(DataUtil.listTempBill(DataUtil.array2ListObject(result.getString("tempBills"))));
-//                listenertempimport.onResponse(DataUtil.filterListTempImport(DataUtil.array2ListObject(result.getString("tempImport"))));
-//
-//                if (result.getLong("lastProductUpdate") > CustomSQL.getLong(Constants.LAST_PRODUCT_UPDATE)) {
-//                    tvHaveNewProduct.setVisibility(View.VISIBLE);
-//
-//                    CustomCenterDialog.alertWithCancelButton("CÓ SẢN PHẨM MỚI",
-//                            "Đồng bộ danh mục sản phẩm với thiết bị của bạn",
-//                            "ĐỒNG Ý",
-//                            "HỦY",
-//                            new CallbackBoolean() {
-//                                @Override
-//                                public void onRespone(Boolean result) {
-//                                    if (result) {
-//                                        loadCurrentData();
-//                                    }
-//                                }
-//                            });
-//                } else {
-//                    tvHaveNewProduct.setVisibility(View.GONE);
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onError(String error) {
-//
-//            }
-//        }, false);
-//    }
+    private void checkNewProductUpdated(CallbackBoolean listener, int load, boolean redirect) {
+        long start = Util.TimeStamp1(Util.Current01MonthYear());
+        long end = Util.TimeStamp1(Util.Next01MonthYear());
+
+        BaseModel param = createGetParam(String.format(ApiUtil.PRODUCT_LASTEST() , start, end), false);
+        new GetPostMethod(param, new NewCallbackCustom() {
+            @Override
+            public void onResponse(BaseModel result, List<BaseModel> list) {
+                swipeRefreshLayout.setRefreshing(false);
+//                updateTempBillVisibility(DataUtil.listTempBill(DataUtil.array2ListObject(result.getString("tempBills"))));
+//                updateTempImportVisibility(DataUtil.filterListTempImport(DataUtil.array2ListObject(result.getString("tempImport"))));
+                //tvCash.setText(String.format("%s đ", Util.FormatMoney(result.getDouble("paymentInMonth"))));
+
+                if (result.getLong("lastProductUpdate") != null && result.getLong("lastProductUpdate") > CustomSQL.getLong(Constants.LAST_PRODUCT_UPDATE)) {
+                    tvHaveNewProduct.setVisibility(View.VISIBLE);
+                    CustomCenterDialog.alertWithButtonCanceled("Thông tin thay đổi",
+                            "Cài đặt hệ thống vừa được điều chỉnh! \n Đồng bộ lại hệ thống với thiết bị của bạn",
+                            "ĐỒNG Ý",
+                            true,
+                            null);
+
+                } else {
+                    tvHaveNewProduct.setVisibility(View.GONE);
+                }
+
+                if (listener != null){
+                    listener.onRespone(true);
+                }
+
+                if (redirect){
+                    //redirectOtherScreen();
+                }
+
+            }
+
+            @Override
+            public void onError(String error) {
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        }, load).execute();
+    }
 
 
 
@@ -408,7 +426,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
                         public void onRespone(Boolean result) {
                             if (result) {
                                 ActivityCompat.requestPermissions(context, new String[]{
-                                        Manifest.permission.CALL_PHONE,
+                                        //Manifest.permission.CALL_PHONE,
                                         Manifest.permission.WRITE_EXTERNAL_STORAGE,
                                         Manifest.permission.READ_EXTERNAL_STORAGE,
                                         Manifest.permission.CAMERA,
@@ -475,18 +493,19 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
 
     @Override
     public void onRefresh() {
+        checkNewProductUpdated(null, 0, false);
 //        checkNewProductUpdated(new CallbackListObject() {
 //            @Override
 //            public void onResponse(List<BaseModel> list) {
-//                updateTempBillVisibility(list);
+//                //updateTempBillVisibility(list);
 //            }
 //        }, new CallbackListObject() {
 //            @Override
 //            public void onResponse(List<BaseModel> list) {
-//                updateTempImportVisibility(list);
+//                //updateTempImportVisibility(list);
 //            }
 //        });
-//        loadOverView();
+        loadOverView();
     }
 
     protected boolean checkWarehouse() {
@@ -496,6 +515,26 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
             return false;
         } else {
             return true;
+        }
+    }
+
+    private void suggestChangePassword(){
+        if (User.getCurrentUser().hasKey("password") && CustomSQL.getString(Constants.USER_PASSWORD).equals("Aa123456")){
+            CustomCenterDialog.alertWithCancelButton("Đổi mật khẩu!",
+                    "Bạn đang sử dụng mật khẩu mặc định. Vui lòng đổi sang mật khẩu khác để bảo mật hơn!!!",
+                    "đồng ý",
+                    "lúc khác",
+                    new CallbackBoolean() {
+                        @Override
+                        public void onRespone(Boolean result) {
+                            if (result){
+                                changePassword();
+                            }
+                        }
+                    });
+
+        }else {
+            CustomSQL.removeKey(Constants.USER_PASSWORD);
         }
     }
 

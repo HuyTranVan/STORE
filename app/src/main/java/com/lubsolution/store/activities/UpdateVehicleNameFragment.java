@@ -81,35 +81,35 @@ public class UpdateVehicleNameFragment extends Fragment implements View.OnClickL
     }
 
     private void intitialData() {
-        String bundle = getArguments().getString(Constants.VEHICLENAME);
-        mVehicle = new BaseModel(getArguments().getString(Constants.VEHICLE));
-        if (bundle != null) {
-            tvDelete.setVisibility(Util.isAdmin()? View.VISIBLE : View.GONE);
-            btnSubmit.setText("CẬP NHẬT");
-            nameObject = new BaseModel(bundle);
-            brandObject = nameObject.getBaseModel("brand");
-            kindObject = nameObject.getBaseModel("kind");
-
-            edName.setText(nameObject.getString("name"));
-            edBrand.setText(brandObject.getString("name"));
-            edKind.setText(kindObject.getString("name"));
-
-            if (!Util.checkImageNull(nameObject.getString("image"))) {
-                Glide.with(UpdateVehicleNameFragment.this).load(nameObject.getString("image")).centerCrop().into(imgName);
-
-            } else {
-                Glide.with(this).load(R.drawable.ic_lub_empty).centerCrop().into(imgName);
-
-            }
-
-        } else {
-            btnSubmit.setText("TẠO MỚI");
-            nameObject = new BaseModel();
-            nameObject.put("id", 0);
-            brandObject = new BaseModel();
-            kindObject = new BaseModel();
-
-        }
+//        String bundle = getArguments().getString(Constants.VEHICLENAME);
+//        mVehicle = new BaseModel(getArguments().getString(Constants.VEHICLE));
+//        if (bundle != null) {
+//            tvDelete.setVisibility(Util.isAdmin()? View.VISIBLE : View.GONE);
+//            btnSubmit.setText("CẬP NHẬT");
+//            nameObject = new BaseModel(bundle);
+//            brandObject = nameObject.getBaseModel("brand");
+//            kindObject = nameObject.getBaseModel("kind");
+//
+//            edName.setText(nameObject.getString("name"));
+//            edBrand.setText(brandObject.getString("name"));
+//            edKind.setText(kindObject.getString("name"));
+//
+//            if (!Util.checkImageNull(nameObject.getString("image"))) {
+//                Glide.with(UpdateVehicleNameFragment.this).load(nameObject.getString("image")).centerCrop().into(imgName);
+//
+//            } else {
+//                Glide.with(this).load(R.drawable.ic_lub_empty).centerCrop().into(imgName);
+//
+//            }
+//
+//        } else {
+//            btnSubmit.setText("TẠO MỚI");
+//            nameObject = new BaseModel();
+//            nameObject.put("id", 0);
+//            brandObject = new BaseModel();
+//            kindObject = new BaseModel();
+//
+//        }
         edBrand.setDropdown(true, new CInputForm.ClickListener() {
             @Override
             public void onClick(View view) {
@@ -213,18 +213,18 @@ public class UpdateVehicleNameFragment extends Fragment implements View.OnClickL
                 new UploadCloudaryMethod(Util.getRealPathFromCaptureURI(imageChangeUri), new CallbackString() {
                     @Override
                     public void Result(String url) {
-                        updateProduct(url);
+                        updateVehicleName(url);
                     }
 
                 }).execute();
 
             } else {
                 if (nameObject.getInt("id") == 0) {
-                    updateProduct("");
+                    updateVehicleName("");
                 } else if (nameObject.getString("image").startsWith("http")) {
-                    updateProduct(nameObject.getString("image"));
+                    updateVehicleName(nameObject.getString("image"));
                 } else {
-                    updateProduct("");
+                    updateVehicleName("");
                 }
 
             }
@@ -234,7 +234,7 @@ public class UpdateVehicleNameFragment extends Fragment implements View.OnClickL
         }
     }
 
-    private void updateProduct(String urlImage) {
+    private void updateVehicleName(String urlImage) {
         BaseModel param = createPostParam(ApiUtil.VEHICLE_NEW(),
                 String.format(ApiUtil.VEHICLE_CREATE_PARAM,
                         nameObject.getInt("id") == 0 ? "" : "id=" + nameObject.getString("id") + "&",

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.lubsolution.store.R;
+import com.lubsolution.store.callback.CallbackInt;
 import com.lubsolution.store.callback.CallbackObject;
 import com.lubsolution.store.models.BaseModel;
 import com.lubsolution.store.utils.Util;
@@ -26,21 +27,23 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 
 public class VehicleBrandAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private List<BaseModel> mData = new ArrayList<>();
+    public List<BaseModel> mData = new ArrayList<>();
     private LayoutInflater mLayoutInflater;
     private Context mContext;
     private CallbackObject mListener;
+    private CallbackInt mSize;
     private final int VIEW_TYPE_ITEM = 0;
     private final int VIEW_TYPE_LOADING = 1;
 
-    public VehicleBrandAdapter(List<BaseModel> list, CallbackObject listener) {
+    public VehicleBrandAdapter(List<BaseModel> list, CallbackObject listener, CallbackInt size) {
         this.mLayoutInflater = LayoutInflater.from(Util.getInstance().getCurrentActivity());
         this.mContext = Util.getInstance().getCurrentActivity();
         this.mListener = listener;
-
+        this.mSize = size;
         this.mData = list;
-        mData.add(0,null);
 
+        //mSize.onResponse(list.size());
+        mData.add(0,null);
 
     }
 
@@ -151,6 +154,8 @@ public class VehicleBrandAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             mData.add(object);
             notifyItemChanged(mData.size());
         }
+
+        mSize.onResponse(mData.size() -1);
     }
 
 

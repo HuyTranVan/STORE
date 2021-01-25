@@ -13,11 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.lubsolution.store.R;
 import com.lubsolution.store.activities.BaseActivity;
-import com.lubsolution.store.adapter.VehicleBrandAdapter;
 import com.lubsolution.store.apiconnect.ApiUtil;
 import com.lubsolution.store.apiconnect.apiserver.GetPostMethod;
 import com.lubsolution.store.callback.CallbackBoolean;
 import com.lubsolution.store.callback.CallbackObject;
+import com.lubsolution.store.callback.CallbackString;
 import com.lubsolution.store.callback.NewCallbackCustom;
 import com.lubsolution.store.models.BaseModel;
 import com.lubsolution.store.models.User;
@@ -152,7 +152,9 @@ public class CustomCenterDialog {
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
                                 sDialog.dismissWithAnimation();
-                                callback.onRespone(true);
+                                if (callback != null){
+                                    callback.onRespone(true);
+                                }
                             }
                         });
                 dialog.setCanceledOnTouchOutside(cancel);
@@ -219,6 +221,8 @@ public class CustomCenterDialog {
             }
         });
     }
+
+
 
 //    public static void showDialogEditProduct(final BaseModel product, List<BaseModel> listBillDetail, final CallbackClickProduct callbackClickProduct){
 //        final Dialog dialogResult = CustomCenterDialog.showCustomDialog(R.layout.view_dialog_edit_product);
@@ -1011,7 +1015,6 @@ public class CustomCenterDialog {
             }
         });
 
-
     }
 
     public static void showDialogChangePass(String title, final CallbackBoolean mListener) {
@@ -1088,14 +1091,14 @@ public class CustomCenterDialog {
         tvTitle.setText(title);
         dialogResult.setCanceledOnTouchOutside(true);
 
-        VehicleBrandAdapter adapter = new VehicleBrandAdapter(users, new CallbackObject() {
-            @Override
-            public void onResponse(BaseModel object) {
-                dialogResult.dismiss();
-                mListener.onResponse(object);
-            }
-        });
-        Util.createLinearRV(rvUser, adapter);
+//        VehicleBrandAdapter adapter = new VehicleBrandAdapter(users, new CallbackObject() {
+//            @Override
+//            public void onResponse(BaseModel object) {
+//                dialogResult.dismiss();
+//                mListener.onResponse(object);
+//            }
+//        });
+//        Util.createLinearRV(rvUser, adapter);
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1105,6 +1108,76 @@ public class CustomCenterDialog {
         });
 
     }
+
+    public static void showDialogNewAdmin(String title, int distributor_id, int role, boolean isCreateAdmin, final CallbackObject mListener) {
+        final Dialog dialogResult = CustomCenterDialog.showCustomDialog(R.layout.view_dialog_new_admin);
+
+        final Button btnCancel = (Button) dialogResult.findViewById(R.id.btn_cancel);
+        final Button btnSubmit = (Button) dialogResult.findViewById(R.id.btn_submit);
+        TextView tvTitle = (TextView) dialogResult.findViewById(R.id.dialog_newadmin_title);
+        final EditText edName = (EditText) dialogResult.findViewById(R.id.dialog_newadmin_name);
+        final EditText edPhone = (EditText) dialogResult.findViewById(R.id.dialog_newadmin_phone);
+
+        btnCancel.setText("QUAY LẠI");
+        btnSubmit.setText("TẠO MỚI");
+        tvTitle.setText(title);
+
+        Util.showKeyboardDelay(edPhone);
+        Util.textPhoneEvent(edPhone, new CallbackString() {
+            @Override
+            public void Result(String s) {
+
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogResult.dismiss();
+
+            }
+        });
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Util.hideKeyboard(v);
+                if (Util.isEmpty(edName)){
+                    Util.showToast("Tên hiển thị không để trống");
+
+                }else if (Util.isPhoneFormat(edPhone.getText().toString()) == null){
+                    Util.showToast("Sai số điện thoại");
+
+                }else {
+                    BaseModel param = createPostParam(ApiUtil.ADMIN_NEW(),
+                            String.format(ApiUtil.ADMIN_CREATE_PARAM,
+                                    Util.encodeString(edName.getText().toString()),
+                                    Util.getPhoneValue(edPhone),
+                                    Util.encodeString(isCreateAdmin? "KHO TỔNG" : edName.getText().toString().substring(edName.getText().toString().lastIndexOf(" ") + 1)),
+                                    distributor_id,
+                                    role),
+                            false,
+                            false);
+                    new GetPostMethod(param, new NewCallbackCustom() {
+                        @Override
+                        public void onResponse(BaseModel result, List<BaseModel> list) {
+                            dialogResult.dismiss();
+                            mListener.onResponse(result);
+
+                        }
+
+                        @Override
+                        public void onError(String error) {
+                            dialogResult.dismiss();
+                        }
+                    },1).execute();
+
+                }
+
+            }
+        });
+
+    }
+
 
 
 }

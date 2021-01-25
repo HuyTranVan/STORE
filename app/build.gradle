@@ -122,10 +122,12 @@ dependencies {
 
     implementation project(':dialog')
     implementation project(path: ':mpchart')
-    implementation project(path: ':simplesearchview')
+    //implementation project(path: ':simplesearchview')
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'junit:junit:4.12'
     //play service
+
+    implementation 'com.google.android.material:material:1.2.1'
     implementation 'com.android.support:appcompat-v7:29.0.0'
     implementation 'com.android.support:design:29.0.0'
     implementation 'com.android.support:cardview-v7:29.0.0'

@@ -19,7 +19,7 @@ public class ApiUtil {
 //    public final static String BASE_URL = BuildConfig.DEBUG_FLAG ? "http://192.168.1.29/" : BuildConfig.SERVER_URL;
     public final static String BASE_URL = BuildConfig.SERVER_URL;
     public final static String DMS_HOST_LINK(String id){
-        return "http://dmslub.com?id=" + id;
+        return "http://storelub.com?id=" + id;
     }
     public final static String MAP_API = "https://maps.googleapis.com/maps/api/";
 
@@ -33,8 +33,12 @@ public class ApiUtil {
     public final static String SCANNER_DISTRIBUTOR_TAB = "DISTRIBUTOR!A1:z";
     public final static String SCANNER_CODE_TAB = "CODE!A%d:z";
 
-    public final static String PROVINCES = BASE_URL + "store/token/util/provinces";
-    public final static String DISTRICTS = BASE_URL + "store/token/util/districts?provinceid=";
+    public final static String PROVINCES(){
+        return BASE_URL + "store/token/util/provinces";
+    }
+    public final static String DISTRICTS(){
+        return BASE_URL + "store/token/util/districts?provinceid=";
+    }
 //Login
     public final static String LOGIN_PARAM = "phone=%s&password=%s&fcm_token=%s";
     public final static String LOGIN(){
@@ -54,6 +58,7 @@ public class ApiUtil {
     }
     public final static String VEHICLE_CREATE_PARAM = "%sname=%s&brand_id=%d&kind_id=%d&image=%s";
     public final static String VEHICLE_NEW(){ return BASE_URL + "store/token/vehicle/VehicleNew"; }
+    public final static String VEHICLE_DELETE(){ return BASE_URL + "store/token/vehicle/VehicleDelete?id="; }
 
     public final static String BRAND_CREATE_PARAM = "%sname=%s&image=%s";
     public final static String BRAND_NEW(){ return BASE_URL + "store/token/vehicle/BrandNew"; }
@@ -130,6 +135,11 @@ public class ApiUtil {
         return BASE_URL + "store/token/user/UserNew";
     }
 
+    public final static String ADMIN_CREATE_PARAM = "displayName=%s&phone=%s&warehouse_name=%s&shop_id=%d&role=%d";
+    public final static String ADMIN_NEW(){
+        return BASE_URL + "store/token/user/UserNewAdmin";
+    }
+
     public final static String USER_CHANGE_PASS_PARAM = "id=%d&current_password=%s&new_password=%s";
     public final static String USER_CHANGE_PASS(){
         return BASE_URL + "store/token/user/UserChangePassword";
@@ -140,26 +150,13 @@ public class ApiUtil {
 
     public final static String USER_DEFAULT_PASS_PARAM = "user_id=%d";
 
-    public final static String STATUS(){
-        return BASE_URL + "store/token/statu/StatusList";
+    public final static String USER_ACTIVE(){
+        return BASE_URL + "store/token/user/UserActiveNew";
     }
-    public final static String STATUS_CREATE_PARAM = "%sname=%s&color=%s&defaultStatus=%s";
-
-    public final static String STATUS_NEW(){
-        return BASE_URL + "store/token/statu/StatusNew";
-    }
-    public final static String STATUS_DELETE(){
-        return BASE_URL + "store/token/statu/StatusDelete?id=";
-    }
+    public final static String USER_ACTIVE_PARAM = "user_id=%d&active=%d";
     
     public final static String CUSTOMERS(int page, int size){
         return BASE_URL + "store/token/customer/CustomerList" + String.format(ApiUtil.DEFAULT_RANGE, page, size);
-    }
-
-    public final static String CUSTOMERS_NEAREST(String lat, String lng, int page, int size){
-        return BASE_URL + "store/token/customer/CustomerNearest"
-                + String.format(ApiUtil.DEFAULT_RANGE, page, size)
-                + String.format("&lat=%s&lng=%s", lat, lng);
     }
 
     public final static String CUSTOMER_ORDERED(int user_id, int page, int size){
@@ -168,17 +165,17 @@ public class ApiUtil {
                 + "&user_id=" + user_id;
     }
 
-    public final static String CUSTOMER_CREATE_PARAM = "%sname=%s&signBoard=%s&address=%s&phone=%s&street=%s&note=%s&district=%s&province=%s&lat=%s&lng=%s&volumeEstimate=%s&shopType=%s&status_id=%d&distributor_id=%s&checkinCount=%d";
+    public final static String CUSTOMER_CREATE_PARAM = "%sname=%s&address=%s&phone=%s&note=%s&district_id=%d&province_id=%d&kilomet=%d&shop_id=%d&plate_number=%s&vehicle_id=%d";
     public final static String CUSTOMER_NEW(){
         return BASE_URL + "store/token/customer/CustomerNew";
     }
-
+    public final static String TEMP_CUSTOMER_DELETE(){
+        return BASE_URL + "store/token/customer/TempCustomerDelete?id=";
+    }
 
     public final static String CUSTOMERS_HAVEDEBT = BASE_URL + "store/token/customer/CustomerHaveDebtList";
     //public final static String CUSTOMER_NEW = BASE_URL + "store/token/customer/CustomerNew";
-    public final static String CUSTOMER_DELETE(){
-        return BASE_URL + "store/token/customer/CustomerDelete?id=";
-    }
+
 
     public final static String CUSTOMER_GETDETAIL(){
         return BASE_URL + "store/token/customer/CustomerDetail?id=";
@@ -195,7 +192,10 @@ public class ApiUtil {
     //public final static String CUSTOMER_ORDERED = BASE_URL + "store/token/customer/CustomerOrderedList";
 
     public final static String SHOP_DETAIL(){ return BASE_URL + "store/token/shop/ShopDetail?id="; }
-    public final static String SHOP_CREATE_PARAM = "%scompany=%s&address=%s&phone=%s&website=%s&thanks=%s&image=%s";
+    public final static String SHOPS(){
+        return BASE_URL + "store/token/shop/ShopList";
+    }
+    public final static String SHOP_CREATE_PARAM = "%sname=%s&province_id=%d&district_id=%d&company=%s&address=%s&phone=%s&website=%s&thanks=%s&image=%s";
     public final static String SHOP_NEW(){ return BASE_URL + "store/token/shop/ShopNew"; }
 
     public final static String SCHECKIN_CREATE_PARAM = "customer_id=%d&rating=%d&note=%s&user_id=%d&nextVisit=%d&meetOwner=%d";
@@ -205,6 +205,10 @@ public class ApiUtil {
     public final static String CHECKIN_DELETE(){
         return BASE_URL + "store/token/customer/CheckinDelete?id=";
     }
+
+    //ACTIVE
+    public final static String ACTIVE_CREATE_PARAM = "shop_id=%d&to=%s";
+    public final static String ACTIVE_NEW(){ return BASE_URL + "store/token/shop/ActiveNew"; }
 
 
     public final static String CATEGORIES(){

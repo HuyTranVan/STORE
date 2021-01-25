@@ -3,7 +3,6 @@ package com.lubsolution.store.models;
 import com.lubsolution.store.utils.Constants;
 import com.lubsolution.store.utils.CustomSQL;
 import com.lubsolution.store.utils.DataUtil;
-import com.lubsolution.store.utils.Util;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,6 +13,8 @@ import java.util.List;
 
 public class Vehicle extends BaseModel{
     static List<BaseModel> mListVehicles = null;
+    static List<BaseModel> mListBrand = null;
+
 
     public Vehicle() {
         jsonObject = new JSONObject();
@@ -37,7 +38,7 @@ public class Vehicle extends BaseModel{
     }
 
     public static List<String> getBrandListString(){
-        List<BaseModel> brands = DataUtil.array2ListObject(CustomSQL.getString(Constants.VEHICLEBRAND_LIST));
+        List<BaseModel> brands = DataUtil.array2ListObject(CustomSQL.getString(Constants.BRAND_LIST));
         List<String> results = new ArrayList<>();
         for (int i=0; i<brands.size(); i++){
             results.add(brands.get(i).getString("name"));
@@ -47,84 +48,75 @@ public class Vehicle extends BaseModel{
         return results;
     }
 
-//    public static List<String> getBrandList(List<BaseModel> brands){
-//        //List<BaseModel> brands = DataUtil.array2ListObject(CustomSQL.getString(Constants.VEHICLEBRAND_LIST));
-//        List<String> results = new ArrayList<>();
-//        for (int i=0; i<brands.size(); i++){
-//            results.add(brands.get(i).getString("name"));
-//
-//
-//        }
-//        return results;
-//    }
+    public static List<String> getVehicleList(List<BaseModel> brands){
+        //List<BaseModel> brands = DataUtil.array2ListObject(CustomSQL.getString(Constants.VEHICLEBRAND_LIST));
+        List<String> results = new ArrayList<>();
+        for (int i=0; i<brands.size(); i++){
+            results.add(brands.get(i).getString("name"));
 
-//    public static List<String> getBrandList(List<BaseModel> brands){
-//        //List<BaseModel> brands = DataUtil.array2ListObject(CustomSQL.getString(Constants.VEHICLEBRAND_LIST));
-//        List<String> results = new ArrayList<>();
-//        for (int i=0; i<brands.size(); i++){
-//            results.add(brands.get(i).getString("name"));
-//
-//
-//        }
-//        return results;
-//    }
 
-    public static void saveVehicleList(JSONArray vehiclebrand) {
-        List<BaseModel> groups = DataUtil.array2ListBaseModel(vehiclebrand);
-        CustomSQL.setString(Constants.VEHICLEBRAND_LIST, vehiclebrand.toString());
+        }
+        return results;
+    }
 
-        List<BaseModel> mProducts = new ArrayList<>();
-//        try {
-            for (int i = 0; i < groups.size(); i++) {
-                mProducts.addAll(groups.get(i).getList("vehicles"));
-//                JSONObject object = groups.getJSONObject(i);
-//                JSONArray arrayProduct = object.getJSONArray("product");
-//
-//                for (int ii = 0; ii < arrayProduct.length(); ii++) {
-//                    mProducts.add(new BaseModel(arrayProduct.getJSONObject(ii)));
-//                }
-
+    public static List<BaseModel> getBrandList(BaseModel brand){
+        List<BaseModel> vehicles = CustomSQL.getListObject(Constants.VEHICLE_LIST);
+        List<BaseModel> results = new ArrayList<>();
+        for (int i=0; i<vehicles.size(); i++){
+            if (brand.getInt("id") == vehicles.get(i).getInt("brand_id")){
+                results.add(vehicles.get(i));
             }
 
-            Util.getInstance().stopLoading(true);
-            CustomSQL.setListBaseModel(Constants.PRODUCT_LIST, mProducts);
 
-//            new DownloadImageMethod(mProducts, "image", "PRODUCT", new CallbackListObject() {
-//                @Override
-//                public void onResponse(List<BaseModel> list) {
-//
-//                }
-//            }).execute();
-//
-//
-//        } catch (JSONException e) {
-//
-//        }
+
+        }
+        return results;
+    }
 
 
 
+    public static void saveVehicleList(JSONArray array){
+        CustomSQL.setString(Constants.VEHICLE_LIST, array.toString());
         mListVehicles = null;
     }
 
-//    public static List<BaseModel> getProductGroupList() {
-//        List<BaseModel> mProductGroups = new ArrayList<>();
+    public static void saveBrandList(JSONArray brands) {
+        CustomSQL.setString(Constants.BRAND_LIST, brands.toString());
+       //List<BaseModel> groups = DataUtil.array2ListBaseModel(vehiclebrand);
+        mListBrand = null;
 //
-//        if (mListProductGroups == null) {
-//            try {
-//                JSONArray array = new JSONArray(CustomSQL.getString(Constants.PRODUCTGROUP_LIST));
-//                for (int i = 0; i < array.length(); i++) {
-//                    BaseModel productGroup = new BaseModel(array.getJSONObject(i));
-//                    mProductGroups.add(productGroup);
-//                }
+//        List<BaseModel> mProducts = new ArrayList<>();
+////        try {
+//            for (int i = 0; i < groups.size(); i++) {
+//                mProducts.addAll(groups.get(i).getList("vehicles"));
+////                JSONObject object = groups.getJSONObject(i);
+////                JSONArray arrayProduct = object.getJSONArray("product");
+////
+////                for (int ii = 0; ii < arrayProduct.length(); ii++) {
+////                    mProducts.add(new BaseModel(arrayProduct.getJSONObject(ii)));
+////                }
 //
-//            } catch (JSONException e) {
-//                return mProductGroups;
 //            }
 //
-//        }
+//            Util.getInstance().stopLoading(true);
+//            CustomSQL.setListBaseModel(Constants.PRODUCT_LIST, mProducts);
 //
-//        DataUtil.sortProductGroup(mProductGroups, false);
-//        return mProductGroups;
-//    }
+////            new DownloadImageMethod(mProducts, "image", "PRODUCT", new CallbackListObject() {
+////                @Override
+////                public void onResponse(List<BaseModel> list) {
+////
+////                }
+////            }).execute();
+////
+////
+////        } catch (JSONException e) {
+////
+//        }
+
+
+
+
+
+    }
 
 }
