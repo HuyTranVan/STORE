@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchContainer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        tools:layout_height="?android:attr/actionBarSize">
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="Nhập nội dung tìm kiếm"
+            android:imeOptions="actionSearch"
+            android:inputType="textNoSuggestions"
+            android:lines="1"
+            android:textColor="@color/black_text_color"
+            android:textColorHint="@color/black_text_color_hint"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toStartOf="@id/buttonClear"
+            app:layout_constraintStart_toEndOf="@id/buttonBack" />
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/buttonBack"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:tint="?attr/colorPrimary"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:srcCompat="@drawable/ic_arrow_back_black_18dp" />-->
+
+        <ImageView
+            android:id="@+id/buttonBack"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_arrow_back_black_18dp"
+            android:padding="@dimen/_8sdp"
+            android:background="@drawable/btn_transparent"
+            android:tint="?attr/colorPrimaryDark"
+            tools:ignore="MissingConstraints"
+            tools:layout_width="?android:attr/actionBarSize"/>
+
+        <ImageView
+            android:id="@+id/buttonVoice"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_mic_black_18"
+            android:padding="@dimen/_8sdp"
+            android:background="@drawable/btn_transparent"
+            android:tint="?attr/colorPrimaryDark"
+            tools:ignore="MissingConstraints"
+            tools:layout_width="?android:attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/buttonClear"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_close_black_18"
+            android:padding="@dimen/_8sdp"
+            android:background="@drawable/btn_transparent"
+            android:tint="?attr/colorPrimaryDark"
+            tools:ignore="MissingConstraints"
+            tools:layout_width="?android:attr/actionBarSize"
+            app:layout_constraintEnd_toStartOf="@id/buttonVoice"
+            tools:visibility="visible"
+            android:visibility="gone"/>
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/buttonVoice"-->
+<!--            style="@style/SearchViewIcon"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:contentDescription="@string/action_voice_search"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:srcCompat="@drawable/ic_voice_search_black_24dp" />-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/buttonClear"-->
+<!--            style="@style/SearchViewIcon"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:contentDescription="@string/action_clear_search"-->
+<!--            android:visibility="gone"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/buttonVoice"-->
+<!--            app:srcCompat="@drawable/ic_close_black_24dp"-->
+<!--            tools:visibility="visible" />-->
+
+        <View
+            android:id="@+id/bottomLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#0D000000"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingRight="@dimen/_5sdp"/>
+
+</FrameLayout>

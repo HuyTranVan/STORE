@@ -86,18 +86,6 @@ public class ViewpagerMultiListAdapter extends PagerAdapter {
             }
         });
 
-//        Util.textEvent(edSearch, new CallbackString() {
-//            @Override
-//            public void Result(String s) {
-//                tvIconSearch.setText(Util.isEmpty(s) ? mContext.getResources().getString(R.string.icon_search) : mContext.getResources().getString(R.string.icon_x));
-//                if (mListener != null){
-//                    mListener.onRespone(s, position);
-//                }
-//
-//
-//            }
-//        });
-
         tvIconSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -116,7 +116,10 @@ public class ProductActivity extends BaseActivity implements View.OnClickListene
     @Override
     public void onBackPressed() {
         Fragment mFragment = getSupportFragmentManager().findFragmentById(R.id.product_parent);
-        if (mFragment != null && mFragment instanceof NewUpdateProductFragment) {
+        if (Util.getInstance().isLoading()){
+            Util.getInstance().stopLoading(true);
+
+        }else if (mFragment != null && mFragment instanceof UpdateProductFragment) {
             getSupportFragmentManager().popBackStack();
 
         } else {
@@ -172,7 +175,7 @@ public class ProductActivity extends BaseActivity implements View.OnClickListene
     }
 
     private void openFragmentNewProduct(String product) {
-        NewUpdateProductFragment groupFragment = new NewUpdateProductFragment();
+        UpdateProductFragment groupFragment = new UpdateProductFragment();
         Bundle bundle = new Bundle();
         bundle.putString(Constants.PRODUCT, product);
         changeFragment(groupFragment, bundle, true);
@@ -223,21 +226,19 @@ public class ProductActivity extends BaseActivity implements View.OnClickListene
         for (int i = 0; i < listproductgroup.size(); i++) {
             TabLayout.Tab tab = tabLayout.getTabAt(i);
             View customView = LayoutInflater.from(this).inflate(R.layout.view_tab_default, null);
-            //LinearLayout tabParent =  customView.findViewById(R.id.tabParent);
             TextView tabTextTitle = (TextView) customView.findViewById(R.id.tabNotify);
             TextView textTitle = (TextView) customView.findViewById(R.id.tabTitle);
-
             textTitle.setText(listproductgroup.get(i).getString("name"));
             tabTextTitle.setVisibility(View.GONE);
 
-//            if (listadapter.get(i).getItemCount() <=0){
-//                tabTextTitle.setVisibility(View.GONE);
-//            }else {
-//                tabTextTitle.setVisibility(View.VISIBLE);
-//                tabTextTitle.setText(String.valueOf(listadapter.get(i).getItemCount()));
-//            }
+            if (listadapter.get(i).getItemCount() <=0){
+                tabTextTitle.setVisibility(View.GONE);
+            }else {
+                tabTextTitle.setVisibility(View.VISIBLE);
+                tabTextTitle.setText(String.valueOf(listadapter.get(i).getItemCount()));
+            }
 
-//
+
 
             tab.setCustomView(customView);
 

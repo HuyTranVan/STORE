@@ -16,7 +16,10 @@ import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.speech.RecognizerIntent;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.style.BackgroundColorSpan;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -26,7 +29,7 @@ import android.view.ViewTreeObserver;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -36,18 +39,17 @@ import androidx.annotation.NonNull;
 import androidx.core.widget.ImageViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ferfalk.simplesearchview.SimpleOnTabSelectedListener;
-import com.ferfalk.simplesearchview.SimpleTextWatcher;
-import com.ferfalk.simplesearchview.utils.ContextUtils;
-import com.ferfalk.simplesearchview.utils.DimensUtils;
-import com.ferfalk.simplesearchview.utils.EditTextReflectionUtils;
-import com.ferfalk.simplesearchview.utils.SimpleAnimationListener;
-import com.ferfalk.simplesearchview.utils.SimpleAnimationUtils;
 import com.google.android.material.tabs.TabLayout;
 import com.lubsolution.store.R;
 import com.lubsolution.store.callback.CallbackObject;
+import com.lubsolution.store.callback.CallbackString;
+import com.lubsolution.store.libraries.searchview.utils.ContextUtils;
+import com.lubsolution.store.libraries.searchview.utils.DimensUtils;
+import com.lubsolution.store.libraries.searchview.utils.EditTextReflectionUtils;
+import com.lubsolution.store.libraries.searchview.utils.SimpleAnimationListener;
+import com.lubsolution.store.libraries.searchview.utils.SimpleAnimationUtils;
 import com.lubsolution.store.models.BaseModel;
-import com.lubsolution.store.utils.CustomBottomDialog;
+import com.lubsolution.store.utils.DataUtil;
 import com.lubsolution.store.utils.Util;
 
 import java.lang.annotation.Retention;
@@ -91,10 +93,12 @@ public class SimpleSearchView extends FrameLayout {
 
     private ViewGroup searchContainer;
     private EditText searchEditText;
-    private ImageButton backButton;
-    private ImageButton clearButton;
-    private ImageButton voiceButton;
+    private ImageView backButton, clearButton, voiceButton;
     private RecyclerView rvItem;
+    private List<BaseModel> mList;
+    private Customer_SearchAdapter adapter;
+    private CallbackObject mListener ;
+    private CallbackString mPhone ;
     private View bottomLine;
 
     private TabLayout tabLayout;
@@ -130,86 +134,86 @@ public class SimpleSearchView extends FrameLayout {
     }
 
     private void inflate() {
-        LayoutInflater.from(context).inflate(com.ferfalk.simplesearchview.R.layout.search_view, this, true);
+        LayoutInflater.from(context).inflate(R.layout.search_view, this, true);
 
-        searchContainer = findViewById(com.ferfalk.simplesearchview.R.id.searchContainer);
-        searchEditText = findViewById(com.ferfalk.simplesearchview.R.id.searchEditText);
-        backButton = findViewById(com.ferfalk.simplesearchview.R.id.buttonBack);
-        clearButton = findViewById(com.ferfalk.simplesearchview.R.id.buttonClear);
-        voiceButton = findViewById(com.ferfalk.simplesearchview.R.id.buttonVoice);
-        bottomLine = findViewById(com.ferfalk.simplesearchview.R.id.bottomLine);
-        rvItem = findViewById(com.ferfalk.simplesearchview.R.id.list_item);
+        searchContainer = findViewById(R.id.searchContainer);
+        searchEditText = findViewById(R.id.searchEditText);
+        backButton = findViewById(R.id.buttonBack);
+        clearButton = findViewById(R.id.buttonClear);
+        voiceButton = findViewById(R.id.buttonVoice);
+        bottomLine = findViewById(R.id.bottomLine);
+        rvItem = findViewById(R.id.list_item);
     }
 
     private void initStyle(AttributeSet attrs, int defStyleAttr) {
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, com.ferfalk.simplesearchview.R.styleable.SimpleSearchView, defStyleAttr, 0);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SimpleSearchView, defStyleAttr, 0);
         if (typedArray == null) {
             setCardStyle(style);
             return;
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_type)) {
-            setCardStyle(typedArray.getInt(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_type, style));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_type)) {
+            setCardStyle(typedArray.getInt(R.styleable.SimpleSearchView_type, style));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_backIconAlpha)) {
-            setBackIconAlpha(typedArray.getFloat(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_backIconAlpha, BACK_ICON_ALPHA_DEFAULT));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_backIconAlpha)) {
+            setBackIconAlpha(typedArray.getFloat(R.styleable.SimpleSearchView_backIconAlpha, BACK_ICON_ALPHA_DEFAULT));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_iconsAlpha)) {
-            setIconsAlpha(typedArray.getFloat(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_iconsAlpha, ICONS_ALPHA_DEFAULT));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_iconsAlpha)) {
+            setIconsAlpha(typedArray.getFloat(R.styleable.SimpleSearchView_iconsAlpha, ICONS_ALPHA_DEFAULT));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_backIconTint)) {
-            setBackIconColor(typedArray.getColor(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_backIconTint, ContextUtils.getPrimaryColor(context)));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_backIconTint)) {
+            setBackIconColor(typedArray.getColor(R.styleable.SimpleSearchView_backIconTint, ContextUtils.getPrimaryColor(context)));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_iconsTint)) {
-            setIconsColor(typedArray.getColor(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_iconsTint, Color.BLACK));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_iconsTint)) {
+            setIconsColor(typedArray.getColor(R.styleable.SimpleSearchView_iconsTint, Color.BLACK));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_cursorColor)) {
-            setCursorColor(typedArray.getColor(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_cursorColor, ContextUtils.getAccentColor(context)));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_cursorColor)) {
+            setCursorColor(typedArray.getColor(R.styleable.SimpleSearchView_cursorColor, ContextUtils.getAccentColor(context)));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_hintColor)) {
-            setHintTextColor(typedArray.getColor(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_hintColor, getResources().getColor(com.ferfalk.simplesearchview.R.color.default_textColorHint)));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_hintColor)) {
+            setHintTextColor(typedArray.getColor(R.styleable.SimpleSearchView_hintColor, getResources().getColor(R.color.black_text_color_hint)));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_searchBackground)) {
-            setSearchBackground(typedArray.getDrawable(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_searchBackground));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_searchBackground)) {
+            setSearchBackground(typedArray.getDrawable(R.styleable.SimpleSearchView_searchBackground));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_searchBackIcon)) {
-            setBackIconDrawable(typedArray.getDrawable(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_searchBackIcon));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_searchBackIcon)) {
+            setBackIconDrawable(typedArray.getDrawable(R.styleable.SimpleSearchView_searchBackIcon));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_searchClearIcon)) {
-            setClearIconDrawable(typedArray.getDrawable(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_searchClearIcon));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_searchClearIcon)) {
+            setClearIconDrawable(typedArray.getDrawable(R.styleable.SimpleSearchView_searchClearIcon));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_searchVoiceIcon)) {
-            setVoiceIconDrawable(typedArray.getDrawable(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_searchVoiceIcon));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_searchVoiceIcon)) {
+            setVoiceIconDrawable(typedArray.getDrawable(R.styleable.SimpleSearchView_searchVoiceIcon));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_voiceSearch)) {
-            enableVoiceSearch(typedArray.getBoolean(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_voiceSearch, allowVoiceSearch));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_voiceSearch)) {
+            enableVoiceSearch(typedArray.getBoolean(R.styleable.SimpleSearchView_voiceSearch, allowVoiceSearch));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_voiceSearchPrompt)) {
-            setVoiceSearchPrompt(typedArray.getString(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_voiceSearchPrompt));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_voiceSearchPrompt)) {
+            setVoiceSearchPrompt(typedArray.getString(R.styleable.SimpleSearchView_voiceSearchPrompt));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_android_hint)) {
-            setHint(typedArray.getString(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_android_hint));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_android_hint)) {
+            setHint(typedArray.getString(R.styleable.SimpleSearchView_android_hint));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_android_inputType)) {
-            setInputType(typedArray.getInt(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_android_inputType, EditorInfo.TYPE_TEXT_FLAG_NO_SUGGESTIONS));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_android_inputType)) {
+            setInputType(typedArray.getInt(R.styleable.SimpleSearchView_android_inputType, EditorInfo.TYPE_TEXT_FLAG_NO_SUGGESTIONS));
         }
 
-        if (typedArray.hasValue(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_android_textColor)) {
-            setTextColor(typedArray.getColor(com.ferfalk.simplesearchview.R.styleable.SimpleSearchView_android_textColor, getResources().getColor(com.ferfalk.simplesearchview.R.color.default_textColor)));
+        if (typedArray.hasValue(R.styleable.SimpleSearchView_android_textColor)) {
+            setTextColor(typedArray.getColor(R.styleable.SimpleSearchView_android_textColor, getResources().getColor(R.color.black_text_color)));
         }
 
         typedArray.recycle();
@@ -827,14 +831,13 @@ public class SimpleSearchView extends FrameLayout {
     }
 
 
-    static class SavedState extends BaseSavedState {
+    static class SavedState extends BaseSavedState{
         //required field that makes Parcelables from a Parcel
         public static final Creator<SavedState> CREATOR =
                 new Creator<SavedState>() {
                     public SavedState createFromParcel(Parcel in) {
                         return new SavedState(in);
                     }
-
                     public SavedState[] newArray(int size) {
                         return new SavedState[size];
                     }
@@ -918,19 +921,42 @@ public class SimpleSearchView extends FrameLayout {
 
     }
 
+    public void updateListItem(List<BaseModel> list){
+        mList = new ArrayList<>(list);
+        adapter = new Customer_SearchAdapter(mList, new CallbackObject() {
+            @Override
+            public void onResponse(BaseModel object) {
+                mListener.onResponse(object);
+            }
+        }, new CallbackString() {
+            @Override
+            public void Result(String s) {
+                mPhone.Result(s);
+
+            }
+        });
+        Util.createLinearRV(rvItem, adapter);
+
+    }
+
+    public void setOnItemClick(CallbackObject listener, CallbackString phonelistener){
+        this.mListener = listener;
+        this.mPhone = phonelistener;
+    }
+
     public class Customer_SearchAdapter extends RecyclerView.Adapter<Customer_SearchAdapter.CustomerSearchViewHolder> {
         private List<BaseModel> mData = new ArrayList<>();
         private LayoutInflater mLayoutInflater;
         private Context mContext;
         private CallbackObject mListener;
-        private CustomBottomDialog.FourMethodListener mListerner;
+        private CallbackString mPhone;
 
-        public Customer_SearchAdapter(List<BaseModel> data, CallbackObject listener) {
+        public Customer_SearchAdapter(List<BaseModel> data, CallbackObject listener, CallbackString phone) {
             this.mLayoutInflater = LayoutInflater.from(Util.getInstance().getCurrentActivity());
             this.mData = data;
             this.mContext = Util.getInstance().getCurrentActivity();
             this.mListener = listener;
-
+            this.mPhone = phone;
         }
 
         @Override
@@ -943,12 +969,20 @@ public class SimpleSearchView extends FrameLayout {
         public void onBindViewHolder(final CustomerSearchViewHolder holder, final int position) {
             holder.tvLine.setVisibility(position == mData.size() - 1 ? GONE : VISIBLE);
 
+            holder.tvIcon.setText(Util.getIcon(R.string.icon_plate));
             holder.tvMainText.setText(Util.FormatPlate(mData.get(position).getString("plate_number")).replace(" ", "\n"));
+            String highligh =  Util.FormatPlate(searchEditText.getText().toString());
+            DataUtil.setHighLightedText(holder.tvMainText, highligh);
             holder.tvSecondText.setText(String.format("%s %s",
                     mData.get(position).getBaseModel("vehicle").getBaseModel("brand").getString("name"),
                     mData.get(position).getBaseModel("vehicle").getString("name")));
-            holder.tvPhone.setText(Util.FormatPhone(mData.get(position).getString("phone")));
-
+            holder.tvPhone.setVisibility(Util.isPhoneFormat(mData.get(position).getString("phone")) != null ? VISIBLE : GONE);
+            holder.tvPhone.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mPhone.Result(mData.get(position).getString("phone"));
+                }
+            });
         }
 
         @Override
@@ -979,5 +1013,21 @@ public class SimpleSearchView extends FrameLayout {
 
         }
 
+    }
+
+    public  void setHighLightedText(TextView tv, String textToHighlight) {
+        String tvt = tv.getText().toString();
+        int ofe = tvt.indexOf(textToHighlight, 0);
+        Spannable wordToSpan = new SpannableString(tv.getText());
+        for (int ofs = 0; ofs < tvt.length() && ofe != -1; ofs = ofe + 1) {
+            ofe = tvt.indexOf(textToHighlight, ofs);
+            if (ofe == -1)
+                break;
+            else {
+                // set color here
+                wordToSpan.setSpan(new BackgroundColorSpan(0xFFFFFF00), ofe, ofe + textToHighlight.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                tv.setText(wordToSpan, TextView.BufferType.SPANNABLE);
+            }
+        }
     }
 }

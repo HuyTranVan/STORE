@@ -31,6 +31,7 @@ import com.lubsolution.store.callback.CallbackObject;
 import com.lubsolution.store.callback.NewCallbackCustom;
 import com.lubsolution.store.models.BaseModel;
 import com.lubsolution.store.models.ProductGroup;
+import com.lubsolution.store.models.Shop;
 import com.lubsolution.store.models.User;
 import com.lubsolution.store.models.Vehicle;
 import com.lubsolution.store.utils.Constants;
@@ -50,17 +51,17 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by macos on 9/15/17.
  */
 
-public class HomeActivity extends BaseActivity implements View.OnClickListener, CallbackClickAdapter, SwipeRefreshLayout.OnRefreshListener {
+public class HomeActivity extends BaseActivity implements View.OnClickListener, CallbackClickAdapter, SwipeRefreshLayout.OnRefreshListener, CallbackObject {
     private RecyclerView rvItems;
     private CircleImageView imgUser;
     private TextView tvFullname, tvCash, tvMonth, tvHaveNewProduct,tvRole ;
     private LinearLayout lnUser;
     private SwipeRefreshLayout swipeRefreshLayout;
 
-    protected List<BaseModel> listTempBill = new ArrayList<>();
-    protected List<BaseModel> listTempImport = new ArrayList<>();
+
     private boolean doubleBackToExitPressedOnce = false;
     private Fragment mFragment;
+    private HomeAdapter adapterHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,8 +111,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void createListItem() {
-        HomeAdapter adapter = new HomeAdapter(HomeActivity.this);
-        Util.createGridRV(rvItems, adapter, 3);
+        adapterHome = new HomeAdapter(HomeActivity.this);
+        Util.createGridRV(rvItems, adapterHome, 3);
 
         if (CustomSQL.getBoolean(Constants.LOGIN_SUCCESS)) {
             CustomSQL.setBoolean(Constants.LOGIN_SUCCESS, false);
@@ -203,7 +204,10 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
         } else if (swipeRefreshLayout.isRefreshing()) {
             swipeRefreshLayout.setRefreshing(false);
 
-        } else {
+        }else if (mFragment != null && mFragment instanceof UpdateShopFragment) {
+            getSupportFragmentManager().popBackStack();
+
+        }else {
             if (doubleBackToExitPressedOnce) {
                 this.finish();
             }
@@ -254,7 +258,11 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
 
             case 5:
                 if (CustomSQL.getBoolean(Constants.IS_ADMIN)) {
-                    Transaction.gotoShopActivity();
+                    UpdateShopFragment groupFragment = new UpdateShopFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString(Constants.SHOP, Shop.getObjectString());
+                    changeFragment(groupFragment, bundle, true);
+
                 }
 
                 break;
@@ -383,7 +391,21 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
                             "Cài đặt hệ thống vừa được điều chỉnh! \n Đồng bộ lại hệ thống với thiết bị của bạn",
                             "ĐỒNG Ý",
                             true,
-                            null);
+                            new CallbackBoolean() {
+                                @Override
+                                public void onRespone(Boolean result) {
+                                    if (result){
+                                        loadCurrentData(new CallbackBoolean() {
+                                            @Override
+                                            public void onRespone(Boolean result) {
+                                                if (result){
+                                                    Util.showToast("Đồng bộ thành công");
+                                                }
+                                            }
+                                        }, 1);
+                                    }
+                                }
+                            });
 
                 } else {
                     tvHaveNewProduct.setVisibility(View.GONE);
@@ -411,7 +433,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
     @SuppressLint("WrongConstant")
     private void checkPermission() {
         Activity context = Util.getInstance().getCurrentActivity();
-        if (PermissionChecker.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED ||
+        if (
+//                PermissionChecker.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED ||
                 PermissionChecker.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
                 PermissionChecker.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
                 PermissionChecker.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -539,4 +562,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
     }
 
 
+    @Override
+    public void onResponse(BaseModel object) {
+        adapterHome.reloadItem();
+    }
 }

@@ -2,7 +2,6 @@ package com.lubsolution.store.models;
 
 import com.lubsolution.store.utils.Constants;
 import com.lubsolution.store.utils.CustomSQL;
-import com.lubsolution.store.utils.DataUtil;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,22 +48,24 @@ public class ProductGroup extends BaseModel {
 
     public static List<BaseModel> getProductGroupList() {
         List<BaseModel> mProductGroups = new ArrayList<>();
+       return CustomSQL.getListObject(Constants.PRODUCTGROUP_LIST);
 
-        if (mListProductGroups == null) {
-            try {
-                JSONArray array = new JSONArray(CustomSQL.getString(Constants.PRODUCTGROUP_LIST));
-                for (int i = 0; i < array.length(); i++) {
-                    BaseModel productGroup = new BaseModel(array.getJSONObject(i));
-                    mProductGroups.add(productGroup);
-                }
 
-            } catch (JSONException e) {
-                return mProductGroups;
-            }
-
-        }
-
-        DataUtil.sortProductGroup(mProductGroups, false);
-        return mProductGroups;
+//        if (mListProductGroups == null) {
+//            try {
+//                JSONArray array = new JSONArray(CustomSQL.getString(Constants.PRODUCTGROUP_LIST));
+//                for (int i = 0; i < array.length(); i++) {
+//                    BaseModel productGroup = new BaseModel(array.getJSONObject(i));
+//                    mProductGroups.add(productGroup);
+//                }
+//
+//            } catch (JSONException e) {
+//                return mProductGroups;
+//            }
+//
+//        }
+//
+//        DataUtil.sortProductGroup(mProductGroups, false);
+//        return mProductGroups;
     }
 }

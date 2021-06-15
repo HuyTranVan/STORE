@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/edit_note_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/_5sdp"
+    android:paddingRight="@dimen/_5sdp"
+    android:paddingBottom="@dimen/_5sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_corner5_white"
+        android:layout_gravity="center"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_5sdp">
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:background="@color/colorBlue"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/black_text_color_hint"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Thêm ghi chú khách hàng"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="italic"
+                android:textColor="@color/black_text_color_hint"
+                />
+
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_note_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/_50sdp"
+                android:background="@drawable/transparent"
+                android:contextClickable="false"
+                android:gravity="top"
+                android:imeOptions="actionNext"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_15sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:textColor="@color/black_text_color"
+                android:textSize="@dimen/_12sdp"
+                android:hint="Nhập nội dung khác"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:inputType="textCapSentences|textMultiLine"
+                android:textCursorDrawable="@drawable/custom_cursor" />
+
+            <TextView
+                android:fontFamily="@font/font_awesome"
+                android:id="@+id/edit_note_clear"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/btn_round_transparent_border_grey"
+                android:layout_alignParentRight="true"
+                android:text="@string/icon_x"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/black_text_color_hint"
+                android:gravity="center"
+                android:layout_margin="@dimen/_5sdp" />
+
+        </RelativeLayout>
+
+
+        <include
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            layout="@layout/view_bottom_dialog_button" />
+    </LinearLayout>
+
+
+</FrameLayout>

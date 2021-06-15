@@ -28,7 +28,7 @@ import static com.lubsolution.store.activities.BaseActivity.createPostParam;
  * Created by macos on 9/16/17.
  */
 
-public class NewUpdateProductGroupFragment extends Fragment implements View.OnClickListener {
+public class UpdateProductGroupFragment extends Fragment implements View.OnClickListener {
     private View view;
     private ImageView btnBack;
     private CInputForm edInput;

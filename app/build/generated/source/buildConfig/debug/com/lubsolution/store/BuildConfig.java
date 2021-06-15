@@ -14,7 +14,7 @@ public final class BuildConfig {
   // Field from build type: debug
   public static final Boolean FLAG = false;
   // Field from build type: debug
-  public static final String SERVER_URL = "http://10.0.2.2/";
+  public static final String SERVER_URL = "http://192.168.1.12/";
   // Field from build type: debug
-  public static final String UPLOAD_URL = "http://10.0.2.2/";
+  public static final String UPLOAD_URL = "http://192.168.1.12/";
 }

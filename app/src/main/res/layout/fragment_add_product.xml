@@ -32,8 +32,7 @@
 
     </RelativeLayout>
 
-    <ScrollView
-        android:id="@+id/customer_scrollview"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false">
@@ -44,15 +43,35 @@
             android:orientation="vertical"
             android:paddingBottom="@dimen/_30sdp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/add_product_image"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
-                app:civ_border_width="4dp"
-                app:civ_border_color="@color/colorLightGrey"
-                android:src="@drawable/ic_wolver"
-                android:layout_margin="@dimen/_10sdp"
-                android:layout_gravity="center" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/add_product_image"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    app:civ_border_width="4dp"
+                    app:civ_border_color="@color/colorLightGrey"
+                    android:src="@drawable/ic_lub_empty"
+                    android:layout_margin="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_awesome"
+                    android:text="@string/icon_edit"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/colorGrey"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"/>
+
+
+            </FrameLayout>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -61,13 +80,74 @@
                 android:paddingLeft="@dimen/_10sdp"
                 android:paddingRight="@dimen/_10sdp">
 
+                <RadioGroup
+                    android:checkedButton="@+id/add_product_filter_all"
+                    android:id="@+id/add_product_filter"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:background="@drawable/pink_out_line"
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="@dimen/_10sdp">
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/font_awesome"
+                        android:id="@+id/add_product_filter_moto"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:background="@drawable/toggle_widget_background_left"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="&#xf21c;  Xe máy"
+                        android:textColor="@drawable/text_white_selected"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <RadioButton
+                        android:id="@+id/add_product_filter_all"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="0.2dp"
+                        android:layout_marginRight="0.2dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/font_awesome"
+                        android:layout_weight="1"
+                        android:background="@drawable/toggle_widget_background_center"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="&#xf361;  Tất cả"
+                        android:textColor="@drawable/text_white_selected"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <RadioButton
+                        android:id="@+id/add_product_filter_car"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/font_awesome"
+                        android:layout_weight="1"
+                        android:background="@drawable/toggle_widget_background_right"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="&#xf1b9;  Ô tô"
+                        android:textColor="@drawable/text_white_selected"
+                        android:textSize="@dimen/_10sdp" />
+
+                </RadioGroup>
+
 
                 <com.lubsolution.store.customviews.CInputForm
                     android:id="@+id/add_product_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textCapWords"
-                    app:textHint="Nhập tên sản phẩm"
+                    app:textHint="Tên sản phẩm"
                     app:iconText="@string/icon_product" />
 
                 <com.lubsolution.store.customviews.CInputForm
@@ -84,7 +164,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    app:textHint="Giá bán"
+                    app:textHint="Giá bán lẻ"
                     app:iconText="@string/icon_price" />
 
                 <com.lubsolution.store.customviews.CInputForm
@@ -92,24 +172,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    app:textHint="Giá nhập hàng"
-                    app:iconText="@string/icon_purchase" />
+                    app:textHint="Giá nhân viên"
+                    app:iconText="@string/icon_purchase"
+                    app:iconColor="@color/black_text_color_hint"/>
 
                 <com.lubsolution.store.customviews.CInputForm
                     android:id="@+id/add_product_distributor_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    app:textHint="Giá nhà phân phối"
-                    app:iconText="@string/icon_briefcase" />
+                    app:textHint="Giá nhập cửa hàng"
+                    app:iconText="@string/icon_cart"
+                    app:iconColor="@color/colorRedTransparent"/>
 
-                <com.lubsolution.store.customviews.CInputForm
-                    android:id="@+id/add_product_unit_in_carton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    app:textHint="đơn vị/ thùng"
-                    app:iconText="@string/icon_container" />
+<!--                <com.lubsolution.store.customviews.CInputForm-->
+<!--                    android:id="@+id/add_product_unit_in_carton"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:inputType="number"-->
+<!--                    app:textHint="đơn vị/ thùng"-->
+<!--                    app:iconText="@string/icon_container" />-->
 
                 <com.lubsolution.store.customviews.CInputForm
                     android:id="@+id/add_product_volume"
@@ -119,14 +201,14 @@
                     app:textHint="Khối lượng"
                     app:iconText="@string/icon_weight" />
 
-                <com.lubsolution.store.customviews.CInputForm
-                    android:id="@+id/add_product_promotion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:textHint=""
-                    app:iconText="@string/icon_gift"
-                    app:isDropdown="true"
-                    app:textColor="@color/colorBlue" />
+<!--                <com.lubsolution.store.customviews.CInputForm-->
+<!--                    android:id="@+id/add_product_promotion"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:textHint=""-->
+<!--                    app:iconText="@string/icon_gift"-->
+<!--                    app:isDropdown="true"-->
+<!--                    app:textColor="@color/colorBlue" />-->
 
 
             </LinearLayout>
@@ -144,8 +226,66 @@
                 android:textSize="@dimen/_14sdp"
                 android:layout_gravity="center_horizontal" />
 
+            <LinearLayout
+                android:id="@+id/add_product_listprice_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+<!--                <ProgressBar-->
+<!--                    android:id="@+id/add_shop_progress"-->
+<!--                    android:layout_width="@dimen/_15sdp"-->
+<!--                    android:layout_height="@dimen/_15sdp"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:indeterminateTint="@color/colorBlue"-->
+<!--                    android:visibility="gone"/>-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/add_product_rvlistprice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:visibility="visible"/>
+
+                <LinearLayout
+                    android:id="@+id/add_product_listprice_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/btn_round_white_border_grey"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/_40sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/font_awesome"
+                        android:text="@string/icon_plus"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thêm giá bán"
+                        android:textSize="@dimen/_10sdp"
+                        android:textAllCaps="true"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:textColor="@color/black_text_color_hint"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
         </LinearLayout>
-    </ScrollView>
+
+
+    </androidx.core.widget.NestedScrollView>
 
 
 </LinearLayout>

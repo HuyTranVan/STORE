@@ -139,11 +139,9 @@ public class UpdateShopFragment extends Fragment implements View.OnClickListener
     private void updateView(BaseModel shop) {
         tvName.setBoldStyle();
         tvName.setTextSize(Util.convertDp2PxInt(10));
-        tvProvince.setBoldStyle();
-        tvDistrict.setBoldStyle();
         tvName.setText(shop.getString("name"));
-        tvProvince.setText(shop.getBaseModel("province").getString("name"));
-        tvDistrict.setText(shop.getBaseModel("district").getString("name"));
+        tvProvince.setText(shop.getBaseModel("province").getString("text"));
+        tvDistrict.setText(shop.getBaseModel("district").getString("text"));
         tvCompany.setText(shop.getString("company"));
         tvAddress.setText(shop.getString("address"));
         tvPhone.setText(Util.FormatPhone(shop.getString("phone")));
@@ -418,10 +416,10 @@ public class UpdateShopFragment extends Fragment implements View.OnClickListener
     }
 
     private void chooseProvince(List<BaseModel> list){
-        CustomBottomDialog.choiceListObject("CHỌN TỈNH / THÀNH PHỐ", list, "name", new CallbackObject() {
+        CustomBottomDialog.choiceListObject("CHỌN TỈNH / THÀNH PHỐ", list, "text", new CallbackObject() {
             @Override
             public void onResponse(BaseModel object) {
-                tvProvince.setText(object.getString("name"));
+                tvProvince.setText(object.getString("text"));
                 currentShop.put("province_id", object.getInt("provinceid"));
                 tvDistrict.setVisibility(currentShop.getInt("province_id") == 0 ? View.GONE : View.VISIBLE);
 
@@ -430,10 +428,10 @@ public class UpdateShopFragment extends Fragment implements View.OnClickListener
     }
 
     private void chooseDistrict(List<BaseModel> list){
-        CustomBottomDialog.choiceListObject("CHỌN QUẬN / HUYỆN", list, "name", new CallbackObject() {
+        CustomBottomDialog.choiceListObject("CHỌN QUẬN / HUYỆN", list, "text", new CallbackObject() {
             @Override
             public void onResponse(BaseModel object) {
-                tvDistrict.setText(object.getString("name"));
+                tvDistrict.setText(object.getString("text"));
                 currentShop.put("district_id", object.getInt("districtid"));
                 //tvDistrict.setVisibility(currentShop.getInt("province_id") == 0 ? View.GONE : View.VISIBLE);
 

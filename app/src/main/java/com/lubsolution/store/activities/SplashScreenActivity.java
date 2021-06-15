@@ -138,7 +138,7 @@ public class SplashScreenActivity extends BaseActivity {
 
             @Override
             public void onError(String error) {
-
+                gotoLoginScreen();
             }
         }, 0).execute();
 

@@ -78,7 +78,7 @@ public class UpdateVehicleBrandFragment extends Fragment implements View.OnClick
     }
 
     private void intitialData() {
-        String bundle = getArguments().getString(Constants.BRAND);
+        String bundle = getArguments().getString(Constants.BRAND_RESULT);
         if (bundle != null) {
             tvDelete.setVisibility(Util.isAdmin()? View.VISIBLE : View.GONE);
             btnSubmit.setText("CẬP NHẬT");
@@ -210,10 +210,11 @@ public class UpdateVehicleBrandFragment extends Fragment implements View.OnClick
         new GetPostMethod(param, new NewCallbackCustom() {
             @Override
             public void onResponse(BaseModel result, List<BaseModel> list) {
+                result.put(Constants.BRAND_RESULT, true);
+                onDataPass.onResponse(result);
+
                 getActivity().getSupportFragmentManager().popBackStack();
 
-                result.put(Constants.BRAND, true);
-                onDataPass.onResponse(result);
             }
 
             @Override

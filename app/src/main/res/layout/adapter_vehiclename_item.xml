@@ -8,19 +8,19 @@
 
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/vehiclename_item_image"
+    <TextView
+        android:id="@+id/vehiclename_item_icon"
         android:layout_width="@dimen/_20sdp"
         android:layout_height="@dimen/_20sdp"
+        android:fontFamily="@font/font_awesome"
+        android:background="@drawable/bg_oval_lightgrey"
         android:layout_marginLeft="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:src="@drawable/ic_lub_empty"
-        app:civ_border_width="2dp"
-        app:civ_border_overlay="true"
-        app:civ_fill_color="@color/colorWhite"
-        app:civ_border_color="@color/colorLightGrey"
-        android:layout_centerVertical="true" />
+        android:text="@string/icon_car"
+        android:textColor="@color/black_text_color_hint"
+        android:layout_centerVertical="true"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/vehiclename_item_name"
@@ -29,7 +29,7 @@
         android:text="Tran van A"
         android:textColor="@color/black_text_color"
         android:textSize="@dimen/_12sdp"
-        android:layout_toRightOf="@+id/vehiclename_item_image"
+        android:layout_toRightOf="@+id/vehiclename_item_icon"
         android:layout_centerInParent="true"
         android:layout_marginLeft="@dimen/_10sdp"/>
 

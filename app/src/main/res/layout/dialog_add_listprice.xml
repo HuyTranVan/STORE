@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/add_listprice_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/_5sdp"
+    android:paddingRight="@dimen/_5sdp"
+    android:paddingBottom="@dimen/_5sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_corner5_white"
+        android:clickable="true"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_5sdp">
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:background="@color/colorBlue"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/black_text_color_hint"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Thêm giá bán"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="italic"
+                android:textColor="@color/black_text_color_hint"
+                />
+
+            <TextView
+                android:id="@+id/add_listprice_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Thêm giá bán"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/black_text_color"
+                android:layout_marginLeft="@dimen/_5sdp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.lubsolution.store.customviews.CInputForm
+                    android:id="@+id/add_listprice_volume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:inputType="numberDecimal"
+                    app:iconText="@string/icon_weight"
+                    app:textHint="0"/>
+
+                <com.lubsolution.store.customviews.CInputForm
+                    android:id="@+id/add_listprice_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:inputType="number"
+                    app:iconText="@string/icon_dollar"
+                    app:textHint="0"/>
+            </LinearLayout>
+
+            <com.lubsolution.store.customviews.CInputForm
+                android:id="@+id/add_listprice_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                app:textHint="Ghi chú"
+                app:iconText="@string/icon_note"
+                app:hideBottomLine="true"/>
+
+
+
+        </LinearLayout>
+
+        <include
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            layout="@layout/view_bottom_dialog_button" />
+
+    </LinearLayout>
+
+
+
+
+</FrameLayout>
+
+
+
+
+
+
+
+

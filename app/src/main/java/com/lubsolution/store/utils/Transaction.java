@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 
 import com.lubsolution.store.BuildConfig;
 import com.lubsolution.store.R;
+import com.lubsolution.store.activities.CustomerActivity;
 import com.lubsolution.store.activities.HomeActivity;
 import com.lubsolution.store.activities.LoginActivity;
 import com.lubsolution.store.activities.MainShopActivity;
@@ -147,26 +148,19 @@ public class Transaction {
 //        ((AppCompatActivity) context).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 //        ((AppCompatActivity) context).finish();
 //    }
-//
-//    public static void gotoStatusActivity() {
-//        Context context = Util.getInstance().getCurrentActivity();
-//        Intent intent = new Intent(context, StatusActivity.class);
-//        context.startActivity(intent);
-//        ((AppCompatActivity) context).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//        ((AppCompatActivity) context).finish();
-//    }
-//
-//    public static void gotoCustomerActivity() {
+
+    public static void gotoCustomerActivity(int customer_id) {
+
 //        if (User.getCurrentRoleId() != Constants.ROLE_WAREHOUSE) {
-//            Activity context = Util.getInstance().getCurrentActivity();
-//            Intent intent = new Intent(context, CustomerActivity.class);
-//            CustomSQL.setLong(Constants.CHECKIN_TIME, Util.CurrentTimeStamp());
-//            context.startActivityForResult(intent, Constants.RESULT_CUSTOMER_ACTIVITY);
-//            context.overridePendingTransition(R.anim.slide_up, R.anim.nothing);
-//
+            Activity context = Util.getInstance().getCurrentActivity();
+            Intent intent = new Intent(context, CustomerActivity.class);
+            CustomSQL.setInt(Constants.CUSTOMER_ID, customer_id);
+            context.startActivityForResult(intent, Constants.RESULT_CUSTOMER_ACTIVITY);
+            context.overridePendingTransition(R.anim.slide_up, R.anim.nothing);
+
 //        }
-//
-//    }
+
+    }
 
     public static void returnCustomerActivity(String fromActivity, String data, int result) {
         Intent returnIntent = Util.getInstance().getCurrentActivity().getIntent();

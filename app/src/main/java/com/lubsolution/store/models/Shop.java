@@ -92,5 +92,10 @@ public class Shop extends BaseModel {
 
     }
 
+    public static String getObjectString() {
+        return CustomSQL.getString(Constants.SHOP);
+
+    }
+
 
 }

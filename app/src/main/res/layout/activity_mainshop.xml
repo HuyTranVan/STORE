@@ -55,18 +55,26 @@
 
     </RelativeLayout>
 
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mainshop_rv"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/mainshop_refresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/mainshop_header"
-        android:clipToPadding="false"
-        android:paddingBottom="@dimen/_60sdp"
-        android:paddingTop="@dimen/_5sdp"
-        android:paddingLeft="@dimen/_2sdp"
-        android:paddingRight="@dimen/_2sdp"/>
+        android:layout_marginBottom="1dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mainshop_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/_60sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_2sdp"
+            android:paddingRight="@dimen/_2sdp"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 
     <com.github.clans.fab.FloatingActionButton
         android:id="@+id/mainshop_new"
@@ -80,7 +88,7 @@
         app:fab_size="normal"
         style="@style/MenuButtonsBlue" />
 
-    <com.ferfalk.simplesearchview.SimpleSearchView
+    <com.lubsolution.store.libraries.searchview.SimpleSearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

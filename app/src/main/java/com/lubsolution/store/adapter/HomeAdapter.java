@@ -102,5 +102,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ItemAdapterVie
         }
 
     }
+    public void reloadItem(){
+        notifyDataSetChanged();
+    }
 
 }

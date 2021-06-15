@@ -1403,7 +1403,7 @@ public class Util {
                 edText.setSelection(currentSelection + (newString.length() - prevStringLength));
 
                 if (mlistener != null){
-                    mlistener.Result(newString.replace(" ", "\n"));
+                    mlistener.Result(baseString);
                 }
 
 
@@ -1454,7 +1454,7 @@ public class Util {
 
         }
 
-        return result;
+        return result.toUpperCase();
     }
 
 

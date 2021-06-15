@@ -55,6 +55,13 @@ public class WaitingListAdapter extends RecyclerView.Adapter<WaitingListAdapter.
         holder.tvBrand.setText(customer.getBaseModel("vehicle").getBaseModel("brand").getString("name"));
         holder.tvVehicle.setText(customer.getBaseModel("vehicle").getString("name"));
 
+        holder.lnParent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onResponse(mData.get(position));
+            }
+        });
+
         holder.lnParent.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -67,9 +74,9 @@ public class WaitingListAdapter extends RecyclerView.Adapter<WaitingListAdapter.
                                 @Override
                                 public void onResponse(BaseModel result, List<BaseModel> list) {
                                     if (result.getBoolean("deleted")){
-                                        notifyItemRemoved(position);
                                         mData.remove(position);
-
+                                        notifyItemRemoved(position);
+                                        notifyItemChanged(position);
 
                                     }
                                 }
@@ -106,6 +113,49 @@ public class WaitingListAdapter extends RecyclerView.Adapter<WaitingListAdapter.
             tvPlate = itemView.findViewById(R.id.waiting_list_plate);
             tvBrand = itemView.findViewById(R.id.waiting_list_brand);
             tvVehicle = itemView.findViewById(R.id.waiting_list_vehicle);
+
+
+
+        }
+
+    }
+
+    public void updateList(List<BaseModel> list){
+        for(BaseModel item: list){
+            boolean dup = false;
+            for (int i=0; i< mData.size(); i++){
+                if (item.getInt("id") == mData.get(i).getInt("id")
+                        && item.getLong("updateAt") != mData.get(i).getLong("updateAt")) {
+                       mData.remove(i);
+                       mData.add(i, item);
+                       notifyItemChanged(i);
+                       dup = true;
+
+                       break;
+
+                }
+
+            }
+
+            if (!dup){
+                mData.add(item);
+                notifyItemInserted(mData.size() -1);
+            }
+
+
+        }
+
+    }
+
+    public void updateItem(BaseModel customer){
+        for (int i=0; i< mData.size(); i++){
+            if (customer.getInt("id") == mData.get(i).getBaseModel("customer").getInt("id")){
+                //mData.get(i).removeKey("customer");
+                mData.get(i).putBaseModel("customer", customer);
+                notifyItemChanged(i, mData.get(i));
+                break;
+
+            }
 
         }
 

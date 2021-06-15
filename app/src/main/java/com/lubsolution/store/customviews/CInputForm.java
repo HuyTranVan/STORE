@@ -115,9 +115,10 @@ public class CInputForm extends FrameLayout {
 //                setDropdown(a.getBoolean(R.styleable.CInputForm_isDropdown, false));
             }
 
-            if (a.hasValue(R.styleable.CInputForm_isShowBottomLine)) {
-                setVisibilityBottomLine(a.getBoolean(R.styleable.CInputForm_isShowBottomLine, false));
+            if (a.hasValue(R.styleable.CInputForm_hideBottomLine)) {
+                setHideBottomLine(a.getBoolean(R.styleable.CInputForm_hideBottomLine, false));
             }
+
 
 
             a.recycle();
@@ -133,7 +134,7 @@ public class CInputForm extends FrameLayout {
         tvMore.setText(text);
     }
 
-    private void setVisibilityBottomLine(boolean value) {
+    private void setHideBottomLine(boolean value) {
         mLine.setVisibility(value ? GONE : VISIBLE);
     }
 
@@ -239,23 +240,24 @@ public class CInputForm extends FrameLayout {
             @Override
             public void afterTextChanged(Editable s) {
                 edInput.removeTextChangedListener(this);
-                listener.Result(edInput.getText().toString().replace(".", ""));
-                try {
-                    edInput.setText(Util.FormatPhone(edInput.getText().toString().replace(".", "")));
-                    edInput.setSelection(edInput.getText().toString().length());
 
-                    //listener.Result(edInput.getText().toString().replace(".", ""));
-                    edInput.addTextChangedListener(this);
+                int currentSelection = edInput.getSelectionStart();
+                int prevStringLength = edInput.getText().length();
 
+                String newString = Util.FormatPhone(edInput.getText().toString().replace(".", ""));
+                edInput.setText(newString);
+                int selection = currentSelection + (newString.length() - prevStringLength);
+                edInput.setSelection(selection);
 
-                } catch (Exception ex) {
-//                    ex.printStackTrace();
-                    edInput.addTextChangedListener(this);
+                if (listener != null){
+                    listener.Result(edInput.getText().toString().replace(".", ""));
                 }
+                edInput.addTextChangedListener(this);
 
             }
         });
     }
+
 
     public void addTextChangeName(CallbackString listener) {
         final int[] countText = {0};
@@ -295,7 +297,7 @@ public class CInputForm extends FrameLayout {
         });
     }
 
-    public void textMoneyEvent(final CallbackDouble mlistener) {
+    public void textMoneyEvent(final Double limitMoney, final CallbackDouble mlistener) {
         edInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -310,16 +312,61 @@ public class CInputForm extends FrameLayout {
             @Override
             public void afterTextChanged(Editable s) {
                 edInput.removeTextChangedListener(this);
-                try {
-                    edInput.setText(Util.FormatMoney(Util.valueMoney(edInput)));
-                    edInput.setSelection(edInput.getText().toString().length());
+                int currentSelection = edInput.getSelectionStart();
+                int prevStringLength = edInput.getText().length();
 
-                    mlistener.Result(Util.valueMoney(edInput));
-                    edInput.addTextChangedListener(this);
+                try {
+                    if (limitMoney == null) {
+                        edInput.setText(Util.FormatMoney(Util.valueMoney(edInput)));
+                        edInput.setSelection(currentSelection + (edInput.getText().toString().length() - prevStringLength));
+
+                        mlistener.Result(Util.valueMoney(edInput));
+                        edInput.addTextChangedListener(this);
+
+                    } else if (limitMoney > 0) {
+                        if (Util.valueMoney(edInput) > limitMoney) {
+                            Util.showToast("Số tiền lớn hơn giới hạn");
+                            String text = Util.valueMoneyString(edInput).replaceFirst(".$", "");
+
+                            edInput.setText(Util.FormatMoney(Double.valueOf(text)));
+                            edInput.setSelection(currentSelection + (edInput.getText().toString().length() - prevStringLength));
+
+                            mlistener.Result(Util.valueMoney(edInput));
+                            edInput.addTextChangedListener(this);
+
+                        } else {
+                            edInput.setText(Util.FormatMoney(Util.valueMoney(edInput)));
+                            edInput.setSelection(currentSelection + (edInput.getText().toString().length() - prevStringLength));
+
+                            mlistener.Result(Util.valueMoney(edInput));
+                            edInput.addTextChangedListener(this);
+
+                        }
+
+                    } else if (limitMoney < 0) {
+                        if (Util.valueMoney(edInput) > limitMoney * -1) {
+                            Util.showToast("Số tiền nhỏ hơn giới hạn");
+                            String text = Util.valueMoneyString(edInput).replaceFirst(".$", "");
+
+                            edInput.setText(Util.FormatMoney(Double.valueOf(text)));
+                            edInput.setSelection(currentSelection + (edInput.getText().toString().length() - prevStringLength));
+
+                            mlistener.Result(Util.valueMoney(edInput) * -1);
+                            edInput.addTextChangedListener(this);
+
+                        } else {
+                            edInput.setText(Util.FormatMoney(Util.valueMoney(edInput)));
+                            edInput.setSelection(currentSelection + (edInput.getText().toString().length() - prevStringLength));
+
+                            mlistener.Result(Util.valueMoney(edInput) * -1);
+                            edInput.addTextChangedListener(this);
+
+                        }
+                    }
 
 
                 } catch (Exception ex) {
-//                    ex.printStackTrace();
+                    ex.printStackTrace();
                     edInput.addTextChangedListener(this);
                 }
 
@@ -329,6 +376,32 @@ public class CInputForm extends FrameLayout {
 
     }
 
+    public void textVolumeEvent() {
+        edInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                edInput.removeTextChangedListener(this);
+                if (edInput.getText().toString().equals(".")){
+                    edInput.setText("0"+ s.toString());
+                    edInput.setSelection(edInput.getText().toString().length());
+                }
+                edInput.addTextChangedListener(this);
+
+            }
+        });
+
+
+    }
 
     public void setColorHint(int color) {
         edInput.setHintTextColor(color);

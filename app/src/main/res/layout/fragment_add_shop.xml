@@ -134,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
                 app:textHint="Địa chỉ"
-                app:iconText="@string/icon_address" />
+                app:iconText="@string/icon_map" />
 
             <com.lubsolution.store.customviews.CInputForm
                 android:id="@+id/add_shop_company_hotline"

@@ -11,7 +11,8 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.ferfalk.simplesearchview.R;
+import com.lubsolution.store.R;
+
 
 /**
  * @author Fernando A. H. Falkiewicz

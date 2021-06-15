@@ -14,7 +14,7 @@ public class Constants {
     public final static String PRODUCTGROUP = "productgroup";
     public final static String DEPOT = "depot";
     public final static String PRODUCT = "product";
-    public final static String BRAND = "brand_result";
+    public final static String BRAND_RESULT = "brand_result";
     public final static String VEHICLENAME = "vehiclename_result";
     public final static String VEHICLE = "vehicle_result";
     public static final String KIND = "kind_result";
@@ -38,12 +38,16 @@ public class Constants {
     public final static String SHOP = "mainshop";
     public final static String USER_USERNAME = "username";
     public final static String USER_PASSWORD = "password";
-    public final static String IMAGES_DIRECTORY = "Lubsolution_DMS";
-    public final static String APP_DIRECTORY = "Lubsolution_DMS";
+    public final static String IMAGES_DIRECTORY = "Lubsolution_STORE";
+    public final static String APP_DIRECTORY = "Lubsolution_STORE";
     public final static int ROLE_ADMIN = 1;
     public final static int ROLE_WAREHOUSE = 2;
     public final static int ROLE_DELIVER = 3;
     public final static int ROLE_SALE = 4;
+
+    public static final String DATE = "date";
+    public static final String MONTH = "month";
+    public static final String YEAR = "year";
 
     public final static String IS_ADMIN = "is_admin";
     public final static String VERSION_CODE = "version_code";

@@ -11,6 +11,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ import com.lubsolution.store.callback.CallbackObject;
 import com.lubsolution.store.models.BaseModel;
 import com.lubsolution.store.utils.DataUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -30,7 +32,12 @@ public class CDropdown extends RelativeLayout {
     private AutoCompleteTextView mText;
     private TextView tvIcon;
     private Context mContext;
-    private View mLayout;
+    private RelativeLayout mLayout;
+    private FrameLayout mCover;
+
+    private List<BaseModel> baseList = new ArrayList<>();
+    private List<String> stringList = new ArrayList<>();
+    private ArrayAdapter adapter;
 
     public CDropdown(Context context) {
         this(context, null);
@@ -56,6 +63,7 @@ public class CDropdown extends RelativeLayout {
 
         mText = (AutoCompleteTextView) mLayout.findViewById(R.id.dropdown_text);
         tvIcon = (TextView) mLayout.findViewById(R.id.dropdown_icon);
+        mCover = (FrameLayout) mLayout.findViewById(R.id.dropdown_cover);
 
     }
 
@@ -110,18 +118,18 @@ public class CDropdown extends RelativeLayout {
 
     }
 
-//    public void setBoldStyle(boolean bold) {
-//        mText.(type);
-//
-//    }
+    public void setClickable(boolean value){
+        mCover.setVisibility(value? GONE : VISIBLE);
+
+    }
 
     public void setFocusable(boolean value) {
-        if (value) {
-            mText.setFocusable(true);
-            mText.setFocusableInTouchMode(true);
+        if (!value) {
+            mText.setFocusable(false);
+            mText.setFocusableInTouchMode(false);
 
         } else {
-            mText.setFocusable(false);
+            mText.setFocusable(true);
         }
     }
 
@@ -167,15 +175,67 @@ public class CDropdown extends RelativeLayout {
 
     }
 
-    public void setListDropdown(List<BaseModel> list, String key , CallbackObject itemSelected){
-        List<String> listToString = DataUtil.getListStringFromListObject(list , key);
-        ArrayAdapter adapter = new ArrayAdapter<String>(
+    public void updateList(List<BaseModel> list){
+        baseList = list;
+        stringList = DataUtil.getListStringFromListObject(baseList, "name");
+
+        adapter.clear();
+        adapter.addAll(stringList);
+
+        adapter.notifyDataSetChanged();
+
+    }
+
+    private int getItemSelect(String key, String name){
+        int pos = -1;
+
+        if (baseList.size() >0){
+            for (int i=0; i< baseList.size(); i++){
+                if (baseList.get(i).getString(key).equals(name)){
+                    pos = i;
+
+                    break;
+                }
+
+            }
+        }
+
+        return pos;
+    }
+
+    public void setmText(String text){
+        mText.setText(text, false);
+    }
+
+    public void setListDropdown(String firstName, List<BaseModel> list, String key , int startPosition, CallbackObject itemSelected){
+        if (list != null){
+            baseList = list;
+
+        }else {
+            baseList = new ArrayList<>();
+        }
+        stringList = DataUtil.getListStringFromListObject(baseList , key);
+        adapter = new ArrayAdapter<String>(
                 mContext,
-                android.R.layout.simple_spinner_dropdown_item, listToString);
+                android.R.layout.simple_spinner_dropdown_item, stringList);
 
         mText.setAdapter(adapter);
-        mText.setText(listToString.get(0), false);
-        itemSelected.onResponse(list.get(0));
+        if (firstName == null){
+            mText.setText(stringList.get(startPosition), false);
+            itemSelected.onResponse(baseList.get(startPosition));
+
+        }else {
+            mText.setText(firstName, false);
+            int position = getItemSelect("name", firstName);
+            itemSelected.onResponse(position >= startPosition ? baseList.get(position) : new BaseModel());
+        }
+
+//        if (done != null){
+//            done.onRespone(true);
+//        }
+
+
+
 
         mText.setOnTouchListener(new View.OnTouchListener(){
             @Override
@@ -198,7 +258,7 @@ public class CDropdown extends RelativeLayout {
         mText.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                itemSelected.onResponse(list.get(i));
+                itemSelected.onResponse(baseList.get(i));
             }
         });
 

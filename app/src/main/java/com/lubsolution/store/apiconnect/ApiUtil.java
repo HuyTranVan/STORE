@@ -59,6 +59,7 @@ public class ApiUtil {
     public final static String VEHICLE_CREATE_PARAM = "%sname=%s&brand_id=%d&kind_id=%d&image=%s";
     public final static String VEHICLE_NEW(){ return BASE_URL + "store/token/vehicle/VehicleNew"; }
     public final static String VEHICLE_DELETE(){ return BASE_URL + "store/token/vehicle/VehicleDelete?id="; }
+    public final static String VEHICLE_CHECK_EXIST(){ return BASE_URL + "store/token/vehicle/VehicleCheckExist?name=%s&brand_id=%d"; }
 
     public final static String BRAND_CREATE_PARAM = "%sname=%s&image=%s";
     public final static String BRAND_NEW(){ return BASE_URL + "store/token/vehicle/BrandNew"; }
@@ -86,11 +87,18 @@ public class ApiUtil {
         return BASE_URL + "store/token/product/ProductList";
     }
 
-    public final static String PRODUCT_CREATE_PARAM = "%sname=%s&promotion=%s&unitPrice=%s&purchasePrice=%s&volume=%s&productGroup.id=%d&image=%s&basePrice=%s&unitInCarton=%s";
+    public final static String PRODUCT_CREATE_PARAM = "%sname=%s&unitPrice=%s&netPrice=%s&volume=%s&group_id=%d&image=%s&basePrice=%s&forMoto=%d&forCar=%d";
     public final static String PRODUCT_NEW(){
         return BASE_URL + "store/token/product/ProductNew";
     }
+    public final static String LISTPRICE_CREATE_PARAM = "product_id=%d&volume=%s&unitPrice=%s&note=%s";
+    public final static String LISTPRICE_NEW(){
+        return BASE_URL + "store/token/product/ListPriceNew";
+    }
 
+    public final static String LISTPRICE_DELETE(){
+        return BASE_URL + "store/token/product/ListPriceDelete?id=";
+    }
     public final static String PRODUCT_DELETE(){
         return BASE_URL + "store/token/product/ProductDelete?id=";
     }
@@ -159,6 +167,10 @@ public class ApiUtil {
         return BASE_URL + "store/token/customer/CustomerList" + String.format(ApiUtil.DEFAULT_RANGE, page, size);
     }
 
+    public final static String CUSTOMER_EXISTED(){
+        return BASE_URL + "store/token/customer/CustomerCheckExist?plate_number=";
+    }
+
     public final static String CUSTOMER_ORDERED(int user_id, int page, int size){
         return BASE_URL + "store/token/customer/CustomerOrderedList"
                 + String.format(ApiUtil.DEFAULT_RANGE, page, size)
@@ -181,9 +193,9 @@ public class ApiUtil {
         return BASE_URL + "store/token/customer/CustomerDetail?id=";
     }
 
-    public final static String CUSTOMER_TEMP_NEW_PARAM = "customer_id=%d&user_id=%d";
-    public final static String CUSTOMER_TEMP_NEW(){
-        return BASE_URL + "store/token/customer/CustomerTempNew";
+    public final static String TEMP_CUSTOMER_NEW_PARAM = "customer_id=";
+    public final static String TEMP_CUSTOMER_NEW(){
+        return BASE_URL + "store/token/customer/TempCustomerNew";
     }
 
     public final static String CUSTOMER_WAITING_LIST(){
@@ -197,14 +209,6 @@ public class ApiUtil {
     }
     public final static String SHOP_CREATE_PARAM = "%sname=%s&province_id=%d&district_id=%d&company=%s&address=%s&phone=%s&website=%s&thanks=%s&image=%s";
     public final static String SHOP_NEW(){ return BASE_URL + "store/token/shop/ShopNew"; }
-
-    public final static String SCHECKIN_CREATE_PARAM = "customer_id=%d&rating=%d&note=%s&user_id=%d&nextVisit=%d&meetOwner=%d";
-    public final static String CHECKIN_NEW(){
-        return BASE_URL + "store/token/customer/CheckinNew";
-    }
-    public final static String CHECKIN_DELETE(){
-        return BASE_URL + "store/token/customer/CheckinDelete?id=";
-    }
 
     //ACTIVE
     public final static String ACTIVE_CREATE_PARAM = "shop_id=%d&to=%s";

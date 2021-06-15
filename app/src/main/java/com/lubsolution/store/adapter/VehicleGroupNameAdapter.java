@@ -28,12 +28,13 @@ import java.util.List;
 public class VehicleGroupNameAdapter extends RecyclerView.Adapter<VehicleGroupNameAdapter.ItemViewHolder> {
     private List<BaseModel> baseData = new ArrayList<>();
     private List<BaseModel> mData = new ArrayList<>();
+    private List<VehicleNameAdapter> mVehicleAdapter;
     private List<List<BaseModel>> mVehicle = new ArrayList<>();
     private LayoutInflater mLayoutInflater;
     private Context mContext;
     private CallbackObject mListener;
     private CallbackInt mSize;
-    private RecyclerView mRecyclerView;
+    //private RecyclerView mRecyclerView;
     private int numberOfVehicle =0;
 
     public VehicleGroupNameAdapter(List<BaseModel> list, List<BaseModel> baselist, CallbackObject listener, CallbackInt size) {
@@ -43,11 +44,13 @@ public class VehicleGroupNameAdapter extends RecyclerView.Adapter<VehicleGroupNa
         this.mData = list;
         this.baseData = baselist;
         this.mSize = size;
+        this.mVehicleAdapter = new ArrayList<>();
 
         for (BaseModel item: mData){
             List<BaseModel> items = new ArrayList<>(item.getList("vehicles"));
             mVehicle.add(items);
             numberOfVehicle += items.size();
+
         }
 
     }
@@ -63,10 +66,16 @@ public class VehicleGroupNameAdapter extends RecyclerView.Adapter<VehicleGroupNa
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         holder.tvName.setText(mData.get(position).getString("name"));
-        VehicleNameAdapter nameAdapter = new VehicleNameAdapter(mVehicle.get(position), new CallbackObject() {
+        mVehicleAdapter.add(position, new VehicleNameAdapter(mVehicle.get(position), new CallbackObject() {
             @Override
             public void onResponse(BaseModel object) {
-                mListener.onResponse(object);
+                CustomInputDialog.createNewVehicle(holder.rvGroup, object, mData.get(position),  new CallbackObject() {
+                    @Override
+                    public void onResponse(BaseModel object) {
+                        updateItem(object, position);
+                    }
+                });
+
             }
         }, new CallbackBoolean() {
             @Override
@@ -77,13 +86,13 @@ public class VehicleGroupNameAdapter extends RecyclerView.Adapter<VehicleGroupNa
                     mSize.onResponse(numberOfVehicle);
                 }
             }
-        });
-        Util.createLinearRV(holder.rvGroup, nameAdapter);
+        }));
+        Util.createLinearRV(holder.rvGroup, mVehicleAdapter.get(position));
 
         holder.tvNew.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CustomInputDialog.createNewVehicle(view, position, baseData, new CallbackObject() {
+                CustomInputDialog.createNewVehicle(view, null, mData.get(position), new CallbackObject() {
                     @Override
                     public void onResponse(BaseModel object) {
                         insertItem(object);
@@ -130,46 +139,31 @@ public class VehicleGroupNameAdapter extends RecyclerView.Adapter<VehicleGroupNa
 
     }
 
-    public void updateItem(BaseModel object){
-        for (int i=0; i<baseData.size(); i++){
-            if (object.getInt("brand_id") == baseData.get(i).getInt("id")){
-                List<BaseModel> vehices = baseData.get(i).getList("vehicles");
-                boolean check = false;
+    public void updateItem(BaseModel object, int pos){
+        mVehicleAdapter.get(pos).updateItem(object);
 
-                for (int j =0; j<vehices.size(); j++){
-                    if (object.getInt("id") == vehices.get(j).getInt("id")){
-//                        vehices.remove(j);
-//                        vehices.add(j, object);
+    }
 
-                        RecyclerView recyclerView = (RecyclerView) mRecyclerView.findViewHolderForAdapterPosition(i).itemView.findViewById(R.id.vehiclegroup_item_rv);
-                        VehicleNameAdapter adapter = (VehicleNameAdapter) recyclerView.getAdapter();
-                        adapter.updateItem(object);
+    public void updateBrand(BaseModel brand){
+        boolean check = false;
+        for (int i=0; i< mData.size(); i++ ){
+            if (brand.getInt("id") == mData.get(i).getInt("id")){
+                mData.get(i).put("name", brand.getString("name"));
+                mData.get(i).put("image", brand.getString("image"));
 
-                        notifyItemChanged(i+1);
-
-                        check = true;
-                        break;
-                    }
-                }
-
-                if (!check){
-                    //vehices.add(object);
-                    RecyclerView recyclerView = (RecyclerView) mRecyclerView.findViewHolderForAdapterPosition(i).itemView.findViewById(R.id.vehiclegroup_item_rv);
-                    VehicleNameAdapter adapter = (VehicleNameAdapter) recyclerView.getAdapter();
-                    adapter.updateItem(object);
-                    //notifyItemChanged(mData.size());
-                }
-//                RecyclerView recyclerView = (RecyclerView) mRecyclerView.findViewHolderForAdapterPosition(i).itemView.findViewById(R.id.vehiclegroup_item_rv);
-//                VehicleNameAdapter adapter = (VehicleNameAdapter) recyclerView.getAdapter();
-//                adapter.updateItem(object);
-
+                notifyItemChanged(i);
+                check = true;
+                break;
 
             }
+
         }
 
-
-        //reloadBaseData(baseData);
-        //notifyDataSetChanged();
+        if (!check){
+            mData.add(brand);
+            mVehicle.add(new ArrayList<>());
+            notifyItemInserted(mData.size() -1);
+        }
 
     }
 

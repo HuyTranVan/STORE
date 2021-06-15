@@ -4,7 +4,6 @@
     android:id="@+id/add_customer_parent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/black_text_color_hint"
     android:paddingLeft="@dimen/_5sdp"
     android:paddingRight="@dimen/_5sdp"
     android:paddingBottom="@dimen/_5sdp">
@@ -22,6 +21,33 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp">
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:background="@color/colorBlue"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/black_text_color_hint"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Tạo khách hàng mới"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="italic"
+                android:textColor="@color/black_text_color_hint"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="@dimen/_25sdp"
             android:orientation="horizontal"
             android:layout_margin="@dimen/_5sdp"
@@ -34,7 +60,6 @@
                 android:text="@string/icon_car"
                 android:textColor="@color/black_text_color_hint"
                 android:textSize="@dimen/_18sdp"
-                android:paddingLeft="@dimen/_5sdp"
                 android:paddingRight="@dimen/_10sdp"
                 android:gravity="bottom"/>
 
@@ -56,25 +81,26 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/input_data_parent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/colorWhite">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/input_data_parent"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:background="@color/colorWhite">-->
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@color/colorWhite">
 
                 <TextView
                     android:id="@+id/add_customer_number_show"
                     android:layout_width="@dimen/_50sdp"
                     android:layout_height="@dimen/_30sdp"
-                    android:background="@drawable/bg_corner5_white_border2_blue"
+                    android:background="@drawable/bg_corner5_white_border2_grey"
                     android:textSize="@dimen/_12sdp"
-                    android:text="XX\nXXXX"
+                    android:text="...."
                     android:textColor="@color/black_text_color_hint"
                     android:layout_gravity="center_vertical"
                     android:layout_centerVertical="true"
@@ -94,16 +120,33 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/_10sdp"
                     android:layout_toRightOf="@+id/add_customer_number_show"
+                    android:layout_toLeftOf="@+id/add_customer_warn"
                     android:clickable="true"
                     android:layout_centerVertical="true"
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:textCursorDrawable="@drawable/custom_cursor" />
-            </LinearLayout>
+
+                <TextView
+                    android:id="@+id/add_customer_warn"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:fontFamily="@font/font_awesome"
+                    android:text="@string/icon_warning_circle"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorRed"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:gravity="center"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
 
 
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
         <View
             android:id="@+id/line"
@@ -127,7 +170,9 @@
             android:importantForAutofill="no"
             app:iconText="@string/icon_phone"
             app:textHint="Số điện thoại"
-            android:inputType="number"/>
+            app:hideBottomLine="true"
+            android:inputType="number"
+            />
 
 
 

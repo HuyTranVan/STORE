@@ -10,7 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.lubsolution.store.R;
 import com.lubsolution.store.apiconnect.ApiUtil;
 import com.lubsolution.store.apiconnect.apiserver.GetPostMethod;
@@ -23,8 +22,6 @@ import com.lubsolution.store.utils.Util;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 import static com.lubsolution.store.activities.BaseActivity.createGetParam;
 
@@ -69,10 +66,9 @@ public class VehicleNameAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         holder.vLine.setVisibility(position == mData.size() -1 ? View.GONE : View.VISIBLE);
         holder.tvName.setText(mData.get(position).getString("name"));
         holder.tvKind.setText(mData.get(position).getBaseModel("kind").getString("name"));
-
-        if (!Util.checkImageNull(mData.get(position).getString("image"))) {
-            Glide.with(mContext).load(mData.get(position).getString("image")).centerCrop().into(holder.image);
-        }
+        holder.tvIcon.setText(mData.get(position).getInt("kind_id") == 0?
+                Util.getIcon(R.string.icon_motocycle):
+                Util.getIcon(R.string.icon_car));
 
         holder.lnParent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,15 +126,14 @@ public class VehicleNameAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvName, tvKind;
-        private CircleImageView image;
+        private TextView tvName, tvKind, tvIcon;
         private View vLine;
         private RelativeLayout lnParent;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
             lnParent = itemView.findViewById(R.id.vehiclename_item_parent);
-            image = itemView.findViewById(R.id.vehiclename_item_image);
+            tvIcon = itemView.findViewById(R.id.vehiclename_item_icon);
             tvName = itemView.findViewById(R.id.vehiclename_item_name);
             tvKind = itemView.findViewById(R.id.vehiclename_item_kind);
             vLine = itemView.findViewById(R.id.seperateline);
@@ -148,7 +143,7 @@ public class VehicleNameAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     public void updateItem(BaseModel object){
         boolean check = false;
-        for (int i=1; i<mData.size(); i++){
+        for (int i=0; i<mData.size(); i++){
             if (object.getInt("id") == mData.get(i).getInt("id")){
                 mData.remove(i);
                 mData.add(i, object);

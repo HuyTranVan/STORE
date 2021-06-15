@@ -193,7 +193,7 @@ public class CustomCenterDialog {
         });
     }
 
-    public static void alertWithCancelButton2(final String title, final String message, final String confirm, final String cancel, final ButtonCallback callback) {
+    public static void alertWithCancelButton2(final String title, final String message, final String confirm, final String cancel, final CallbackBoolean callback) {
         Util.getInstance().getCurrentActivity().runOnUiThread(new Runnable() {
             public void run() {
                 SweetAlertDialog dialog = new SweetAlertDialog(Util.getInstance().getCurrentActivity(), SweetAlertDialog.WARNING_TYPE)
@@ -205,14 +205,14 @@ public class CustomCenterDialog {
                             @Override
                             public void onClick(SweetAlertDialog sweetAlertDialog) {
                                 sweetAlertDialog.dismissWithAnimation();
-                                callback.Cancel(true);
+                                callback.onRespone(true);
                             }
                         })
                         .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
                                 sDialog.dismissWithAnimation();
-                                callback.Submit(true);
+                                callback.onRespone(true);
                             }
                         });
                 dialog.setCanceledOnTouchOutside(true);
@@ -329,100 +329,7 @@ public class CustomCenterDialog {
 //
 //    }
 
-//    public static void showReasonChoice(String title,
-//                                        String hint,
-//                                        String text,
-//                                        String cancel,
-//                                        String submit,
-//                                        boolean touchOutside,
-//                                        boolean showListReason,
-//                                        final CallbackString mListener){
-//        //TYPE 0: NOT INTERESTED
-//        //TYPE 1: NORMAL
-//
-//        final Dialog dialogResult = CustomCenterDialog.showCustomDialog(R.layout.view_dialog_select_status);
-//        final TextView tvTitle = dialogResult.findViewById(R.id.dialog_choice_status_title);
-//        final TextView tvContent = dialogResult.findViewById(R.id.dialog_choice_status_text);
-//        final EditText edNote = dialogResult.findViewById(R.id.dialog_choice_status_content);
-//        TextView tvClose = dialogResult.findViewById(R.id.dialog_select_status_clear);
-//        final RecyclerView rvStatus = dialogResult.findViewById(R.id.dialog_choice_status_rvStatus);
-//        FrameLayout frParent = dialogResult.findViewById(R.id.dialog_choice_status_parent);
-//        Button btnCancel = dialogResult.findViewById(R.id.btn_cancel);
-//        Button btnConfirm = dialogResult.findViewById(R.id.btn_submit);
-//
-//        dialogResult.setCanceledOnTouchOutside(touchOutside);
-//
-//        btnCancel.setText("HỦY");
-//        btnConfirm.setText("HOÀN TẤT");
-//        tvTitle.setText(title);
-//
-//        tvContent.setVisibility(View.GONE);
-//        Util.showKeyboardDelay(edNote);
-//
-//        edNote.setHint(hint);
-//        edNote.setText(text);
-//        edNote.setSelection(text.length());
-//
-//        List<BaseModel> listReason = CustomSQL.getListObject(Constants.STATUS);
-//        if (showListReason){
-//            final CartCheckinReasonAdapter adapter = new CartCheckinReasonAdapter(listReason, new CartCheckinReasonAdapter.ReasonCallback() {
-//                @Override
-//                public void onResult(BaseModel result, int position) {
-//                    listReason.get(position).put("rate", listReason.get(position).getInt("rate") + 1);
-//                    mListener.Result(result.getString("content"));
-//
-//                    dialogResult.dismiss();
-//
-//                }
-//
-//            });
-//
-//            Util.createLinearRV(rvStatus, adapter);
-//        }
-//
-//        tvClose.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                edNote.setText("");
-//            }
-//        });
-//        btnCancel.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                dialogResult.dismiss();
-//            }
-//        });
-//
-//        btnConfirm.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Util.hideKeyboard(v);
-//                if (Util.isEmpty(edNote)){
-////                    Util.showToast("Vui lòng nhập nội dung để tiếp tục");
-//                    mListener.Result(edNote.getText().toString().trim() );
-//                    dialogResult.dismiss();
-//
-//                }else {
-//                    if (showListReason){
-//                        BaseModel baseModel = new BaseModel();
-//                        baseModel.put("type", 0);
-//                        baseModel.put("content",edNote.getText().toString().trim() );
-//                        baseModel.put("rate",1 );
-//
-//                        listReason.add(baseModel);
-//
-//                        CustomSQL.setListBaseModel(Constants.STATUS, listReason);
-//                    }
-//
-//                    mListener.Result(edNote.getText().toString().trim() );
-//                    dialogResult.dismiss();
-//                }
-//            }
-//        });
-//
-//
-//
-//    }
+
 
 //    public static void showCheckinDialog(String title, int customer_id, int status_id, int currentRating, CallbackObject listener){
 //        //status_id 0: NEW

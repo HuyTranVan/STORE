@@ -34,6 +34,7 @@
                 android:textColor="@color/black_text_color_hint"/>
             
             <TextView
+                android:id="@+id/new_vehicle_title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Tạo xe mới"
@@ -50,16 +51,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginBottom="@dimen/_10sdp">
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp">
             
             <RadioButton
                 android:id="@+id/new_vehicle_moto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/font_awesome"
-                android:text="Xe máy"
+                android:text="@string/icon_motocycle"
+                android:textSize="@dimen/_14sdp"
                 android:layout_marginRight="@dimen/_30sdp"
+                android:paddingLeft="@dimen/_5sdp"
                 android:buttonTint="@color/colorBlue"/>
 
             <RadioButton
@@ -67,7 +70,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/font_awesome"
-                android:text="Ô tô"
+                android:text="@string/icon_car"
+                android:textSize="@dimen/_14sdp"
+                android:paddingLeft="@dimen/_5sdp"
                 android:buttonTint="@color/colorBlue"/>
             
         </RadioGroup>
@@ -78,24 +83,49 @@
             android:orientation="horizontal"
             android:layout_marginBottom="@dimen/_10sdp">
 
-            <Spinner
+            <com.lubsolution.store.customviews.CDropdown
                 android:id="@+id/new_vehicename_brand"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.4"
                 android:gravity="center_vertical"
                 android:background="@color/colorWhite"
                 android:layout_marginRight="@dimen/_5sdp"/>
 
-            <EditText
-                android:id="@+id/new_vehicename"
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:inputType="textCapWords"
-                android:hint="Nhập tên xe"
-                android:background="@drawable/transparent"
-                android:gravity="center_vertical"
-                android:paddingLeft="@dimen/_10sdp"
-                android:importantForAutofill="no"/>
+                android:layout_weight="0.6">
+
+                <EditText
+                    android:id="@+id/new_vehicename"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textCapWords"
+                    android:hint="Nhập tên xe"
+                    android:background="@drawable/bg_corner5_transparent_border_grey"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_20sdp"
+                    android:importantForAutofill="no"/>
+
+                <TextView
+                    android:id="@+id/new_vehice_warn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_awesome"
+                    android:text="@string/icon_warning_circle"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorRed"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:visibility="gone"/>
+
+
+            </RelativeLayout>
+
+
 
         </LinearLayout>
 

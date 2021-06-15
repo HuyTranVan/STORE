@@ -1,6 +1,5 @@
 package com.lubsolution.store.libraries.searchview;
 
-import com.ferfalk.simplesearchview.SimpleSearchView;
 
 /**
  * @author Fernando A. H. Falkiewicz

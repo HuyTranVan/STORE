@@ -55,6 +55,7 @@
     <string name="icon_status" translatable="false">&#xf27a;</string>
     <string name="icon_purchase" translatable="false">&#xf291;</string>
     <string name="icon_weight" translatable="false">&#xf5cd;</string>
+    <string name="icon_map" translatable="false">&#xf59f;</string>
     <string name="icon_address" translatable="false">&#xf277;</string>
     <string name="icon_district" translatable="false">&#xf3c5;</string>
     <string name="icon_detail" translatable="false">&#xf05a;</string>
@@ -65,6 +66,7 @@
     <string name="icon_edit_map" translatable="false">&#xf279;</string>
     <string name="icon_money" translatable="false">&#xf53a;</string>
     <string name="icon_warning" translatable="false">&#xf071;</string>
+    <string name="icon_warning_circle" translatable="false">&#xf06a;</string>
     <string name="icon_print" translatable="false">&#xf02f;</string>
     <string name="icon_keyboard" translatable="false">&#xf11c;</string>
     <string name="icon_import" translatable="false">&#xf187;</string>
@@ -81,6 +83,7 @@
     <string name="icon_barcode" translatable="false">&#xf02a;</string>
     <string name="icon_direction" translatable="false">&#xf124;</string>
     <string name="icon_car" translatable="false">&#xf1b9;</string>
+    <string name="icon_motocycle" translatable="false">&#xf21c;</string>
     <string name="icon_next" translatable="false">&#xf105;</string>
     <string name="icon_next_circle" translatable="false">&#xf0a9;</string>
     <string name="icon_bomb" translatable="false">&#xf4fd;</string>

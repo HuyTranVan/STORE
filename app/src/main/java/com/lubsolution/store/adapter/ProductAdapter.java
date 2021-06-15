@@ -76,20 +76,20 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductA
 
     @Override
     public void onBindViewHolder(final ProductAdapterViewHolder holder, final int position) {
-        holder.tvName.setText(mData.get(position).getString("name"));
+        holder.line.setVisibility(position == mData.size() - 1 ? View.GONE : View.VISIBLE);
+
+        holder.tvName.setText(String.format("%s%s",
+                mData.get(position).getString("name"),
+                mData.get(position).getInt("numOfPrice")>0 ? " (" + mData.get(position).getString("numOfPrice") +")" : ""));
         holder.tvPrice.setText(Util.FormatMoney(mData.get(position).getDouble("unitPrice")));
         String baseprice = Util.isAdmin() ? (String.format(" (%s)", Util.FormatMoney(mData.get(position).getDouble("basePrice")))) : "";
-        holder.tvBasePrice.setText(Util.FormatMoney(mData.get(position).getDouble("purchasePrice")) + baseprice);
+        holder.tvBasePrice.setText(Util.FormatMoney(mData.get(position).getDouble("netPrice")) + baseprice);
 
+        holder.tvMoto.setVisibility(mData.get(position).getInt("forMoto") ==1 ? View.VISIBLE : View.GONE);
+        holder.tvCar.setVisibility(mData.get(position).getInt("forCar") ==1 ? View.VISIBLE : View.GONE);
 
-        holder.tvGift.setVisibility(mData.get(position).getInt("promotion") == 1 ? View.VISIBLE : View.GONE);
-        if (!Util.checkImageNull(mData.get(position).getString("image"))) {
+        if (!Util.checkImageNull(mData.get(position).getString("image")))
             Glide.with(mContext).load(mData.get(position).getString("image")).centerCrop().into(holder.imageProduct);
-
-        } else {
-            Glide.with(mContext).load(R.drawable.ic_wolver).centerCrop().into(holder.imageProduct);
-
-        }
 
         if (User.getCurrentRoleId() == Constants.ROLE_ADMIN) {
             holder.rlParent.setOnClickListener(new View.OnClickListener() {
@@ -141,7 +141,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductA
 
 
     public class ProductAdapterViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvName, tvBasePrice, tvPrice, tvGift;
+        private TextView tvName, tvBasePrice, tvPrice, tvMoto, tvCar;
+        private View line;
         private RelativeLayout rlParent;
         private CircleImageView imageProduct;
 
@@ -150,9 +151,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductA
             tvName = (TextView) itemView.findViewById(R.id.product_item_name);
             tvBasePrice = (TextView) itemView.findViewById(R.id.product_item_base_price);
             tvPrice = (TextView) itemView.findViewById(R.id.product_item_unitprice);
-            tvGift = (TextView) itemView.findViewById(R.id.product_item_gift);
+            tvMoto = (TextView) itemView.findViewById(R.id.product_item_moto);
+            tvCar = (TextView) itemView.findViewById(R.id.product_item_car);
             rlParent = (RelativeLayout) itemView.findViewById(R.id.product_item_parent);
             imageProduct = itemView.findViewById(R.id.product_item_image);
+            line = itemView.findViewById(R.id.line);
         }
 
     }

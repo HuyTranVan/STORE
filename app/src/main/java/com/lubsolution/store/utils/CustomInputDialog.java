@@ -1,19 +1,20 @@
 package com.lubsolution.store.utils;
 
 import android.graphics.Rect;
+import android.os.Handler;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.inputmethod.EditorInfo;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
@@ -37,7 +38,10 @@ import com.orhanobut.dialogplus.OnDismissListener;
 import com.orhanobut.dialogplus.ViewHolder;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
+import static com.lubsolution.store.activities.BaseActivity.createGetParam;
 import static com.lubsolution.store.activities.BaseActivity.createPostParam;
 
 public class CustomInputDialog {
@@ -330,12 +334,17 @@ public class CustomInputDialog {
         FrameLayout layoutParent = (FrameLayout) dialog.findViewById(R.id.add_customer_parent);
         EditText iPlate = (EditText) dialog.findViewById(R.id.add_customer_number);
         TextView iPlateShow = (TextView) dialog.findViewById(R.id.add_customer_number_show);
+        TextView tvWarn = (TextView) dialog.findViewById(R.id.add_customer_warn);
         CInputForm iPhone = (CInputForm) dialog.findViewById(R.id.add_customer_phone);
         CInputForm iUsername = (CInputForm) dialog.findViewById(R.id.add_customer_name);
         CDropdown mBrand = (CDropdown) dialog.findViewById(R.id.add_customer_brand);
         CDropdown mVehicle = (CDropdown) dialog.findViewById(R.id.add_customer_vehicle);
         Button btnCancel = (Button) dialog.findViewById(R.id.btn_cancel);
         Button btnSubmit = (Button) dialog.findViewById(R.id.btn_submit);
+
+        Handler mHandlerSearch = new Handler();
+        final boolean[] plateExisted = {false};
+
         btnCancel.setText("hủy");
         btnSubmit.setText("Tạo mới");
 
@@ -347,14 +356,22 @@ public class CustomInputDialog {
         Util.textPhoneEvent(iPhone.getEdInput(), null);
 
         List<BaseModel> brands = CustomSQL.getListObject(Constants.BRAND_LIST);
-        final List<BaseModel>[] currentVehicleList = new List[]{Vehicle.getBrandList(brands.get(0))};
+        final List<BaseModel>[] currentVehicleList = new List[]{Vehicle.getVehicleList(brands.get(0))};
         final BaseModel[] currentVehicle = {new BaseModel()};
 
-        mBrand.setListDropdown(brands, "name", new CallbackObject() {
+        mBrand.setListDropdown(null,
+                brands,
+                "name",
+                0,
+                new CallbackObject() {
             @Override
             public void onResponse(BaseModel object) {
-                currentVehicleList[0] = Vehicle.getBrandList(object);
-                mVehicle.setListDropdown(currentVehicleList[0], "name", new CallbackObject() {
+                currentVehicleList[0] = Vehicle.getVehicleList(object);
+                mVehicle.setListDropdown(null,
+                        currentVehicleList[0],
+                        "name",
+                        0,
+                        new CallbackObject() {
                     @Override
                     public void onResponse(BaseModel object1){
                         currentVehicle[0] = object1;
@@ -366,11 +383,48 @@ public class CustomInputDialog {
 
         });
 
+        tvWarn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Util.showSnackbar("Khách hàng đã tồn tại", null, null);
+            }
+        });
+
+        Runnable delayForCheckPlate = new Runnable() {
+            @Override
+            public void run() {
+                BaseModel param = createGetParam(
+                        ApiUtil.CUSTOMER_EXISTED() + Util.encodeString(iPlate.getText().toString().replace(" ", "").toLowerCase()),
+                        false);
+
+                new GetPostMethod(param, new NewCallbackCustom() {
+                    @Override
+                    public void onResponse(BaseModel result, List<BaseModel> list) {
+                        if (result.getBoolean("success")){
+                            plateExisted[0] = true;
+                            tvWarn.setVisibility(plateExisted[0] ? View.VISIBLE : View.GONE);
+
+                        }else {
+                            plateExisted[0] = false;
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(String error) {
+
+                    }
+                }, 0).execute();
+
+            }};
 
         Util.plateNumberEvent(iPlate, new CallbackString() {
             @Override
             public void Result(String s) {
-                iPlateShow.setText(s);
+                iPlateShow.setText(Util.FormatPlate(s).replace(" ", "\n"));
+                mHandlerSearch.removeCallbacks(delayForCheckPlate);
+                mHandlerSearch.postDelayed(delayForCheckPlate, 500);
+
             }
         });
 
@@ -387,7 +441,10 @@ public class CustomInputDialog {
                 if (iPlate.getText().toString().length()< 8 ){
                     Util.showToast("Sai định dạng biển số");
 
-                }else {
+                }else if (plateExisted[0]){
+                    Util.showSnackbar("Khách hàng đã tồn tại!", null, null);
+
+                } else {
                     String param = String.format(ApiUtil.CUSTOMER_CREATE_PARAM,
                             "",
                             Util.encodeString(iUsername.getText()),
@@ -422,11 +479,13 @@ public class CustomInputDialog {
             }
         });
 
+
+
         dialog.show();
 
     }
 
-    public static void createNewVehicle(View view, int position, List<BaseModel> brands, CallbackObject mListener){
+    public static void createNewVehicle(View view, BaseModel vehicle, BaseModel brand, CallbackObject mListener){
         final DialogPlus dialog = DialogPlus.newDialog(Util.getInstance().getCurrentActivity())
                 .setContentHolder(new ViewHolder(R.layout.dialog_add_vehiclename))
                 .setGravity(Gravity.BOTTOM)
@@ -452,44 +511,95 @@ public class CustomInputDialog {
                 }).create();
 
         FrameLayout layoutParent = (FrameLayout) dialog.findViewById(R.id.add_vehiclename_parent);
+        TextView tvTitle = (TextView) dialog.findViewById(R.id.new_vehicle_title);
+        TextView tvWarn = (TextView) dialog.findViewById(R.id.new_vehice_warn);
         EditText edName = (EditText) dialog.findViewById(R.id.new_vehicename);
-        Spinner spBrand = (Spinner) dialog.findViewById(R.id.new_vehicename_brand);
+        CDropdown spBrand = (CDropdown) dialog.findViewById(R.id.new_vehicename_brand);
         RadioGroup rdKind = (RadioGroup) dialog.findViewById(R.id.new_vehicle_kinds);
+        RadioButton rdAuto = (RadioButton) dialog.findViewById(R.id.new_vehicle_auto);
+        RadioButton rdMoto = (RadioButton) dialog.findViewById(R.id.new_vehicle_moto);
         Button btnCancel = (Button) dialog.findViewById(R.id.btn_cancel);
         Button btnSubmit = (Button) dialog.findViewById(R.id.btn_submit);
 
+        final Timer[] timer = new Timer[1];
+
+        tvTitle.setText(vehicle == null? "Tạo xe mới" : "Sửa thông tin xe");
         btnCancel.setText("hủy");
-        btnSubmit.setText("Tạo mới");
+        btnSubmit.setText(vehicle == null? "Tạo mới": "Cập nhật");
 
         Util.showKeyboardEditTextDelay(edName);
 
-        final int[] currentPosition = {position};
+        rdKind.check(vehicle != null && vehicle.getInt("kind_id") == 1 ? R.id.new_vehicle_auto : R.id.new_vehicle_moto );
+        spBrand.setFocusable(false);
+        spBrand.setClickable(vehicle != null ? false : true);
+//        rdAuto.setChecked( true : false );
+        List<BaseModel> mBrands = CustomSQL.getListObject(Constants.BRAND_LIST);
+        final BaseModel[] currentBrand = {brand != null ? brand : mBrands.get(0)};
+        spBrand.setListDropdown(currentBrand[0].getString("name"),
+                //vehicle == null ? currentBrand[0].getString("name") : vehicle.getBaseModel("brand").getString("name"),
+                mBrands,
+                "name",
+                0,
+                new CallbackObject() {
+                    @Override
+                    public void onResponse(BaseModel object) {
+                        currentBrand[0] = object;
+                        edName.setText("");
+                    }
+                });
 
-        //List<BaseModel> mBrands = DataUtil.array2ListObject(CustomSQL.getString(Constants.VEHICLEBRAND_LIST));
+        edName.setText(vehicle == null? "": vehicle.getString("name"));
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(Util.getInstance().getCurrentActivity(), R.layout.view_spinner_text, DataUtil.getListStringFromListObject(brands, "name"));
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spBrand.setAdapter(dataAdapter);
-        spBrand.setSelection(currentPosition[0]);
-
-        spBrand.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                currentPosition[0] = i;
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        rdKind.check(R.id.new_vehicle_moto);
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Util.hideKeyboard(view);
                 dialog.dismiss();
+            }
+        });
+
+        edName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (timer[0] != null) {
+                    timer[0].cancel();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                timer[0] = new Timer();
+                timer[0].schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        BaseModel param = createGetParam(String.format(ApiUtil.VEHICLE_CHECK_EXIST(),
+                                Util.encodeString(edName.getText().toString()),
+                                currentBrand[0].getInt("id")), false);
+                        new GetPostMethod(param, new NewCallbackCustom() {
+                            @Override
+                            public void onResponse(BaseModel result, List<BaseModel> list) {
+                                if (result.getBoolean("success")){
+                                    //plateExisted[0] = true;
+                                    tvWarn.setVisibility( View.VISIBLE);
+
+                                }else {
+                                    tvWarn.setVisibility( View.GONE);
+                                }
+                            }
+
+                            @Override
+                            public void onError(String error) {
+
+                            }
+                        },0).execute();
+
+                    }
+                }, 500);
             }
         });
 
@@ -500,12 +610,15 @@ public class CustomInputDialog {
                 if (Util.isEmpty(edName)){
                     Util.showToast("Thiếu thông tin tên xe");
 
+                }else if (tvWarn.getVisibility() == View.VISIBLE){
+                    Util.showToast("Đã tồn tại tên xe này trong hệ thống");
+
                 }else {
                     BaseModel param = createPostParam(ApiUtil.VEHICLE_NEW(),
                             String.format(ApiUtil.VEHICLE_CREATE_PARAM,
-                                    "" ,
+                                    vehicle != null? "id="+vehicle.getInt("id")+"&" : "",
                                     Util.encodeString(edName.getText().toString().trim()),
-                                    brands.get(currentPosition[0]).getInt("id"),
+                                    currentBrand[0].getInt("id"),
                                     rdKind.getCheckedRadioButtonId() == R.id.new_vehicle_moto ? 0 : 1,
                                     ""),
                             false, false);
@@ -524,6 +637,148 @@ public class CustomInputDialog {
                     },1).execute();
 
                 }
+            }
+        });
+
+        dialog.show();
+
+    }
+
+    public static void createNewListPrice(View view, BaseModel product, CallbackObject listener){
+        final DialogPlus dialog = DialogPlus.newDialog(Util.getInstance().getCurrentActivity())
+                .setContentHolder(new ViewHolder(R.layout.dialog_add_listprice))
+                .setGravity(Gravity.BOTTOM)
+                .setBackgroundColorResId(R.drawable.bg_corner5_white)
+                .setMargin(20, 20, 20, 20)
+                .setInAnimation(R.anim.slide_up)
+                .setOnDismissListener(new OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogPlus dialog) {
+                        Util.hideKeyboard(view);
+
+                    }
+                })
+
+                .setOnBackPressListener(new OnBackPressListener() {
+                    @Override
+                    public void onBackPressed(DialogPlus dialogPlus) {
+                        dialogPlus.dismiss();
+                    }
+                }).create();
+
+        FrameLayout layoutParent = (FrameLayout) dialog.findViewById(R.id.add_listprice_parent);
+        TextView tvTitle = (TextView) dialog.findViewById(R.id.add_listprice_name);
+        CInputForm iVolume = (CInputForm) dialog.findViewById(R.id.add_listprice_volume);
+        CInputForm iPrice = (CInputForm) dialog.findViewById(R.id.add_listprice_price);
+        CInputForm iNote = (CInputForm) dialog.findViewById(R.id.add_listprice_note);
+        Button btnCancel = (Button) dialog.findViewById(R.id.btn_cancel);
+        Button btnSubmit = (Button) dialog.findViewById(R.id.btn_submit);
+
+
+        tvTitle.setText(product.getString("name"));
+        btnCancel.setText("hủy");
+        btnSubmit.setText("Tạo mới");
+
+        Util.showKeyboardEditTextDelay(iVolume.getEdInput());
+        iPrice.textMoneyEvent(null, null);
+        iVolume.textVolumeEvent();
+
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (Util.moneyValue(iVolume.getEdInput()) <= 0 ){
+                    Util.showToast("Sai khối lượng");
+
+                }else if (Util.isEmpty(iPrice.getEdInput())){
+                    Util.showToast("Thiếu giá tiền");
+                }else {
+                    String param = String.format(ApiUtil.LISTPRICE_CREATE_PARAM,
+                            product.getInt("id"),
+                            iVolume.getText().toString().trim(),
+                            Util.valueMoney(iPrice.getText().toString()),
+                            Util.encodeString(iNote.getText().toString()));
+                    new GetPostMethod(createPostParam(ApiUtil.LISTPRICE_NEW(),
+                            param,
+                            false,
+                            false),
+                            new NewCallbackCustom() {
+                                @Override
+                                public void onResponse(BaseModel result, List<BaseModel> list) {
+                                    listener.onResponse(result);
+                                    dialog.dismiss();
+                                }
+
+                                @Override
+                                public void onError(String error) {
+                                    //dialog.dismiss();
+                                }
+                            },1).execute();
+
+                }
+            }
+        });
+
+        dialog.show();
+
+    }
+
+    public static void showNoteInput(View view, String hint, String text, final CallbackString mListener){
+        final DialogPlus dialog = DialogPlus.newDialog(Util.getInstance().getCurrentActivity())
+                .setContentHolder(new ViewHolder(R.layout.view_dialog_edit_note))
+                .setGravity(Gravity.BOTTOM)
+                .setBackgroundColorResId(R.drawable.bg_corner5_white)
+                .setMargin(20, 20, 20, 20)
+                .setInAnimation(R.anim.slide_up)
+                .setOnDismissListener(new OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogPlus dialog) {
+                        Util.hideKeyboard(view);
+
+                    }
+                })
+
+                .setOnBackPressListener(new OnBackPressListener() {
+                    @Override
+                    public void onBackPressed(DialogPlus dialogPlus) {
+                        dialogPlus.dismiss();
+                    }
+                }).create();
+
+
+        final EditText edNote = (EditText) dialog.findViewById(R.id.edit_note_content);
+        TextView tvClose = (TextView) dialog.findViewById(R.id.edit_note_clear);
+        FrameLayout frParent = (FrameLayout) dialog.findViewById(R.id.edit_note_parent);
+        Button btnCancel = (Button) dialog.findViewById(R.id.btn_cancel);
+        Button btnConfirm = (Button) dialog.findViewById(R.id.btn_submit);
+
+        btnCancel.setText("HỦY");
+        btnConfirm.setText("CẬP NHẬT");
+
+        Util.showKeyboardDelay(edNote);
+
+        edNote.setHint(hint);
+        edNote.setText(text);
+        edNote.setSelection(text.length());
+
+        tvClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                edNote.setText("");
+            }
+        });
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Util.hideKeyboard(v);
+                mListener.Result(edNote.getText().toString().trim() );
+                dialog.dismiss();
             }
         });
 

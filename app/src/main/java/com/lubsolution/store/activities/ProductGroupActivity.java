@@ -85,7 +85,7 @@ public class ProductGroupActivity extends BaseActivity implements View.OnClickLi
     @Override
     public void onBackPressed() {
         Fragment mFragment = getSupportFragmentManager().findFragmentById(R.id.product_group_parent);
-        if (mFragment != null && mFragment instanceof NewUpdateProductGroupFragment) {
+        if (mFragment != null && mFragment instanceof UpdateProductGroupFragment) {
             getSupportFragmentManager().popBackStack();
 
         } else {
@@ -135,7 +135,7 @@ public class ProductGroupActivity extends BaseActivity implements View.OnClickLi
     }
 
     private void openFragmentNewProductGroup(String productgroup) {
-        NewUpdateProductGroupFragment groupFragment = new NewUpdateProductGroupFragment();
+        UpdateProductGroupFragment groupFragment = new UpdateProductGroupFragment();
         Bundle bundle = new Bundle();
         bundle.putString(Constants.PRODUCTGROUP, productgroup);
         changeFragment(groupFragment, bundle, true);

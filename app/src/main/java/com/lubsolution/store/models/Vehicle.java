@@ -16,6 +16,8 @@ public class Vehicle extends BaseModel{
     static List<BaseModel> mListBrand = null;
 
 
+    //kind_id = 0 ? xe may : o to
+
     public Vehicle() {
         jsonObject = new JSONObject();
     }
@@ -59,7 +61,7 @@ public class Vehicle extends BaseModel{
         return results;
     }
 
-    public static List<BaseModel> getBrandList(BaseModel brand){
+    public static List<BaseModel> getVehicleList(BaseModel brand){
         List<BaseModel> vehicles = CustomSQL.getListObject(Constants.VEHICLE_LIST);
         List<BaseModel> results = new ArrayList<>();
         for (int i=0; i<vehicles.size(); i++){
@@ -70,6 +72,23 @@ public class Vehicle extends BaseModel{
 
 
         }
+        return results;
+    }
+
+    public static List<BaseModel> getVehicleListWithNew(BaseModel brand){
+        List<BaseModel> vehicles = CustomSQL.getListObject(Constants.VEHICLE_LIST);
+        List<BaseModel> results = new ArrayList<>();
+        for (int i=0; i<vehicles.size(); i++){
+            if (brand.getInt("id") == vehicles.get(i).getInt("brand_id")){
+                results.add(vehicles.get(i));
+            }
+
+        }
+        BaseModel itemNew = new BaseModel();
+        itemNew.put("id", 0);
+        itemNew.put("name", "TẠO XE MỚI");
+
+        results.add(0, itemNew);
         return results;
     }
 

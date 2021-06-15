@@ -1,5 +1,9 @@
 package com.lubsolution.store.models;
 
+import com.lubsolution.store.apiconnect.ApiUtil;
+import com.lubsolution.store.apiconnect.apiserver.GetPostMethod;
+import com.lubsolution.store.callback.CallbackListObject;
+import com.lubsolution.store.callback.NewCallbackCustom;
 import com.lubsolution.store.utils.Constants;
 import com.lubsolution.store.utils.CustomSQL;
 
@@ -7,9 +11,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+
+import static com.lubsolution.store.activities.BaseActivity.createGetParam;
 
 /**
  * Created by macos on 9/16/17.
@@ -35,40 +39,21 @@ public class Province extends BaseModel {
         mListProvinces = null;
     }
 
-    public static List<Province> getProvincetList() {
-        if (mListProvinces == null) {
-            mListProvinces = new ArrayList<>();
-            try {
-                JSONArray array = new JSONArray(CustomSQL.getString(Constants.PROVINCE_LIST));
-                for (int i = 0; i < array.length(); i++) {
-                    Province province = new Province(array.getJSONObject(i));
-                    mListProvinces.add(province);
-                }
-
-            } catch (JSONException e) {
-                return mListProvinces;
-            }
-        }
-
-        return mListProvinces;
-    }
-
-    public static List<String> getListProvince() {
-        List<String> list = new ArrayList<>();
-
-        try {
-            JSONArray array = new JSONArray(CustomSQL.getString(Constants.PROVINCE_LIST));
-            for (int i = 0; i < array.length(); i++) {
-                JSONObject object = array.getJSONObject(i);
-                list.add(object.getString("name"));
+    public static void getProvincetList(CallbackListObject listener) {
+        BaseModel param = createGetParam(ApiUtil.PROVINCES(), true);
+        new GetPostMethod(param, new NewCallbackCustom() {
+            @Override
+            public void onResponse(BaseModel result, List<BaseModel> list) {
+                listener.onResponse(list);
             }
 
-        } catch (JSONException e) {
-            return list;
-        }
+            @Override
+            public void onError(String error) {
 
-        Collections.sort(list);
-        return list;
+            }
+        },0).execute();
+
+
     }
 
     public static int getDistrictId(String district) {
